@@ -4,3 +4,4 @@
 * **2026-10-13T22:30** - `zetaris`: implement(zetaris): fertilizer and IPM spray expenditure amortization (#1001)
 * **2026-10-13T22:59** - `hmem`: implement(hmem): fail-closed provenance classification for unverified URLs (#1002)
 * **2026-10-13T23:27** - `decision`: implement(decision): browser CDP automated test assertions and hooks (#1003)
+* **2026-10-13T23:56** - `metrics`: implement(metrics): TPC-DS merchandise domain exclusion ruleset (#1004)
