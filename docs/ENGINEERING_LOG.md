@@ -46,3 +46,4 @@
 * **2026-10-14T18:28** - `types`: refactor(types): Wang'uru market price deflation boundary checks (#1043)
 * **2026-10-14T18:56** - `trace`: refactor(trace): on-farm weir storage abstraction permit verification (#1044)
 * **2026-10-14T19:25** - `security`: refactor(security): interactive farmgate price sensitivity stress curve (#1045)
+* **2026-10-14T19:53** - `docs`: refactor(docs): regulatory Markdown due diligence briefing format (#1046)
