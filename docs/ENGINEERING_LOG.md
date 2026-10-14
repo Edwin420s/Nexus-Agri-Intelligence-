@@ -38,3 +38,4 @@
 * **2026-10-14T14:40** - `decision`: refactor(decision): Nakuru highland potato frost cessation heuristics (#1035)
 * **2026-10-14T15:08** - `metrics`: refactor(metrics): stop-word lexical pruning in semantic tokenization (#1036)
 * **2026-10-14T15:37** - `risk`: refactor(risk): atomic JSON storage rename with file mode 0o600 (#1037)
+* **2026-10-14T16:05** - `nemotron`: refactor(nemotron): NVIDIA Nemotron prompt temperature and token guardrails (#1038)
