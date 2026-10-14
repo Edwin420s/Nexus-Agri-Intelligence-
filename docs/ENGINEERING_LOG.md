@@ -40,3 +40,4 @@
 * **2026-10-14T15:37** - `risk`: refactor(risk): atomic JSON storage rename with file mode 0o600 (#1037)
 * **2026-10-14T16:05** - `nemotron`: refactor(nemotron): NVIDIA Nemotron prompt temperature and token guardrails (#1038)
 * **2026-10-14T16:34** - `telemetry`: refactor(telemetry): Yatta canal rotational water rationing alerts (#1039)
+* **2026-10-14T17:02** - `api`: refactor(api): Zetaris Bearer token auto-renewal life-cycle (#1040)
