@@ -16,3 +16,4 @@
 * **2026-10-14T04:12** - `security`: implement(security): Wang'uru market price deflation boundary checks (#1013)
 * **2026-10-14T04:41** - `docs`: implement(docs): on-farm weir storage abstraction permit verification (#1014)
 * **2026-10-14T05:09** - `tests`: implement(tests): interactive farmgate price sensitivity stress curve (#1015)
+* **2026-10-14T05:38** - `engine`: optimize(engine): regulatory Markdown due diligence briefing format (#1016)
