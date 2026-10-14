@@ -51,3 +51,4 @@
 * **2026-10-14T20:50** - `engine`: calibrate(engine): certified seed tuber working capital ratios (#1048)
 * **2026-10-14T21:19** - `zetaris`: calibrate(zetaris): decision checklist score weighting algorithm (#1049)
 * **2026-10-14T21:47** - `hmem`: calibrate(hmem): Content-Security-Policy and X-Frame-Options headers (#1050)
+* **2026-10-14T22:16** - `decision`: calibrate(decision): fail-safe deterministic report synthesis fallbacks (#1051)
