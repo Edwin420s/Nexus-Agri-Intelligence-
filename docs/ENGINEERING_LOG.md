@@ -19,3 +19,4 @@
 * **2026-10-14T05:38** - `engine`: optimize(engine): regulatory Markdown due diligence briefing format (#1016)
 * **2026-10-14T06:06** - `zetaris`: optimize(zetaris): in-memory LRU rate-limiting per client IP address (#1017)
 * **2026-10-14T06:35** - `hmem`: optimize(hmem): certified seed tuber working capital ratios (#1018)
+* **2026-10-14T07:03** - `decision`: optimize(decision): decision checklist score weighting algorithm (#1019)
