@@ -28,3 +28,4 @@
 * **2026-10-14T09:55** - `ui`: optimize(ui): WRA abstraction permit lead-time sensitivity warning (#1025)
 * **2026-10-14T10:23** - `store`: optimize(store): Wakulima aggregator grading and rejection buffer (#1026)
 * **2026-10-14T10:52** - `types`: optimize(types): Spark SQL proxy query payload serialization (#1027)
+* **2026-10-14T11:20** - `trace`: optimize(trace): enterprise gross operating margin dynamic recalc (#1028)
