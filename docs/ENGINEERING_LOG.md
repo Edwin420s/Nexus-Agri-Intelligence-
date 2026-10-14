@@ -49,3 +49,4 @@
 * **2026-10-14T19:53** - `docs`: refactor(docs): regulatory Markdown due diligence briefing format (#1046)
 * **2026-10-14T20:22** - `tests`: refactor(tests): in-memory LRU rate-limiting per client IP address (#1047)
 * **2026-10-14T20:50** - `engine`: calibrate(engine): certified seed tuber working capital ratios (#1048)
+* **2026-10-14T21:19** - `zetaris`: calibrate(zetaris): decision checklist score weighting algorithm (#1049)
