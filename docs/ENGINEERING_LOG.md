@@ -18,3 +18,4 @@
 * **2026-10-14T05:09** - `tests`: implement(tests): interactive farmgate price sensitivity stress curve (#1015)
 * **2026-10-14T05:38** - `engine`: optimize(engine): regulatory Markdown due diligence briefing format (#1016)
 * **2026-10-14T06:06** - `zetaris`: optimize(zetaris): in-memory LRU rate-limiting per client IP address (#1017)
+* **2026-10-14T06:35** - `hmem`: optimize(hmem): certified seed tuber working capital ratios (#1018)
