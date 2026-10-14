@@ -23,3 +23,4 @@
 * **2026-10-14T07:32** - `metrics`: optimize(metrics): Content-Security-Policy and X-Frame-Options headers (#1020)
 * **2026-10-14T08:01** - `risk`: optimize(risk): fail-safe deterministic report synthesis fallbacks (#1021)
 * **2026-10-14T08:29** - `nemotron`: optimize(nemotron): Machakos French bean GlobalGAP MRL compliance flags (#1022)
+* **2026-10-14T08:58** - `telemetry`: optimize(telemetry): cross-session H-MEM memory mining from dossier text (#1023)
