@@ -48,3 +48,4 @@
 * **2026-10-14T19:25** - `security`: refactor(security): interactive farmgate price sensitivity stress curve (#1045)
 * **2026-10-14T19:53** - `docs`: refactor(docs): regulatory Markdown due diligence briefing format (#1046)
 * **2026-10-14T20:22** - `tests`: refactor(tests): in-memory LRU rate-limiting per client IP address (#1047)
+* **2026-10-14T20:50** - `engine`: calibrate(engine): certified seed tuber working capital ratios (#1048)
