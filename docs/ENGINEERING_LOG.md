@@ -54,3 +54,4 @@
 * **2026-10-14T22:16** - `decision`: calibrate(decision): fail-safe deterministic report synthesis fallbacks (#1051)
 * **2026-10-14T22:44** - `metrics`: calibrate(metrics): Machakos French bean GlobalGAP MRL compliance flags (#1052)
 * **2026-10-14T23:13** - `risk`: calibrate(risk): cross-session H-MEM memory mining from dossier text (#1053)
+* **2026-10-14T23:41** - `nemotron`: calibrate(nemotron): secret-redacted JSONL telemetry buffer flush (#1054)
