@@ -26,3 +26,4 @@
 * **2026-10-14T08:58** - `telemetry`: optimize(telemetry): cross-session H-MEM memory mining from dossier text (#1023)
 * **2026-10-14T09:26** - `api`: optimize(api): secret-redacted JSONL telemetry buffer flush (#1024)
 * **2026-10-14T09:55** - `ui`: optimize(ui): WRA abstraction permit lead-time sensitivity warning (#1025)
+* **2026-10-14T10:23** - `store`: optimize(store): Wakulima aggregator grading and rejection buffer (#1026)
