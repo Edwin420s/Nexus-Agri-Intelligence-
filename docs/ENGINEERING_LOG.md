@@ -33,3 +33,4 @@
 * **2026-10-14T12:17** - `docs`: optimize(docs): Kirinyaga tomato wholesale price index curve (#1030)
 * **2026-10-14T12:46** - `tests`: optimize(tests): fertilizer and IPM spray expenditure amortization (#1031)
 * **2026-10-14T13:14** - `engine`: refactor(engine): fail-closed provenance classification for unverified URLs (#1032)
+* **2026-10-14T13:43** - `zetaris`: refactor(zetaris): browser CDP automated test assertions and hooks (#1033)
