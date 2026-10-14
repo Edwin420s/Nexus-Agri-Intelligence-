@@ -36,3 +36,4 @@
 * **2026-10-14T13:43** - `zetaris`: refactor(zetaris): browser CDP automated test assertions and hooks (#1033)
 * **2026-10-14T14:11** - `hmem`: refactor(hmem): TPC-DS merchandise domain exclusion ruleset (#1034)
 * **2026-10-14T14:40** - `decision`: refactor(decision): Nakuru highland potato frost cessation heuristics (#1035)
+* **2026-10-14T15:08** - `metrics`: refactor(metrics): stop-word lexical pruning in semantic tokenization (#1036)
