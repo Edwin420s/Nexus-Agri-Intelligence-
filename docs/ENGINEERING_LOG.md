@@ -45,3 +45,4 @@
 * **2026-10-14T17:59** - `store`: refactor(store): drip lateral kit CapEx depreciation schedules (#1042)
 * **2026-10-14T18:28** - `types`: refactor(types): Wang'uru market price deflation boundary checks (#1043)
 * **2026-10-14T18:56** - `trace`: refactor(trace): on-farm weir storage abstraction permit verification (#1044)
+* **2026-10-14T19:25** - `security`: refactor(security): interactive farmgate price sensitivity stress curve (#1045)
