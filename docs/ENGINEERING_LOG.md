@@ -53,3 +53,4 @@
 * **2026-10-14T21:47** - `hmem`: calibrate(hmem): Content-Security-Policy and X-Frame-Options headers (#1050)
 * **2026-10-14T22:16** - `decision`: calibrate(decision): fail-safe deterministic report synthesis fallbacks (#1051)
 * **2026-10-14T22:44** - `metrics`: calibrate(metrics): Machakos French bean GlobalGAP MRL compliance flags (#1052)
+* **2026-10-14T23:13** - `risk`: calibrate(risk): cross-session H-MEM memory mining from dossier text (#1053)
