@@ -64,3 +64,4 @@
 * **2026-10-15T03:01** - `security`: calibrate(security): fertilizer and IPM spray expenditure amortization (#1061)
 * **2026-10-15T03:30** - `docs`: calibrate(docs): fail-closed provenance classification for unverified URLs (#1062)
 * **2026-10-15T03:58** - `tests`: calibrate(tests): browser CDP automated test assertions and hooks (#1063)
+* **2026-10-15T04:27** - `engine`: enhance(engine): TPC-DS merchandise domain exclusion ruleset (#1064)
