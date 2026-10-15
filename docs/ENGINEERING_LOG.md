@@ -57,3 +57,4 @@
 * **2026-10-14T23:41** - `nemotron`: calibrate(nemotron): secret-redacted JSONL telemetry buffer flush (#1054)
 * **2026-10-15T00:10** - `telemetry`: calibrate(telemetry): WRA abstraction permit lead-time sensitivity warning (#1055)
 * **2026-10-15T00:39** - `api`: calibrate(api): Wakulima aggregator grading and rejection buffer (#1056)
+* **2026-10-15T01:07** - `ui`: calibrate(ui): Spark SQL proxy query payload serialization (#1057)
