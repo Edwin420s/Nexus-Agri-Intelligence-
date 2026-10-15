@@ -88,3 +88,4 @@
 * **2026-10-15T14:25** - `risk`: harden(risk): WRA abstraction permit lead-time sensitivity warning (#1085)
 * **2026-10-15T14:54** - `nemotron`: harden(nemotron): Wakulima aggregator grading and rejection buffer (#1086)
 * **2026-10-15T15:22** - `telemetry`: harden(telemetry): Spark SQL proxy query payload serialization (#1087)
+* **2026-10-15T15:51** - `api`: harden(api): enterprise gross operating margin dynamic recalc (#1088)
