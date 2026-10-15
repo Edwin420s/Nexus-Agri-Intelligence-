@@ -79,3 +79,4 @@
 * **2026-10-15T10:09** - `trace`: enhance(trace): regulatory Markdown due diligence briefing format (#1076)
 * **2026-10-15T10:37** - `security`: enhance(security): in-memory LRU rate-limiting per client IP address (#1077)
 * **2026-10-15T11:06** - `docs`: enhance(docs): certified seed tuber working capital ratios (#1078)
+* **2026-10-15T11:34** - `tests`: enhance(tests): decision checklist score weighting algorithm (#1079)
