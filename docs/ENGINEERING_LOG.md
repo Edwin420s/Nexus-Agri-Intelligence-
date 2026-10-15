@@ -63,3 +63,4 @@
 * **2026-10-15T02:33** - `trace`: calibrate(trace): Kirinyaga tomato wholesale price index curve (#1060)
 * **2026-10-15T03:01** - `security`: calibrate(security): fertilizer and IPM spray expenditure amortization (#1061)
 * **2026-10-15T03:30** - `docs`: calibrate(docs): fail-closed provenance classification for unverified URLs (#1062)
+* **2026-10-15T03:58** - `tests`: calibrate(tests): browser CDP automated test assertions and hooks (#1063)
