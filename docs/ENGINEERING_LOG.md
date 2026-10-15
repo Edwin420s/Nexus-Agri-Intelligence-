@@ -95,3 +95,4 @@
 * **2026-10-15T17:45** - `trace`: harden(trace): fail-closed provenance classification for unverified URLs (#1092)
 * **2026-10-15T18:14** - `security`: harden(security): browser CDP automated test assertions and hooks (#1093)
 * **2026-10-15T18:42** - `docs`: harden(docs): TPC-DS merchandise domain exclusion ruleset (#1094)
+* **2026-10-15T19:11** - `tests`: harden(tests): Nakuru highland potato frost cessation heuristics (#1095)
