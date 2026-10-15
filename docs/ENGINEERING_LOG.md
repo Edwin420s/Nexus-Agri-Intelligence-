@@ -99,3 +99,4 @@
 * **2026-10-15T19:39** - `engine`: streamline(engine): stop-word lexical pruning in semantic tokenization (#1096)
 * **2026-10-15T20:08** - `zetaris`: streamline(zetaris): atomic JSON storage rename with file mode 0o600 (#1097)
 * **2026-10-15T20:36** - `hmem`: streamline(hmem): NVIDIA Nemotron prompt temperature and token guardrails (#1098)
+* **2026-10-15T21:05** - `decision`: streamline(decision): Yatta canal rotational water rationing alerts (#1099)
