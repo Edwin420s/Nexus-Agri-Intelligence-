@@ -91,3 +91,4 @@
 * **2026-10-15T15:51** - `api`: harden(api): enterprise gross operating margin dynamic recalc (#1088)
 * **2026-10-15T16:20** - `ui`: harden(ui): multi-tenant organization ID request header propagation (#1089)
 * **2026-10-15T16:48** - `store`: harden(store): Kirinyaga tomato wholesale price index curve (#1090)
+* **2026-10-15T17:17** - `types`: harden(types): fertilizer and IPM spray expenditure amortization (#1091)
