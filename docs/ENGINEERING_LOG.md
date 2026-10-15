@@ -60,3 +60,4 @@
 * **2026-10-15T01:07** - `ui`: calibrate(ui): Spark SQL proxy query payload serialization (#1057)
 * **2026-10-15T01:36** - `store`: calibrate(store): enterprise gross operating margin dynamic recalc (#1058)
 * **2026-10-15T02:04** - `types`: calibrate(types): multi-tenant organization ID request header propagation (#1059)
+* **2026-10-15T02:33** - `trace`: calibrate(trace): Kirinyaga tomato wholesale price index curve (#1060)
