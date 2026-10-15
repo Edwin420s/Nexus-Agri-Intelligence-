@@ -72,3 +72,4 @@
 * **2026-10-15T06:49** - `risk`: enhance(risk): Yatta canal rotational water rationing alerts (#1069)
 * **2026-10-15T07:18** - `nemotron`: enhance(nemotron): Zetaris Bearer token auto-renewal life-cycle (#1070)
 * **2026-10-15T07:46** - `telemetry`: enhance(telemetry): conditions precedent credit matrix generator (#1071)
+* **2026-10-15T08:15** - `api`: enhance(api): drip lateral kit CapEx depreciation schedules (#1072)
