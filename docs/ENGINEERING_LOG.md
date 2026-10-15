@@ -66,3 +66,4 @@
 * **2026-10-15T03:58** - `tests`: calibrate(tests): browser CDP automated test assertions and hooks (#1063)
 * **2026-10-15T04:27** - `engine`: enhance(engine): TPC-DS merchandise domain exclusion ruleset (#1064)
 * **2026-10-15T04:55** - `zetaris`: enhance(zetaris): Nakuru highland potato frost cessation heuristics (#1065)
+* **2026-10-15T05:24** - `hmem`: enhance(hmem): stop-word lexical pruning in semantic tokenization (#1066)
