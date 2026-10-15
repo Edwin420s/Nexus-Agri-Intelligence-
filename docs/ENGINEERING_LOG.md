@@ -84,3 +84,4 @@
 * **2026-10-15T12:31** - `zetaris`: harden(zetaris): fail-safe deterministic report synthesis fallbacks (#1081)
 * **2026-10-15T13:00** - `hmem`: harden(hmem): Machakos French bean GlobalGAP MRL compliance flags (#1082)
 * **2026-10-15T13:28** - `decision`: harden(decision): cross-session H-MEM memory mining from dossier text (#1083)
+* **2026-10-15T13:57** - `metrics`: harden(metrics): secret-redacted JSONL telemetry buffer flush (#1084)
