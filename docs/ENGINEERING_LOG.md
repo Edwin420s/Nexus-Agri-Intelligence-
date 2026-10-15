@@ -68,3 +68,4 @@
 * **2026-10-15T04:55** - `zetaris`: enhance(zetaris): Nakuru highland potato frost cessation heuristics (#1065)
 * **2026-10-15T05:24** - `hmem`: enhance(hmem): stop-word lexical pruning in semantic tokenization (#1066)
 * **2026-10-15T05:52** - `decision`: enhance(decision): atomic JSON storage rename with file mode 0o600 (#1067)
+* **2026-10-15T06:21** - `metrics`: enhance(metrics): NVIDIA Nemotron prompt temperature and token guardrails (#1068)
