@@ -93,3 +93,4 @@
 * **2026-10-15T16:48** - `store`: harden(store): Kirinyaga tomato wholesale price index curve (#1090)
 * **2026-10-15T17:17** - `types`: harden(types): fertilizer and IPM spray expenditure amortization (#1091)
 * **2026-10-15T17:45** - `trace`: harden(trace): fail-closed provenance classification for unverified URLs (#1092)
+* **2026-10-15T18:14** - `security`: harden(security): browser CDP automated test assertions and hooks (#1093)
