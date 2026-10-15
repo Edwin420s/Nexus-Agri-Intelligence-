@@ -65,3 +65,4 @@
 * **2026-10-15T03:30** - `docs`: calibrate(docs): fail-closed provenance classification for unverified URLs (#1062)
 * **2026-10-15T03:58** - `tests`: calibrate(tests): browser CDP automated test assertions and hooks (#1063)
 * **2026-10-15T04:27** - `engine`: enhance(engine): TPC-DS merchandise domain exclusion ruleset (#1064)
+* **2026-10-15T04:55** - `zetaris`: enhance(zetaris): Nakuru highland potato frost cessation heuristics (#1065)
