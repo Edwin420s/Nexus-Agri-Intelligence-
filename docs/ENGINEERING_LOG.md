@@ -74,3 +74,4 @@
 * **2026-10-15T07:46** - `telemetry`: enhance(telemetry): conditions precedent credit matrix generator (#1071)
 * **2026-10-15T08:15** - `api`: enhance(api): drip lateral kit CapEx depreciation schedules (#1072)
 * **2026-10-15T08:43** - `ui`: enhance(ui): Wang'uru market price deflation boundary checks (#1073)
+* **2026-10-15T09:12** - `store`: enhance(store): on-farm weir storage abstraction permit verification (#1074)
