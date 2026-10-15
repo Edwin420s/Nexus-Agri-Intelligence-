@@ -82,3 +82,4 @@
 * **2026-10-15T11:34** - `tests`: enhance(tests): decision checklist score weighting algorithm (#1079)
 * **2026-10-15T12:03** - `engine`: harden(engine): Content-Security-Policy and X-Frame-Options headers (#1080)
 * **2026-10-15T12:31** - `zetaris`: harden(zetaris): fail-safe deterministic report synthesis fallbacks (#1081)
+* **2026-10-15T13:00** - `hmem`: harden(hmem): Machakos French bean GlobalGAP MRL compliance flags (#1082)
