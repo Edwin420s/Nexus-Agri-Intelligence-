@@ -75,3 +75,4 @@
 * **2026-10-15T08:15** - `api`: enhance(api): drip lateral kit CapEx depreciation schedules (#1072)
 * **2026-10-15T08:43** - `ui`: enhance(ui): Wang'uru market price deflation boundary checks (#1073)
 * **2026-10-15T09:12** - `store`: enhance(store): on-farm weir storage abstraction permit verification (#1074)
+* **2026-10-15T09:40** - `types`: enhance(types): interactive farmgate price sensitivity stress curve (#1075)
