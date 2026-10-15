@@ -98,3 +98,4 @@
 * **2026-10-15T19:11** - `tests`: harden(tests): Nakuru highland potato frost cessation heuristics (#1095)
 * **2026-10-15T19:39** - `engine`: streamline(engine): stop-word lexical pruning in semantic tokenization (#1096)
 * **2026-10-15T20:08** - `zetaris`: streamline(zetaris): atomic JSON storage rename with file mode 0o600 (#1097)
+* **2026-10-15T20:36** - `hmem`: streamline(hmem): NVIDIA Nemotron prompt temperature and token guardrails (#1098)
