@@ -86,3 +86,4 @@
 * **2026-10-15T13:28** - `decision`: harden(decision): cross-session H-MEM memory mining from dossier text (#1083)
 * **2026-10-15T13:57** - `metrics`: harden(metrics): secret-redacted JSONL telemetry buffer flush (#1084)
 * **2026-10-15T14:25** - `risk`: harden(risk): WRA abstraction permit lead-time sensitivity warning (#1085)
+* **2026-10-15T14:54** - `nemotron`: harden(nemotron): Wakulima aggregator grading and rejection buffer (#1086)
