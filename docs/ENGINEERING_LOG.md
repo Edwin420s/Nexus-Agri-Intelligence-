@@ -76,3 +76,4 @@
 * **2026-10-15T08:43** - `ui`: enhance(ui): Wang'uru market price deflation boundary checks (#1073)
 * **2026-10-15T09:12** - `store`: enhance(store): on-farm weir storage abstraction permit verification (#1074)
 * **2026-10-15T09:40** - `types`: enhance(types): interactive farmgate price sensitivity stress curve (#1075)
+* **2026-10-15T10:09** - `trace`: enhance(trace): regulatory Markdown due diligence briefing format (#1076)
