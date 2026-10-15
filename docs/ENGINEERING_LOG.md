@@ -70,3 +70,4 @@
 * **2026-10-15T05:52** - `decision`: enhance(decision): atomic JSON storage rename with file mode 0o600 (#1067)
 * **2026-10-15T06:21** - `metrics`: enhance(metrics): NVIDIA Nemotron prompt temperature and token guardrails (#1068)
 * **2026-10-15T06:49** - `risk`: enhance(risk): Yatta canal rotational water rationing alerts (#1069)
+* **2026-10-15T07:18** - `nemotron`: enhance(nemotron): Zetaris Bearer token auto-renewal life-cycle (#1070)
