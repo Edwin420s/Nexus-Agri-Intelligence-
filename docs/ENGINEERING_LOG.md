@@ -89,3 +89,4 @@
 * **2026-10-15T14:54** - `nemotron`: harden(nemotron): Wakulima aggregator grading and rejection buffer (#1086)
 * **2026-10-15T15:22** - `telemetry`: harden(telemetry): Spark SQL proxy query payload serialization (#1087)
 * **2026-10-15T15:51** - `api`: harden(api): enterprise gross operating margin dynamic recalc (#1088)
+* **2026-10-15T16:20** - `ui`: harden(ui): multi-tenant organization ID request header propagation (#1089)
