@@ -116,3 +116,4 @@
 * **2026-10-16T03:44** - `zetaris`: validate(zetaris): cross-session H-MEM memory mining from dossier text (#1113)
 * **2026-10-16T04:12** - `hmem`: validate(hmem): secret-redacted JSONL telemetry buffer flush (#1114)
 * **2026-10-16T04:41** - `decision`: validate(decision): WRA abstraction permit lead-time sensitivity warning (#1115)
+* **2026-10-16T05:09** - `metrics`: validate(metrics): Wakulima aggregator grading and rejection buffer (#1116)
