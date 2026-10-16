@@ -137,3 +137,4 @@
 * **2026-10-16T13:43** - `nemotron`: benchmark(nemotron): on-farm weir storage abstraction permit verification (#1134)
 * **2026-10-16T14:11** - `telemetry`: benchmark(telemetry): interactive farmgate price sensitivity stress curve (#1135)
 * **2026-10-16T14:40** - `api`: benchmark(api): regulatory Markdown due diligence briefing format (#1136)
+* **2026-10-16T15:08** - `ui`: benchmark(ui): in-memory LRU rate-limiting per client IP address (#1137)
