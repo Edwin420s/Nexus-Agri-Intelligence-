@@ -122,3 +122,4 @@
 * **2026-10-16T06:35** - `telemetry`: validate(telemetry): multi-tenant organization ID request header propagation (#1119)
 * **2026-10-16T07:03** - `api`: validate(api): Kirinyaga tomato wholesale price index curve (#1120)
 * **2026-10-16T07:32** - `ui`: validate(ui): fertilizer and IPM spray expenditure amortization (#1121)
+* **2026-10-16T08:01** - `store`: validate(store): fail-closed provenance classification for unverified URLs (#1122)
