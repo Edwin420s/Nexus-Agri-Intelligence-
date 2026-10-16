@@ -123,3 +123,4 @@
 * **2026-10-16T07:03** - `api`: validate(api): Kirinyaga tomato wholesale price index curve (#1120)
 * **2026-10-16T07:32** - `ui`: validate(ui): fertilizer and IPM spray expenditure amortization (#1121)
 * **2026-10-16T08:01** - `store`: validate(store): fail-closed provenance classification for unverified URLs (#1122)
+* **2026-10-16T08:29** - `types`: validate(types): browser CDP automated test assertions and hooks (#1123)
