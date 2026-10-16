@@ -147,3 +147,4 @@
 * **2026-10-16T18:28** - `engine`: synchronize(engine): secret-redacted JSONL telemetry buffer flush (#1144)
 * **2026-10-16T18:56** - `zetaris`: synchronize(zetaris): WRA abstraction permit lead-time sensitivity warning (#1145)
 * **2026-10-16T19:25** - `hmem`: synchronize(hmem): Wakulima aggregator grading and rejection buffer (#1146)
+* **2026-10-16T19:53** - `decision`: synchronize(decision): Spark SQL proxy query payload serialization (#1147)
