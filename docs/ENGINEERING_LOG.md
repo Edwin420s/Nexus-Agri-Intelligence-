@@ -136,3 +136,4 @@
 * **2026-10-16T13:14** - `risk`: benchmark(risk): Wang'uru market price deflation boundary checks (#1133)
 * **2026-10-16T13:43** - `nemotron`: benchmark(nemotron): on-farm weir storage abstraction permit verification (#1134)
 * **2026-10-16T14:11** - `telemetry`: benchmark(telemetry): interactive farmgate price sensitivity stress curve (#1135)
+* **2026-10-16T14:40** - `api`: benchmark(api): regulatory Markdown due diligence briefing format (#1136)
