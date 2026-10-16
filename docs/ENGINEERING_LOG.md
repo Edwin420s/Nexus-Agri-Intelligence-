@@ -144,3 +144,4 @@
 * **2026-10-16T17:02** - `security`: benchmark(security): fail-safe deterministic report synthesis fallbacks (#1141)
 * **2026-10-16T17:31** - `docs`: benchmark(docs): Machakos French bean GlobalGAP MRL compliance flags (#1142)
 * **2026-10-16T17:59** - `tests`: benchmark(tests): cross-session H-MEM memory mining from dossier text (#1143)
+* **2026-10-16T18:28** - `engine`: synchronize(engine): secret-redacted JSONL telemetry buffer flush (#1144)
