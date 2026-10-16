@@ -142,3 +142,4 @@
 * **2026-10-16T16:05** - `types`: benchmark(types): decision checklist score weighting algorithm (#1139)
 * **2026-10-16T16:34** - `trace`: benchmark(trace): Content-Security-Policy and X-Frame-Options headers (#1140)
 * **2026-10-16T17:02** - `security`: benchmark(security): fail-safe deterministic report synthesis fallbacks (#1141)
+* **2026-10-16T17:31** - `docs`: benchmark(docs): Machakos French bean GlobalGAP MRL compliance flags (#1142)
