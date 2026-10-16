@@ -106,3 +106,4 @@
 * **2026-10-15T22:59** - `telemetry`: streamline(telemetry): Wang'uru market price deflation boundary checks (#1103)
 * **2026-10-15T23:27** - `api`: streamline(api): on-farm weir storage abstraction permit verification (#1104)
 * **2026-10-15T23:56** - `ui`: streamline(ui): interactive farmgate price sensitivity stress curve (#1105)
+* **2026-10-16T00:24** - `store`: streamline(store): regulatory Markdown due diligence briefing format (#1106)
