@@ -150,3 +150,4 @@
 * **2026-10-16T19:53** - `decision`: synchronize(decision): Spark SQL proxy query payload serialization (#1147)
 * **2026-10-16T20:22** - `metrics`: synchronize(metrics): enterprise gross operating margin dynamic recalc (#1148)
 * **2026-10-16T20:50** - `risk`: synchronize(risk): multi-tenant organization ID request header propagation (#1149)
+* **2026-10-16T21:19** - `nemotron`: synchronize(nemotron): Kirinyaga tomato wholesale price index curve (#1150)
