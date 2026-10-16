@@ -138,3 +138,4 @@
 * **2026-10-16T14:11** - `telemetry`: benchmark(telemetry): interactive farmgate price sensitivity stress curve (#1135)
 * **2026-10-16T14:40** - `api`: benchmark(api): regulatory Markdown due diligence briefing format (#1136)
 * **2026-10-16T15:08** - `ui`: benchmark(ui): in-memory LRU rate-limiting per client IP address (#1137)
+* **2026-10-16T15:37** - `store`: benchmark(store): certified seed tuber working capital ratios (#1138)
