@@ -124,3 +124,4 @@
 * **2026-10-16T07:32** - `ui`: validate(ui): fertilizer and IPM spray expenditure amortization (#1121)
 * **2026-10-16T08:01** - `store`: validate(store): fail-closed provenance classification for unverified URLs (#1122)
 * **2026-10-16T08:29** - `types`: validate(types): browser CDP automated test assertions and hooks (#1123)
+* **2026-10-16T08:58** - `trace`: validate(trace): TPC-DS merchandise domain exclusion ruleset (#1124)
