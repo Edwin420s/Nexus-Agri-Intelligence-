@@ -140,3 +140,4 @@
 * **2026-10-16T15:08** - `ui`: benchmark(ui): in-memory LRU rate-limiting per client IP address (#1137)
 * **2026-10-16T15:37** - `store`: benchmark(store): certified seed tuber working capital ratios (#1138)
 * **2026-10-16T16:05** - `types`: benchmark(types): decision checklist score weighting algorithm (#1139)
+* **2026-10-16T16:34** - `trace`: benchmark(trace): Content-Security-Policy and X-Frame-Options headers (#1140)
