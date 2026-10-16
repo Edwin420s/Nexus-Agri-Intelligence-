@@ -109,3 +109,4 @@
 * **2026-10-16T00:24** - `store`: streamline(store): regulatory Markdown due diligence briefing format (#1106)
 * **2026-10-16T00:53** - `types`: streamline(types): in-memory LRU rate-limiting per client IP address (#1107)
 * **2026-10-16T01:21** - `trace`: streamline(trace): certified seed tuber working capital ratios (#1108)
+* **2026-10-16T01:50** - `security`: streamline(security): decision checklist score weighting algorithm (#1109)
