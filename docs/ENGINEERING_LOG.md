@@ -126,3 +126,4 @@
 * **2026-10-16T08:29** - `types`: validate(types): browser CDP automated test assertions and hooks (#1123)
 * **2026-10-16T08:58** - `trace`: validate(trace): TPC-DS merchandise domain exclusion ruleset (#1124)
 * **2026-10-16T09:26** - `security`: validate(security): Nakuru highland potato frost cessation heuristics (#1125)
+* **2026-10-16T09:55** - `docs`: validate(docs): stop-word lexical pruning in semantic tokenization (#1126)
