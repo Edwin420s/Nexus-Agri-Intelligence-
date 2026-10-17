@@ -172,3 +172,4 @@
 * **2026-10-17T06:21** - `ui`: standardize(ui): decision checklist score weighting algorithm (#1169)
 * **2026-10-17T06:49** - `store`: standardize(store): Content-Security-Policy and X-Frame-Options headers (#1170)
 * **2026-10-17T07:18** - `types`: standardize(types): fail-safe deterministic report synthesis fallbacks (#1171)
+* **2026-10-17T07:46** - `trace`: standardize(trace): Machakos French bean GlobalGAP MRL compliance flags (#1172)
