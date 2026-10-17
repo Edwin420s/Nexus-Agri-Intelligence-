@@ -182,3 +182,4 @@
 * **2026-10-17T11:06** - `decision`: align(decision): multi-tenant organization ID request header propagation (#1179)
 * **2026-10-17T11:34** - `metrics`: align(metrics): Kirinyaga tomato wholesale price index curve (#1180)
 * **2026-10-17T12:03** - `risk`: align(risk): fertilizer and IPM spray expenditure amortization (#1181)
+* **2026-10-17T12:31** - `nemotron`: align(nemotron): fail-closed provenance classification for unverified URLs (#1182)
