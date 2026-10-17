@@ -204,3 +204,4 @@
 * **2026-10-17T21:33** - `ui`: implement(ui): fail-safe deterministic report synthesis fallbacks (#1201)
 * **2026-10-17T22:02** - `store`: implement(store): Machakos French bean GlobalGAP MRL compliance flags (#1202)
 * **2026-10-17T22:30** - `types`: implement(types): cross-session H-MEM memory mining from dossier text (#1203)
+* **2026-10-17T22:59** - `trace`: implement(trace): secret-redacted JSONL telemetry buffer flush (#1204)
