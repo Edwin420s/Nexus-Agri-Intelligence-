@@ -166,3 +166,4 @@
 * **2026-10-17T03:30** - `decision`: standardize(decision): Wang'uru market price deflation boundary checks (#1163)
 * **2026-10-17T03:58** - `metrics`: standardize(metrics): on-farm weir storage abstraction permit verification (#1164)
 * **2026-10-17T04:27** - `risk`: standardize(risk): interactive farmgate price sensitivity stress curve (#1165)
+* **2026-10-17T04:55** - `nemotron`: standardize(nemotron): regulatory Markdown due diligence briefing format (#1166)
