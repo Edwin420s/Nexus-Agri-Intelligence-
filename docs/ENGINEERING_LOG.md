@@ -195,3 +195,4 @@
 * **2026-10-17T17:17** - `engine`: implement(engine): drip lateral kit CapEx depreciation schedules (#1192)
 * **2026-10-17T17:45** - `zetaris`: implement(zetaris): Wang'uru market price deflation boundary checks (#1193)
 * **2026-10-17T18:14** - `hmem`: implement(hmem): on-farm weir storage abstraction permit verification (#1194)
+* **2026-10-17T18:42** - `decision`: implement(decision): interactive farmgate price sensitivity stress curve (#1195)
