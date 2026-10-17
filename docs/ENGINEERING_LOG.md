@@ -187,3 +187,4 @@
 * **2026-10-17T13:28** - `api`: align(api): TPC-DS merchandise domain exclusion ruleset (#1184)
 * **2026-10-17T13:57** - `ui`: align(ui): Nakuru highland potato frost cessation heuristics (#1185)
 * **2026-10-17T14:25** - `store`: align(store): stop-word lexical pruning in semantic tokenization (#1186)
+* **2026-10-17T14:54** - `types`: align(types): atomic JSON storage rename with file mode 0o600 (#1187)
