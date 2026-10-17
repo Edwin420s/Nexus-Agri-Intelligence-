@@ -169,3 +169,4 @@
 * **2026-10-17T04:55** - `nemotron`: standardize(nemotron): regulatory Markdown due diligence briefing format (#1166)
 * **2026-10-17T05:24** - `telemetry`: standardize(telemetry): in-memory LRU rate-limiting per client IP address (#1167)
 * **2026-10-17T05:52** - `api`: standardize(api): certified seed tuber working capital ratios (#1168)
+* **2026-10-17T06:21** - `ui`: standardize(ui): decision checklist score weighting algorithm (#1169)
