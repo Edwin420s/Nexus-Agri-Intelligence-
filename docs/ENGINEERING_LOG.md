@@ -156,3 +156,4 @@
 * **2026-10-16T22:44** - `ui`: synchronize(ui): browser CDP automated test assertions and hooks (#1153)
 * **2026-10-16T23:13** - `store`: synchronize(store): TPC-DS merchandise domain exclusion ruleset (#1154)
 * **2026-10-16T23:41** - `types`: synchronize(types): Nakuru highland potato frost cessation heuristics (#1155)
+* **2026-10-17T00:10** - `trace`: synchronize(trace): stop-word lexical pruning in semantic tokenization (#1156)
