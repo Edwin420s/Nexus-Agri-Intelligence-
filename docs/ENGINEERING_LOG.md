@@ -165,3 +165,4 @@
 * **2026-10-17T03:01** - `hmem`: standardize(hmem): drip lateral kit CapEx depreciation schedules (#1162)
 * **2026-10-17T03:30** - `decision`: standardize(decision): Wang'uru market price deflation boundary checks (#1163)
 * **2026-10-17T03:58** - `metrics`: standardize(metrics): on-farm weir storage abstraction permit verification (#1164)
+* **2026-10-17T04:27** - `risk`: standardize(risk): interactive farmgate price sensitivity stress curve (#1165)
