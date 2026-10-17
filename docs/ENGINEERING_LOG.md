@@ -198,3 +198,4 @@
 * **2026-10-17T18:42** - `decision`: implement(decision): interactive farmgate price sensitivity stress curve (#1195)
 * **2026-10-17T19:11** - `metrics`: implement(metrics): regulatory Markdown due diligence briefing format (#1196)
 * **2026-10-17T19:39** - `risk`: implement(risk): in-memory LRU rate-limiting per client IP address (#1197)
+* **2026-10-17T20:08** - `nemotron`: implement(nemotron): certified seed tuber working capital ratios (#1198)
