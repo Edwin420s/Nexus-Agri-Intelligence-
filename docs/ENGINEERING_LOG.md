@@ -179,3 +179,4 @@
 * **2026-10-17T09:40** - `engine`: align(engine): Wakulima aggregator grading and rejection buffer (#1176)
 * **2026-10-17T10:09** - `zetaris`: align(zetaris): Spark SQL proxy query payload serialization (#1177)
 * **2026-10-17T10:37** - `hmem`: align(hmem): enterprise gross operating margin dynamic recalc (#1178)
+* **2026-10-17T11:06** - `decision`: align(decision): multi-tenant organization ID request header propagation (#1179)
