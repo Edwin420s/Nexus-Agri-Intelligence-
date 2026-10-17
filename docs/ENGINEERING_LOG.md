@@ -184,3 +184,4 @@
 * **2026-10-17T12:03** - `risk`: align(risk): fertilizer and IPM spray expenditure amortization (#1181)
 * **2026-10-17T12:31** - `nemotron`: align(nemotron): fail-closed provenance classification for unverified URLs (#1182)
 * **2026-10-17T13:00** - `telemetry`: align(telemetry): browser CDP automated test assertions and hooks (#1183)
+* **2026-10-17T13:28** - `api`: align(api): TPC-DS merchandise domain exclusion ruleset (#1184)
