@@ -176,3 +176,4 @@
 * **2026-10-17T08:15** - `security`: standardize(security): cross-session H-MEM memory mining from dossier text (#1173)
 * **2026-10-17T08:43** - `docs`: standardize(docs): secret-redacted JSONL telemetry buffer flush (#1174)
 * **2026-10-17T09:12** - `tests`: standardize(tests): WRA abstraction permit lead-time sensitivity warning (#1175)
+* **2026-10-17T09:40** - `engine`: align(engine): Wakulima aggregator grading and rejection buffer (#1176)
