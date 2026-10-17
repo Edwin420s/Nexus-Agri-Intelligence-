@@ -174,3 +174,4 @@
 * **2026-10-17T07:18** - `types`: standardize(types): fail-safe deterministic report synthesis fallbacks (#1171)
 * **2026-10-17T07:46** - `trace`: standardize(trace): Machakos French bean GlobalGAP MRL compliance flags (#1172)
 * **2026-10-17T08:15** - `security`: standardize(security): cross-session H-MEM memory mining from dossier text (#1173)
+* **2026-10-17T08:43** - `docs`: standardize(docs): secret-redacted JSONL telemetry buffer flush (#1174)
