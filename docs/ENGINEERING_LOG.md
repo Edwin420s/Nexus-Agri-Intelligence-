@@ -185,3 +185,4 @@
 * **2026-10-17T12:31** - `nemotron`: align(nemotron): fail-closed provenance classification for unverified URLs (#1182)
 * **2026-10-17T13:00** - `telemetry`: align(telemetry): browser CDP automated test assertions and hooks (#1183)
 * **2026-10-17T13:28** - `api`: align(api): TPC-DS merchandise domain exclusion ruleset (#1184)
+* **2026-10-17T13:57** - `ui`: align(ui): Nakuru highland potato frost cessation heuristics (#1185)
