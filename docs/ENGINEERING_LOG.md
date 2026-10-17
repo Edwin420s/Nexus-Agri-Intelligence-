@@ -190,3 +190,4 @@
 * **2026-10-17T14:54** - `types`: align(types): atomic JSON storage rename with file mode 0o600 (#1187)
 * **2026-10-17T15:22** - `trace`: align(trace): NVIDIA Nemotron prompt temperature and token guardrails (#1188)
 * **2026-10-17T15:51** - `security`: align(security): Yatta canal rotational water rationing alerts (#1189)
+* **2026-10-17T16:20** - `docs`: align(docs): Zetaris Bearer token auto-renewal life-cycle (#1190)
