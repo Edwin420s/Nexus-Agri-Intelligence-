@@ -202,3 +202,4 @@
 * **2026-10-17T20:36** - `telemetry`: implement(telemetry): decision checklist score weighting algorithm (#1199)
 * **2026-10-17T21:05** - `api`: implement(api): Content-Security-Policy and X-Frame-Options headers (#1200)
 * **2026-10-17T21:33** - `ui`: implement(ui): fail-safe deterministic report synthesis fallbacks (#1201)
+* **2026-10-17T22:02** - `store`: implement(store): Machakos French bean GlobalGAP MRL compliance flags (#1202)
