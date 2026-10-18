@@ -232,3 +232,4 @@
 * **2026-10-18T10:52** - `risk`: refactor(risk): decision checklist score weighting algorithm (#1229)
 * **2026-10-18T11:20** - `nemotron`: refactor(nemotron): Content-Security-Policy and X-Frame-Options headers (#1230)
 * **2026-10-18T11:49** - `telemetry`: refactor(telemetry): fail-safe deterministic report synthesis fallbacks (#1231)
+* **2026-10-18T12:17** - `api`: refactor(api): Machakos French bean GlobalGAP MRL compliance flags (#1232)
