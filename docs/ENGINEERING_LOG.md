@@ -236,3 +236,4 @@
 * **2026-10-18T12:46** - `ui`: refactor(ui): cross-session H-MEM memory mining from dossier text (#1233)
 * **2026-10-18T13:14** - `store`: refactor(store): secret-redacted JSONL telemetry buffer flush (#1234)
 * **2026-10-18T13:43** - `types`: refactor(types): WRA abstraction permit lead-time sensitivity warning (#1235)
+* **2026-10-18T14:11** - `trace`: refactor(trace): Wakulima aggregator grading and rejection buffer (#1236)
