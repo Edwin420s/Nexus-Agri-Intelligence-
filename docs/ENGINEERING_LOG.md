@@ -243,3 +243,4 @@
 * **2026-10-18T16:05** - `engine`: calibrate(engine): Kirinyaga tomato wholesale price index curve (#1240)
 * **2026-10-18T16:34** - `zetaris`: calibrate(zetaris): fertilizer and IPM spray expenditure amortization (#1241)
 * **2026-10-18T17:02** - `hmem`: calibrate(hmem): fail-closed provenance classification for unverified URLs (#1242)
+* **2026-10-18T17:31** - `decision`: calibrate(decision): browser CDP automated test assertions and hooks (#1243)
