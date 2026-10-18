@@ -226,3 +226,4 @@
 * **2026-10-18T08:01** - `tests`: optimize(tests): Wang'uru market price deflation boundary checks (#1223)
 * **2026-10-18T08:29** - `engine`: refactor(engine): on-farm weir storage abstraction permit verification (#1224)
 * **2026-10-18T08:58** - `zetaris`: refactor(zetaris): interactive farmgate price sensitivity stress curve (#1225)
+* **2026-10-18T09:26** - `hmem`: refactor(hmem): regulatory Markdown due diligence briefing format (#1226)
