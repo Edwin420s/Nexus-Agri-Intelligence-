@@ -230,3 +230,4 @@
 * **2026-10-18T09:55** - `decision`: refactor(decision): in-memory LRU rate-limiting per client IP address (#1227)
 * **2026-10-18T10:23** - `metrics`: refactor(metrics): certified seed tuber working capital ratios (#1228)
 * **2026-10-18T10:52** - `risk`: refactor(risk): decision checklist score weighting algorithm (#1229)
+* **2026-10-18T11:20** - `nemotron`: refactor(nemotron): Content-Security-Policy and X-Frame-Options headers (#1230)
