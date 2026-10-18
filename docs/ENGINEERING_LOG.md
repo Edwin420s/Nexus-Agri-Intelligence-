@@ -215,3 +215,4 @@
 * **2026-10-18T02:47** - `metrics`: optimize(metrics): fail-closed provenance classification for unverified URLs (#1212)
 * **2026-10-18T03:15** - `risk`: optimize(risk): browser CDP automated test assertions and hooks (#1213)
 * **2026-10-18T03:44** - `nemotron`: optimize(nemotron): TPC-DS merchandise domain exclusion ruleset (#1214)
+* **2026-10-18T04:12** - `telemetry`: optimize(telemetry): Nakuru highland potato frost cessation heuristics (#1215)
