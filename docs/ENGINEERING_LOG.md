@@ -241,3 +241,4 @@
 * **2026-10-18T15:08** - `docs`: refactor(docs): enterprise gross operating margin dynamic recalc (#1238)
 * **2026-10-18T15:37** - `tests`: refactor(tests): multi-tenant organization ID request header propagation (#1239)
 * **2026-10-18T16:05** - `engine`: calibrate(engine): Kirinyaga tomato wholesale price index curve (#1240)
+* **2026-10-18T16:34** - `zetaris`: calibrate(zetaris): fertilizer and IPM spray expenditure amortization (#1241)
