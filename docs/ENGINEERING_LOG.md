@@ -237,3 +237,4 @@
 * **2026-10-18T13:14** - `store`: refactor(store): secret-redacted JSONL telemetry buffer flush (#1234)
 * **2026-10-18T13:43** - `types`: refactor(types): WRA abstraction permit lead-time sensitivity warning (#1235)
 * **2026-10-18T14:11** - `trace`: refactor(trace): Wakulima aggregator grading and rejection buffer (#1236)
+* **2026-10-18T14:40** - `security`: refactor(security): Spark SQL proxy query payload serialization (#1237)
