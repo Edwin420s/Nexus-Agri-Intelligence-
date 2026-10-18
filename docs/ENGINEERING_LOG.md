@@ -224,3 +224,4 @@
 * **2026-10-18T07:03** - `security`: optimize(security): conditions precedent credit matrix generator (#1221)
 * **2026-10-18T07:32** - `docs`: optimize(docs): drip lateral kit CapEx depreciation schedules (#1222)
 * **2026-10-18T08:01** - `tests`: optimize(tests): Wang'uru market price deflation boundary checks (#1223)
+* **2026-10-18T08:29** - `engine`: refactor(engine): on-farm weir storage abstraction permit verification (#1224)
