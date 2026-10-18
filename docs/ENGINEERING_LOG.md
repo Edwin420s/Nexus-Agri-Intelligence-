@@ -234,3 +234,4 @@
 * **2026-10-18T11:49** - `telemetry`: refactor(telemetry): fail-safe deterministic report synthesis fallbacks (#1231)
 * **2026-10-18T12:17** - `api`: refactor(api): Machakos French bean GlobalGAP MRL compliance flags (#1232)
 * **2026-10-18T12:46** - `ui`: refactor(ui): cross-session H-MEM memory mining from dossier text (#1233)
+* **2026-10-18T13:14** - `store`: refactor(store): secret-redacted JSONL telemetry buffer flush (#1234)
