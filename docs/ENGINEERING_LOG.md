@@ -255,3 +255,4 @@
 * **2026-10-18T21:47** - `trace`: calibrate(trace): drip lateral kit CapEx depreciation schedules (#1252)
 * **2026-10-18T22:16** - `security`: calibrate(security): Wang'uru market price deflation boundary checks (#1253)
 * **2026-10-18T22:44** - `docs`: calibrate(docs): on-farm weir storage abstraction permit verification (#1254)
+* **2026-10-18T23:13** - `tests`: calibrate(tests): interactive farmgate price sensitivity stress curve (#1255)
