@@ -249,3 +249,4 @@
 * **2026-10-18T18:56** - `nemotron`: calibrate(nemotron): stop-word lexical pruning in semantic tokenization (#1246)
 * **2026-10-18T19:25** - `telemetry`: calibrate(telemetry): atomic JSON storage rename with file mode 0o600 (#1247)
 * **2026-10-18T19:53** - `api`: calibrate(api): NVIDIA Nemotron prompt temperature and token guardrails (#1248)
+* **2026-10-18T20:22** - `ui`: calibrate(ui): Yatta canal rotational water rationing alerts (#1249)
