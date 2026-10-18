@@ -247,3 +247,4 @@
 * **2026-10-18T17:59** - `metrics`: calibrate(metrics): TPC-DS merchandise domain exclusion ruleset (#1244)
 * **2026-10-18T18:28** - `risk`: calibrate(risk): Nakuru highland potato frost cessation heuristics (#1245)
 * **2026-10-18T18:56** - `nemotron`: calibrate(nemotron): stop-word lexical pruning in semantic tokenization (#1246)
+* **2026-10-18T19:25** - `telemetry`: calibrate(telemetry): atomic JSON storage rename with file mode 0o600 (#1247)
