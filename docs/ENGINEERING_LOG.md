@@ -228,3 +228,4 @@
 * **2026-10-18T08:58** - `zetaris`: refactor(zetaris): interactive farmgate price sensitivity stress curve (#1225)
 * **2026-10-18T09:26** - `hmem`: refactor(hmem): regulatory Markdown due diligence briefing format (#1226)
 * **2026-10-18T09:55** - `decision`: refactor(decision): in-memory LRU rate-limiting per client IP address (#1227)
+* **2026-10-18T10:23** - `metrics`: refactor(metrics): certified seed tuber working capital ratios (#1228)
