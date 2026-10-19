@@ -282,3 +282,4 @@
 * **2026-10-19T10:37** - `telemetry`: harden(telemetry): Yatta canal rotational water rationing alerts (#1279)
 * **2026-10-19T11:06** - `api`: harden(api): Zetaris Bearer token auto-renewal life-cycle (#1280)
 * **2026-10-19T11:34** - `ui`: harden(ui): conditions precedent credit matrix generator (#1281)
+* **2026-10-19T12:03** - `store`: harden(store): drip lateral kit CapEx depreciation schedules (#1282)
