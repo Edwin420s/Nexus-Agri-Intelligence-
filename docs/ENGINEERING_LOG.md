@@ -265,3 +265,4 @@
 * **2026-10-19T02:33** - `nemotron`: enhance(nemotron): Machakos French bean GlobalGAP MRL compliance flags (#1262)
 * **2026-10-19T03:01** - `telemetry`: enhance(telemetry): cross-session H-MEM memory mining from dossier text (#1263)
 * **2026-10-19T03:30** - `api`: enhance(api): secret-redacted JSONL telemetry buffer flush (#1264)
+* **2026-10-19T03:58** - `ui`: enhance(ui): WRA abstraction permit lead-time sensitivity warning (#1265)
