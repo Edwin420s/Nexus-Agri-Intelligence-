@@ -273,3 +273,4 @@
 * **2026-10-19T06:21** - `docs`: enhance(docs): Kirinyaga tomato wholesale price index curve (#1270)
 * **2026-10-19T06:49** - `tests`: enhance(tests): fertilizer and IPM spray expenditure amortization (#1271)
 * **2026-10-19T07:18** - `engine`: harden(engine): fail-closed provenance classification for unverified URLs (#1272)
+* **2026-10-19T07:46** - `zetaris`: harden(zetaris): browser CDP automated test assertions and hooks (#1273)
