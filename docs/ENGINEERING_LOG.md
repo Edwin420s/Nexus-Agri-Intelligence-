@@ -307,3 +307,4 @@
 * **2026-10-19T22:30** - `engine`: validate(engine): TPC-DS merchandise domain exclusion ruleset (#1304)
 * **2026-10-19T22:59** - `zetaris`: validate(zetaris): Nakuru highland potato frost cessation heuristics (#1305)
 * **2026-10-19T23:27** - `hmem`: validate(hmem): stop-word lexical pruning in semantic tokenization (#1306)
+* **2026-10-19T23:56** - `decision`: validate(decision): atomic JSON storage rename with file mode 0o600 (#1307)
