@@ -300,3 +300,4 @@
 * **2026-10-19T19:11** - `ui`: streamline(ui): Spark SQL proxy query payload serialization (#1297)
 * **2026-10-19T19:39** - `store`: streamline(store): enterprise gross operating margin dynamic recalc (#1298)
 * **2026-10-19T20:08** - `types`: streamline(types): multi-tenant organization ID request header propagation (#1299)
+* **2026-10-19T20:36** - `trace`: streamline(trace): Kirinyaga tomato wholesale price index curve (#1300)
