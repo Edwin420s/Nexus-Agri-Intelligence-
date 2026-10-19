@@ -287,3 +287,4 @@
 * **2026-10-19T13:00** - `trace`: harden(trace): on-farm weir storage abstraction permit verification (#1284)
 * **2026-10-19T13:28** - `security`: harden(security): interactive farmgate price sensitivity stress curve (#1285)
 * **2026-10-19T13:57** - `docs`: harden(docs): regulatory Markdown due diligence briefing format (#1286)
+* **2026-10-19T14:25** - `tests`: harden(tests): in-memory LRU rate-limiting per client IP address (#1287)
