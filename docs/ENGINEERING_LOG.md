@@ -277,3 +277,4 @@
 * **2026-10-19T08:15** - `hmem`: harden(hmem): TPC-DS merchandise domain exclusion ruleset (#1274)
 * **2026-10-19T08:43** - `decision`: harden(decision): Nakuru highland potato frost cessation heuristics (#1275)
 * **2026-10-19T09:12** - `metrics`: harden(metrics): stop-word lexical pruning in semantic tokenization (#1276)
+* **2026-10-19T09:40** - `risk`: harden(risk): atomic JSON storage rename with file mode 0o600 (#1277)
