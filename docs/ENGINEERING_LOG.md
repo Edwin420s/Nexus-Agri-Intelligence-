@@ -257,3 +257,4 @@
 * **2026-10-18T22:44** - `docs`: calibrate(docs): on-farm weir storage abstraction permit verification (#1254)
 * **2026-10-18T23:13** - `tests`: calibrate(tests): interactive farmgate price sensitivity stress curve (#1255)
 * **2026-10-18T23:41** - `engine`: enhance(engine): regulatory Markdown due diligence briefing format (#1256)
+* **2026-10-19T00:10** - `zetaris`: enhance(zetaris): in-memory LRU rate-limiting per client IP address (#1257)
