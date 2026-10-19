@@ -279,3 +279,4 @@
 * **2026-10-19T09:12** - `metrics`: harden(metrics): stop-word lexical pruning in semantic tokenization (#1276)
 * **2026-10-19T09:40** - `risk`: harden(risk): atomic JSON storage rename with file mode 0o600 (#1277)
 * **2026-10-19T10:09** - `nemotron`: harden(nemotron): NVIDIA Nemotron prompt temperature and token guardrails (#1278)
+* **2026-10-19T10:37** - `telemetry`: harden(telemetry): Yatta canal rotational water rationing alerts (#1279)
