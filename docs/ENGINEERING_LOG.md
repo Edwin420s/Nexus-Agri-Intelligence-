@@ -304,3 +304,4 @@
 * **2026-10-19T21:05** - `security`: streamline(security): fertilizer and IPM spray expenditure amortization (#1301)
 * **2026-10-19T21:33** - `docs`: streamline(docs): fail-closed provenance classification for unverified URLs (#1302)
 * **2026-10-19T22:02** - `tests`: streamline(tests): browser CDP automated test assertions and hooks (#1303)
+* **2026-10-19T22:30** - `engine`: validate(engine): TPC-DS merchandise domain exclusion ruleset (#1304)
