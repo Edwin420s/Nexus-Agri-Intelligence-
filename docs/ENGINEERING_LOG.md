@@ -292,3 +292,4 @@
 * **2026-10-19T15:22** - `zetaris`: streamline(zetaris): decision checklist score weighting algorithm (#1289)
 * **2026-10-19T15:51** - `hmem`: streamline(hmem): Content-Security-Policy and X-Frame-Options headers (#1290)
 * **2026-10-19T16:20** - `decision`: streamline(decision): fail-safe deterministic report synthesis fallbacks (#1291)
+* **2026-10-19T16:48** - `metrics`: streamline(metrics): Machakos French bean GlobalGAP MRL compliance flags (#1292)
