@@ -275,3 +275,4 @@
 * **2026-10-19T07:18** - `engine`: harden(engine): fail-closed provenance classification for unverified URLs (#1272)
 * **2026-10-19T07:46** - `zetaris`: harden(zetaris): browser CDP automated test assertions and hooks (#1273)
 * **2026-10-19T08:15** - `hmem`: harden(hmem): TPC-DS merchandise domain exclusion ruleset (#1274)
+* **2026-10-19T08:43** - `decision`: harden(decision): Nakuru highland potato frost cessation heuristics (#1275)
