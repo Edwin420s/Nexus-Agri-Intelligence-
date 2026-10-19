@@ -270,3 +270,4 @@
 * **2026-10-19T04:55** - `types`: enhance(types): Spark SQL proxy query payload serialization (#1267)
 * **2026-10-19T05:24** - `trace`: enhance(trace): enterprise gross operating margin dynamic recalc (#1268)
 * **2026-10-19T05:52** - `security`: enhance(security): multi-tenant organization ID request header propagation (#1269)
+* **2026-10-19T06:21** - `docs`: enhance(docs): Kirinyaga tomato wholesale price index curve (#1270)
