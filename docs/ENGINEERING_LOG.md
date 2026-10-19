@@ -285,3 +285,4 @@
 * **2026-10-19T12:03** - `store`: harden(store): drip lateral kit CapEx depreciation schedules (#1282)
 * **2026-10-19T12:31** - `types`: harden(types): Wang'uru market price deflation boundary checks (#1283)
 * **2026-10-19T13:00** - `trace`: harden(trace): on-farm weir storage abstraction permit verification (#1284)
+* **2026-10-19T13:28** - `security`: harden(security): interactive farmgate price sensitivity stress curve (#1285)
