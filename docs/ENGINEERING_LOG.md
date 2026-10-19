@@ -290,3 +290,4 @@
 * **2026-10-19T14:25** - `tests`: harden(tests): in-memory LRU rate-limiting per client IP address (#1287)
 * **2026-10-19T14:54** - `engine`: streamline(engine): certified seed tuber working capital ratios (#1288)
 * **2026-10-19T15:22** - `zetaris`: streamline(zetaris): decision checklist score weighting algorithm (#1289)
+* **2026-10-19T15:51** - `hmem`: streamline(hmem): Content-Security-Policy and X-Frame-Options headers (#1290)
