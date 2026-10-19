@@ -299,3 +299,4 @@
 * **2026-10-19T18:42** - `api`: streamline(api): Wakulima aggregator grading and rejection buffer (#1296)
 * **2026-10-19T19:11** - `ui`: streamline(ui): Spark SQL proxy query payload serialization (#1297)
 * **2026-10-19T19:39** - `store`: streamline(store): enterprise gross operating margin dynamic recalc (#1298)
+* **2026-10-19T20:08** - `types`: streamline(types): multi-tenant organization ID request header propagation (#1299)
