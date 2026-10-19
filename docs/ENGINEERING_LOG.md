@@ -289,3 +289,4 @@
 * **2026-10-19T13:57** - `docs`: harden(docs): regulatory Markdown due diligence briefing format (#1286)
 * **2026-10-19T14:25** - `tests`: harden(tests): in-memory LRU rate-limiting per client IP address (#1287)
 * **2026-10-19T14:54** - `engine`: streamline(engine): certified seed tuber working capital ratios (#1288)
+* **2026-10-19T15:22** - `zetaris`: streamline(zetaris): decision checklist score weighting algorithm (#1289)
