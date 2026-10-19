@@ -263,3 +263,4 @@
 * **2026-10-19T01:36** - `metrics`: enhance(metrics): Content-Security-Policy and X-Frame-Options headers (#1260)
 * **2026-10-19T02:04** - `risk`: enhance(risk): fail-safe deterministic report synthesis fallbacks (#1261)
 * **2026-10-19T02:33** - `nemotron`: enhance(nemotron): Machakos French bean GlobalGAP MRL compliance flags (#1262)
+* **2026-10-19T03:01** - `telemetry`: enhance(telemetry): cross-session H-MEM memory mining from dossier text (#1263)
