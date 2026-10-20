@@ -331,3 +331,4 @@
 * **2026-10-20T09:55** - `api`: benchmark(api): enterprise gross operating margin dynamic recalc (#1328)
 * **2026-10-20T10:23** - `ui`: benchmark(ui): multi-tenant organization ID request header propagation (#1329)
 * **2026-10-20T10:52** - `store`: benchmark(store): Kirinyaga tomato wholesale price index curve (#1330)
+* **2026-10-20T11:20** - `types`: benchmark(types): fertilizer and IPM spray expenditure amortization (#1331)
