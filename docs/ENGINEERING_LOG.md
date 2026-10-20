@@ -349,3 +349,4 @@
 * **2026-10-20T18:28** - `store`: synchronize(store): regulatory Markdown due diligence briefing format (#1346)
 * **2026-10-20T18:56** - `types`: synchronize(types): in-memory LRU rate-limiting per client IP address (#1347)
 * **2026-10-20T19:25** - `trace`: synchronize(trace): certified seed tuber working capital ratios (#1348)
+* **2026-10-20T19:53** - `security`: synchronize(security): decision checklist score weighting algorithm (#1349)
