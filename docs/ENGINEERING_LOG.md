@@ -336,3 +336,4 @@
 * **2026-10-20T12:17** - `security`: benchmark(security): browser CDP automated test assertions and hooks (#1333)
 * **2026-10-20T12:46** - `docs`: benchmark(docs): TPC-DS merchandise domain exclusion ruleset (#1334)
 * **2026-10-20T13:14** - `tests`: benchmark(tests): Nakuru highland potato frost cessation heuristics (#1335)
+* **2026-10-20T13:43** - `engine`: synchronize(engine): stop-word lexical pruning in semantic tokenization (#1336)
