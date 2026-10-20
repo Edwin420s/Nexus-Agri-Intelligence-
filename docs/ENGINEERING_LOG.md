@@ -309,3 +309,4 @@
 * **2026-10-19T23:27** - `hmem`: validate(hmem): stop-word lexical pruning in semantic tokenization (#1306)
 * **2026-10-19T23:56** - `decision`: validate(decision): atomic JSON storage rename with file mode 0o600 (#1307)
 * **2026-10-20T00:24** - `metrics`: validate(metrics): NVIDIA Nemotron prompt temperature and token guardrails (#1308)
+* **2026-10-20T00:53** - `risk`: validate(risk): Yatta canal rotational water rationing alerts (#1309)
