@@ -340,3 +340,4 @@
 * **2026-10-20T14:11** - `zetaris`: synchronize(zetaris): atomic JSON storage rename with file mode 0o600 (#1337)
 * **2026-10-20T14:40** - `hmem`: synchronize(hmem): NVIDIA Nemotron prompt temperature and token guardrails (#1338)
 * **2026-10-20T15:08** - `decision`: synchronize(decision): Yatta canal rotational water rationing alerts (#1339)
+* **2026-10-20T15:37** - `metrics`: synchronize(metrics): Zetaris Bearer token auto-renewal life-cycle (#1340)
