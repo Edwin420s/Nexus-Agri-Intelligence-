@@ -323,3 +323,4 @@
 * **2026-10-20T06:06** - `engine`: benchmark(engine): Content-Security-Policy and X-Frame-Options headers (#1320)
 * **2026-10-20T06:35** - `zetaris`: benchmark(zetaris): fail-safe deterministic report synthesis fallbacks (#1321)
 * **2026-10-20T07:03** - `hmem`: benchmark(hmem): Machakos French bean GlobalGAP MRL compliance flags (#1322)
+* **2026-10-20T07:32** - `decision`: benchmark(decision): cross-session H-MEM memory mining from dossier text (#1323)
