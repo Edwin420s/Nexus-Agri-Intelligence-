@@ -317,3 +317,4 @@
 * **2026-10-20T03:15** - `store`: validate(store): on-farm weir storage abstraction permit verification (#1314)
 * **2026-10-20T03:44** - `types`: validate(types): interactive farmgate price sensitivity stress curve (#1315)
 * **2026-10-20T04:12** - `trace`: validate(trace): regulatory Markdown due diligence briefing format (#1316)
+* **2026-10-20T04:41** - `security`: validate(security): in-memory LRU rate-limiting per client IP address (#1317)
