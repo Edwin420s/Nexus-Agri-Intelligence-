@@ -338,3 +338,4 @@
 * **2026-10-20T13:14** - `tests`: benchmark(tests): Nakuru highland potato frost cessation heuristics (#1335)
 * **2026-10-20T13:43** - `engine`: synchronize(engine): stop-word lexical pruning in semantic tokenization (#1336)
 * **2026-10-20T14:11** - `zetaris`: synchronize(zetaris): atomic JSON storage rename with file mode 0o600 (#1337)
+* **2026-10-20T14:40** - `hmem`: synchronize(hmem): NVIDIA Nemotron prompt temperature and token guardrails (#1338)
