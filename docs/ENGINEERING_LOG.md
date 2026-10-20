@@ -315,3 +315,4 @@
 * **2026-10-20T02:18** - `api`: validate(api): drip lateral kit CapEx depreciation schedules (#1312)
 * **2026-10-20T02:47** - `ui`: validate(ui): Wang'uru market price deflation boundary checks (#1313)
 * **2026-10-20T03:15** - `store`: validate(store): on-farm weir storage abstraction permit verification (#1314)
+* **2026-10-20T03:44** - `types`: validate(types): interactive farmgate price sensitivity stress curve (#1315)
