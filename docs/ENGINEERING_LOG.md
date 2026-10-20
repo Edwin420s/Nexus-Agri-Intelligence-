@@ -354,3 +354,4 @@
 * **2026-10-20T20:50** - `tests`: synchronize(tests): fail-safe deterministic report synthesis fallbacks (#1351)
 * **2026-10-20T21:19** - `engine`: standardize(engine): Machakos French bean GlobalGAP MRL compliance flags (#1352)
 * **2026-10-20T21:47** - `zetaris`: standardize(zetaris): cross-session H-MEM memory mining from dossier text (#1353)
+* **2026-10-20T22:16** - `hmem`: standardize(hmem): secret-redacted JSONL telemetry buffer flush (#1354)
