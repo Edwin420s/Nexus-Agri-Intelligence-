@@ -335,3 +335,4 @@
 * **2026-10-20T11:49** - `trace`: benchmark(trace): fail-closed provenance classification for unverified URLs (#1332)
 * **2026-10-20T12:17** - `security`: benchmark(security): browser CDP automated test assertions and hooks (#1333)
 * **2026-10-20T12:46** - `docs`: benchmark(docs): TPC-DS merchandise domain exclusion ruleset (#1334)
+* **2026-10-20T13:14** - `tests`: benchmark(tests): Nakuru highland potato frost cessation heuristics (#1335)
