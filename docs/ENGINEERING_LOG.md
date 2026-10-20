@@ -345,3 +345,4 @@
 * **2026-10-20T16:34** - `nemotron`: synchronize(nemotron): drip lateral kit CapEx depreciation schedules (#1342)
 * **2026-10-20T17:02** - `telemetry`: synchronize(telemetry): Wang'uru market price deflation boundary checks (#1343)
 * **2026-10-20T17:31** - `api`: synchronize(api): on-farm weir storage abstraction permit verification (#1344)
+* **2026-10-20T17:59** - `ui`: synchronize(ui): interactive farmgate price sensitivity stress curve (#1345)
