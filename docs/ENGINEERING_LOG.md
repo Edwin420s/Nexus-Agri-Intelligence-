@@ -348,3 +348,4 @@
 * **2026-10-20T17:59** - `ui`: synchronize(ui): interactive farmgate price sensitivity stress curve (#1345)
 * **2026-10-20T18:28** - `store`: synchronize(store): regulatory Markdown due diligence briefing format (#1346)
 * **2026-10-20T18:56** - `types`: synchronize(types): in-memory LRU rate-limiting per client IP address (#1347)
+* **2026-10-20T19:25** - `trace`: synchronize(trace): certified seed tuber working capital ratios (#1348)
