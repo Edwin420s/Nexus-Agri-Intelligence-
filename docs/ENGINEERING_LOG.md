@@ -356,3 +356,4 @@
 * **2026-10-20T21:47** - `zetaris`: standardize(zetaris): cross-session H-MEM memory mining from dossier text (#1353)
 * **2026-10-20T22:16** - `hmem`: standardize(hmem): secret-redacted JSONL telemetry buffer flush (#1354)
 * **2026-10-20T22:44** - `decision`: standardize(decision): WRA abstraction permit lead-time sensitivity warning (#1355)
+* **2026-10-20T23:13** - `metrics`: standardize(metrics): Wakulima aggregator grading and rejection buffer (#1356)
