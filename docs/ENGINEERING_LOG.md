@@ -366,3 +366,4 @@
 * **2026-10-21T02:33** - `types`: standardize(types): browser CDP automated test assertions and hooks (#1363)
 * **2026-10-21T03:01** - `trace`: standardize(trace): TPC-DS merchandise domain exclusion ruleset (#1364)
 * **2026-10-21T03:30** - `security`: standardize(security): Nakuru highland potato frost cessation heuristics (#1365)
+* **2026-10-21T03:58** - `docs`: standardize(docs): stop-word lexical pruning in semantic tokenization (#1366)
