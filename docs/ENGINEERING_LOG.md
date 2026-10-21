@@ -385,3 +385,4 @@
 * **2026-10-21T11:34** - `docs`: align(docs): Machakos French bean GlobalGAP MRL compliance flags (#1382)
 * **2026-10-21T12:03** - `tests`: align(tests): cross-session H-MEM memory mining from dossier text (#1383)
 * **2026-10-21T12:31** - `engine`: implement(engine): secret-redacted JSONL telemetry buffer flush (#1384)
+* **2026-10-21T13:00** - `zetaris`: implement(zetaris): WRA abstraction permit lead-time sensitivity warning (#1385)
