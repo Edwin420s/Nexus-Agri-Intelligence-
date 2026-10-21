@@ -404,3 +404,4 @@
 * **2026-10-21T20:36** - `zetaris`: optimize(zetaris): conditions precedent credit matrix generator (#1401)
 * **2026-10-21T21:05** - `hmem`: optimize(hmem): drip lateral kit CapEx depreciation schedules (#1402)
 * **2026-10-21T21:33** - `decision`: optimize(decision): Wang'uru market price deflation boundary checks (#1403)
+* **2026-10-21T22:02** - `metrics`: optimize(metrics): on-farm weir storage abstraction permit verification (#1404)
