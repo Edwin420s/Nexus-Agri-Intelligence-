@@ -397,3 +397,4 @@
 * **2026-10-21T17:17** - `store`: implement(store): TPC-DS merchandise domain exclusion ruleset (#1394)
 * **2026-10-21T17:45** - `types`: implement(types): Nakuru highland potato frost cessation heuristics (#1395)
 * **2026-10-21T18:14** - `trace`: implement(trace): stop-word lexical pruning in semantic tokenization (#1396)
+* **2026-10-21T18:42** - `security`: implement(security): atomic JSON storage rename with file mode 0o600 (#1397)
