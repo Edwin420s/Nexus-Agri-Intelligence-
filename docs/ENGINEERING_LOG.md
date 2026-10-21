@@ -371,3 +371,4 @@
 * **2026-10-21T04:55** - `engine`: align(engine): NVIDIA Nemotron prompt temperature and token guardrails (#1368)
 * **2026-10-21T05:24** - `zetaris`: align(zetaris): Yatta canal rotational water rationing alerts (#1369)
 * **2026-10-21T05:52** - `hmem`: align(hmem): Zetaris Bearer token auto-renewal life-cycle (#1370)
+* **2026-10-21T06:21** - `decision`: align(decision): conditions precedent credit matrix generator (#1371)
