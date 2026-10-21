@@ -391,3 +391,4 @@
 * **2026-10-21T14:25** - `metrics`: implement(metrics): enterprise gross operating margin dynamic recalc (#1388)
 * **2026-10-21T14:54** - `risk`: implement(risk): multi-tenant organization ID request header propagation (#1389)
 * **2026-10-21T15:22** - `nemotron`: implement(nemotron): Kirinyaga tomato wholesale price index curve (#1390)
+* **2026-10-21T15:51** - `telemetry`: implement(telemetry): fertilizer and IPM spray expenditure amortization (#1391)
