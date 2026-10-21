@@ -406,3 +406,4 @@
 * **2026-10-21T21:33** - `decision`: optimize(decision): Wang'uru market price deflation boundary checks (#1403)
 * **2026-10-21T22:02** - `metrics`: optimize(metrics): on-farm weir storage abstraction permit verification (#1404)
 * **2026-10-21T22:30** - `risk`: optimize(risk): interactive farmgate price sensitivity stress curve (#1405)
+* **2026-10-21T22:59** - `nemotron`: optimize(nemotron): regulatory Markdown due diligence briefing format (#1406)
