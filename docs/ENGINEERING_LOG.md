@@ -361,3 +361,4 @@
 * **2026-10-21T00:10** - `nemotron`: standardize(nemotron): enterprise gross operating margin dynamic recalc (#1358)
 * **2026-10-21T00:39** - `telemetry`: standardize(telemetry): multi-tenant organization ID request header propagation (#1359)
 * **2026-10-21T01:07** - `api`: standardize(api): Kirinyaga tomato wholesale price index curve (#1360)
+* **2026-10-21T01:36** - `ui`: standardize(ui): fertilizer and IPM spray expenditure amortization (#1361)
