@@ -376,3 +376,4 @@
 * **2026-10-21T07:18** - `risk`: align(risk): Wang'uru market price deflation boundary checks (#1373)
 * **2026-10-21T07:46** - `nemotron`: align(nemotron): on-farm weir storage abstraction permit verification (#1374)
 * **2026-10-21T08:15** - `telemetry`: align(telemetry): interactive farmgate price sensitivity stress curve (#1375)
+* **2026-10-21T08:43** - `api`: align(api): regulatory Markdown due diligence briefing format (#1376)
