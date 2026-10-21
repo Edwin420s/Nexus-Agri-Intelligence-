@@ -372,3 +372,4 @@
 * **2026-10-21T05:24** - `zetaris`: align(zetaris): Yatta canal rotational water rationing alerts (#1369)
 * **2026-10-21T05:52** - `hmem`: align(hmem): Zetaris Bearer token auto-renewal life-cycle (#1370)
 * **2026-10-21T06:21** - `decision`: align(decision): conditions precedent credit matrix generator (#1371)
+* **2026-10-21T06:49** - `metrics`: align(metrics): drip lateral kit CapEx depreciation schedules (#1372)
