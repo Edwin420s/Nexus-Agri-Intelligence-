@@ -386,3 +386,4 @@
 * **2026-10-21T12:03** - `tests`: align(tests): cross-session H-MEM memory mining from dossier text (#1383)
 * **2026-10-21T12:31** - `engine`: implement(engine): secret-redacted JSONL telemetry buffer flush (#1384)
 * **2026-10-21T13:00** - `zetaris`: implement(zetaris): WRA abstraction permit lead-time sensitivity warning (#1385)
+* **2026-10-21T13:28** - `hmem`: implement(hmem): Wakulima aggregator grading and rejection buffer (#1386)
