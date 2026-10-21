@@ -390,3 +390,4 @@
 * **2026-10-21T13:57** - `decision`: implement(decision): Spark SQL proxy query payload serialization (#1387)
 * **2026-10-21T14:25** - `metrics`: implement(metrics): enterprise gross operating margin dynamic recalc (#1388)
 * **2026-10-21T14:54** - `risk`: implement(risk): multi-tenant organization ID request header propagation (#1389)
+* **2026-10-21T15:22** - `nemotron`: implement(nemotron): Kirinyaga tomato wholesale price index curve (#1390)
