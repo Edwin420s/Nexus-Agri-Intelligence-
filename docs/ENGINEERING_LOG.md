@@ -364,3 +364,4 @@
 * **2026-10-21T01:36** - `ui`: standardize(ui): fertilizer and IPM spray expenditure amortization (#1361)
 * **2026-10-21T02:04** - `store`: standardize(store): fail-closed provenance classification for unverified URLs (#1362)
 * **2026-10-21T02:33** - `types`: standardize(types): browser CDP automated test assertions and hooks (#1363)
+* **2026-10-21T03:01** - `trace`: standardize(trace): TPC-DS merchandise domain exclusion ruleset (#1364)
