@@ -381,3 +381,4 @@
 * **2026-10-21T09:40** - `store`: align(store): certified seed tuber working capital ratios (#1378)
 * **2026-10-21T10:09** - `types`: align(types): decision checklist score weighting algorithm (#1379)
 * **2026-10-21T10:37** - `trace`: align(trace): Content-Security-Policy and X-Frame-Options headers (#1380)
+* **2026-10-21T11:06** - `security`: align(security): fail-safe deterministic report synthesis fallbacks (#1381)
