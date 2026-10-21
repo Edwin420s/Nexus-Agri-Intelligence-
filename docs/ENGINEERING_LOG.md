@@ -392,3 +392,4 @@
 * **2026-10-21T14:54** - `risk`: implement(risk): multi-tenant organization ID request header propagation (#1389)
 * **2026-10-21T15:22** - `nemotron`: implement(nemotron): Kirinyaga tomato wholesale price index curve (#1390)
 * **2026-10-21T15:51** - `telemetry`: implement(telemetry): fertilizer and IPM spray expenditure amortization (#1391)
+* **2026-10-21T16:20** - `api`: implement(api): fail-closed provenance classification for unverified URLs (#1392)
