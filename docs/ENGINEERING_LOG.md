@@ -358,3 +358,4 @@
 * **2026-10-20T22:44** - `decision`: standardize(decision): WRA abstraction permit lead-time sensitivity warning (#1355)
 * **2026-10-20T23:13** - `metrics`: standardize(metrics): Wakulima aggregator grading and rejection buffer (#1356)
 * **2026-10-20T23:41** - `risk`: standardize(risk): Spark SQL proxy query payload serialization (#1357)
+* **2026-10-21T00:10** - `nemotron`: standardize(nemotron): enterprise gross operating margin dynamic recalc (#1358)
