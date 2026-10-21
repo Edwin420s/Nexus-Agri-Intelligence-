@@ -379,3 +379,4 @@
 * **2026-10-21T08:43** - `api`: align(api): regulatory Markdown due diligence briefing format (#1376)
 * **2026-10-21T09:12** - `ui`: align(ui): in-memory LRU rate-limiting per client IP address (#1377)
 * **2026-10-21T09:40** - `store`: align(store): certified seed tuber working capital ratios (#1378)
+* **2026-10-21T10:09** - `types`: align(types): decision checklist score weighting algorithm (#1379)
