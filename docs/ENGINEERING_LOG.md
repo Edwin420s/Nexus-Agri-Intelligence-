@@ -395,3 +395,4 @@
 * **2026-10-21T16:20** - `api`: implement(api): fail-closed provenance classification for unverified URLs (#1392)
 * **2026-10-21T16:48** - `ui`: implement(ui): browser CDP automated test assertions and hooks (#1393)
 * **2026-10-21T17:17** - `store`: implement(store): TPC-DS merchandise domain exclusion ruleset (#1394)
+* **2026-10-21T17:45** - `types`: implement(types): Nakuru highland potato frost cessation heuristics (#1395)
