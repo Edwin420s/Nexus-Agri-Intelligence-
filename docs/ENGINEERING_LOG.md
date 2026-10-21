@@ -367,3 +367,4 @@
 * **2026-10-21T03:01** - `trace`: standardize(trace): TPC-DS merchandise domain exclusion ruleset (#1364)
 * **2026-10-21T03:30** - `security`: standardize(security): Nakuru highland potato frost cessation heuristics (#1365)
 * **2026-10-21T03:58** - `docs`: standardize(docs): stop-word lexical pruning in semantic tokenization (#1366)
+* **2026-10-21T04:27** - `tests`: standardize(tests): atomic JSON storage rename with file mode 0o600 (#1367)
