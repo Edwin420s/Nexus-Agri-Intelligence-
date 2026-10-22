@@ -443,3 +443,4 @@
 * **2026-10-22T15:08** - `api`: calibrate(api): Content-Security-Policy and X-Frame-Options headers (#1440)
 * **2026-10-22T15:37** - `ui`: calibrate(ui): fail-safe deterministic report synthesis fallbacks (#1441)
 * **2026-10-22T16:05** - `store`: calibrate(store): Machakos French bean GlobalGAP MRL compliance flags (#1442)
+* **2026-10-22T16:34** - `types`: calibrate(types): cross-session H-MEM memory mining from dossier text (#1443)
