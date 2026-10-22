@@ -429,3 +429,4 @@
 * **2026-10-22T08:29** - `store`: refactor(store): stop-word lexical pruning in semantic tokenization (#1426)
 * **2026-10-22T08:58** - `types`: refactor(types): atomic JSON storage rename with file mode 0o600 (#1427)
 * **2026-10-22T09:26** - `trace`: refactor(trace): NVIDIA Nemotron prompt temperature and token guardrails (#1428)
+* **2026-10-22T09:55** - `security`: refactor(security): Yatta canal rotational water rationing alerts (#1429)
