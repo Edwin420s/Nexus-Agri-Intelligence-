@@ -423,3 +423,4 @@
 * **2026-10-22T05:38** - `metrics`: refactor(metrics): Kirinyaga tomato wholesale price index curve (#1420)
 * **2026-10-22T06:06** - `risk`: refactor(risk): fertilizer and IPM spray expenditure amortization (#1421)
 * **2026-10-22T06:35** - `nemotron`: refactor(nemotron): fail-closed provenance classification for unverified URLs (#1422)
+* **2026-10-22T07:03** - `telemetry`: refactor(telemetry): browser CDP automated test assertions and hooks (#1423)
