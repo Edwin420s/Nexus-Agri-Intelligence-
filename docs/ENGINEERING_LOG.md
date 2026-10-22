@@ -422,3 +422,4 @@
 * **2026-10-22T05:09** - `decision`: refactor(decision): multi-tenant organization ID request header propagation (#1419)
 * **2026-10-22T05:38** - `metrics`: refactor(metrics): Kirinyaga tomato wholesale price index curve (#1420)
 * **2026-10-22T06:06** - `risk`: refactor(risk): fertilizer and IPM spray expenditure amortization (#1421)
+* **2026-10-22T06:35** - `nemotron`: refactor(nemotron): fail-closed provenance classification for unverified URLs (#1422)
