@@ -446,3 +446,4 @@
 * **2026-10-22T16:34** - `types`: calibrate(types): cross-session H-MEM memory mining from dossier text (#1443)
 * **2026-10-22T17:02** - `trace`: calibrate(trace): secret-redacted JSONL telemetry buffer flush (#1444)
 * **2026-10-22T17:31** - `security`: calibrate(security): WRA abstraction permit lead-time sensitivity warning (#1445)
+* **2026-10-22T17:59** - `docs`: calibrate(docs): Wakulima aggregator grading and rejection buffer (#1446)
