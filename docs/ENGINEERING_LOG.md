@@ -437,3 +437,4 @@
 * **2026-10-22T12:17** - `hmem`: calibrate(hmem): on-farm weir storage abstraction permit verification (#1434)
 * **2026-10-22T12:46** - `decision`: calibrate(decision): interactive farmgate price sensitivity stress curve (#1435)
 * **2026-10-22T13:14** - `metrics`: calibrate(metrics): regulatory Markdown due diligence briefing format (#1436)
+* **2026-10-22T13:43** - `risk`: calibrate(risk): in-memory LRU rate-limiting per client IP address (#1437)
