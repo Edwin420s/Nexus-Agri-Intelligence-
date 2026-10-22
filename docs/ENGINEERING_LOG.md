@@ -442,3 +442,4 @@
 * **2026-10-22T14:40** - `telemetry`: calibrate(telemetry): decision checklist score weighting algorithm (#1439)
 * **2026-10-22T15:08** - `api`: calibrate(api): Content-Security-Policy and X-Frame-Options headers (#1440)
 * **2026-10-22T15:37** - `ui`: calibrate(ui): fail-safe deterministic report synthesis fallbacks (#1441)
+* **2026-10-22T16:05** - `store`: calibrate(store): Machakos French bean GlobalGAP MRL compliance flags (#1442)
