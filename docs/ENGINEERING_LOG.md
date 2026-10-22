@@ -452,3 +452,4 @@
 * **2026-10-22T19:25** - `zetaris`: enhance(zetaris): multi-tenant organization ID request header propagation (#1449)
 * **2026-10-22T19:53** - `hmem`: enhance(hmem): Kirinyaga tomato wholesale price index curve (#1450)
 * **2026-10-22T20:22** - `decision`: enhance(decision): fertilizer and IPM spray expenditure amortization (#1451)
+* **2026-10-22T20:50** - `metrics`: enhance(metrics): fail-closed provenance classification for unverified URLs (#1452)
