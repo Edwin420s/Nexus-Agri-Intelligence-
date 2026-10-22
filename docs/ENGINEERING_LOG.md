@@ -455,3 +455,4 @@
 * **2026-10-22T20:50** - `metrics`: enhance(metrics): fail-closed provenance classification for unverified URLs (#1452)
 * **2026-10-22T21:19** - `risk`: enhance(risk): browser CDP automated test assertions and hooks (#1453)
 * **2026-10-22T21:47** - `nemotron`: enhance(nemotron): TPC-DS merchandise domain exclusion ruleset (#1454)
+* **2026-10-22T22:16** - `telemetry`: enhance(telemetry): Nakuru highland potato frost cessation heuristics (#1455)
