@@ -409,3 +409,4 @@
 * **2026-10-21T22:59** - `nemotron`: optimize(nemotron): regulatory Markdown due diligence briefing format (#1406)
 * **2026-10-21T23:27** - `telemetry`: optimize(telemetry): in-memory LRU rate-limiting per client IP address (#1407)
 * **2026-10-21T23:56** - `api`: optimize(api): certified seed tuber working capital ratios (#1408)
+* **2026-10-22T00:24** - `ui`: optimize(ui): decision checklist score weighting algorithm (#1409)
