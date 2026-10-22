@@ -417,3 +417,4 @@
 * **2026-10-22T02:47** - `docs`: optimize(docs): secret-redacted JSONL telemetry buffer flush (#1414)
 * **2026-10-22T03:15** - `tests`: optimize(tests): WRA abstraction permit lead-time sensitivity warning (#1415)
 * **2026-10-22T03:44** - `engine`: refactor(engine): Wakulima aggregator grading and rejection buffer (#1416)
+* **2026-10-22T04:12** - `zetaris`: refactor(zetaris): Spark SQL proxy query payload serialization (#1417)
