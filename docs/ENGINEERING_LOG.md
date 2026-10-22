@@ -411,3 +411,4 @@
 * **2026-10-21T23:56** - `api`: optimize(api): certified seed tuber working capital ratios (#1408)
 * **2026-10-22T00:24** - `ui`: optimize(ui): decision checklist score weighting algorithm (#1409)
 * **2026-10-22T00:53** - `store`: optimize(store): Content-Security-Policy and X-Frame-Options headers (#1410)
+* **2026-10-22T01:21** - `types`: optimize(types): fail-safe deterministic report synthesis fallbacks (#1411)
