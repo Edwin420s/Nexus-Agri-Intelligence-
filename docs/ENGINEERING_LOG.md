@@ -441,3 +441,4 @@
 * **2026-10-22T14:11** - `nemotron`: calibrate(nemotron): certified seed tuber working capital ratios (#1438)
 * **2026-10-22T14:40** - `telemetry`: calibrate(telemetry): decision checklist score weighting algorithm (#1439)
 * **2026-10-22T15:08** - `api`: calibrate(api): Content-Security-Policy and X-Frame-Options headers (#1440)
+* **2026-10-22T15:37** - `ui`: calibrate(ui): fail-safe deterministic report synthesis fallbacks (#1441)
