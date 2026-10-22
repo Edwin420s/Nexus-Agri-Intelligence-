@@ -435,3 +435,4 @@
 * **2026-10-22T11:20** - `engine`: calibrate(engine): drip lateral kit CapEx depreciation schedules (#1432)
 * **2026-10-22T11:49** - `zetaris`: calibrate(zetaris): Wang'uru market price deflation boundary checks (#1433)
 * **2026-10-22T12:17** - `hmem`: calibrate(hmem): on-farm weir storage abstraction permit verification (#1434)
+* **2026-10-22T12:46** - `decision`: calibrate(decision): interactive farmgate price sensitivity stress curve (#1435)
