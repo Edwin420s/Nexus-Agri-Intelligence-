@@ -427,3 +427,4 @@
 * **2026-10-22T07:32** - `api`: refactor(api): TPC-DS merchandise domain exclusion ruleset (#1424)
 * **2026-10-22T08:01** - `ui`: refactor(ui): Nakuru highland potato frost cessation heuristics (#1425)
 * **2026-10-22T08:29** - `store`: refactor(store): stop-word lexical pruning in semantic tokenization (#1426)
+* **2026-10-22T08:58** - `types`: refactor(types): atomic JSON storage rename with file mode 0o600 (#1427)
