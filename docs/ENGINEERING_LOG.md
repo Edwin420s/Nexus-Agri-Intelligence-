@@ -457,3 +457,4 @@
 * **2026-10-22T21:47** - `nemotron`: enhance(nemotron): TPC-DS merchandise domain exclusion ruleset (#1454)
 * **2026-10-22T22:16** - `telemetry`: enhance(telemetry): Nakuru highland potato frost cessation heuristics (#1455)
 * **2026-10-22T22:44** - `api`: enhance(api): stop-word lexical pruning in semantic tokenization (#1456)
+* **2026-10-22T23:13** - `ui`: enhance(ui): atomic JSON storage rename with file mode 0o600 (#1457)
