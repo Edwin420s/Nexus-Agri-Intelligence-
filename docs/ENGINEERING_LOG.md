@@ -439,3 +439,4 @@
 * **2026-10-22T13:14** - `metrics`: calibrate(metrics): regulatory Markdown due diligence briefing format (#1436)
 * **2026-10-22T13:43** - `risk`: calibrate(risk): in-memory LRU rate-limiting per client IP address (#1437)
 * **2026-10-22T14:11** - `nemotron`: calibrate(nemotron): certified seed tuber working capital ratios (#1438)
+* **2026-10-22T14:40** - `telemetry`: calibrate(telemetry): decision checklist score weighting algorithm (#1439)
