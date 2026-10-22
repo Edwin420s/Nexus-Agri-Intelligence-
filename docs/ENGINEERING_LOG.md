@@ -454,3 +454,4 @@
 * **2026-10-22T20:22** - `decision`: enhance(decision): fertilizer and IPM spray expenditure amortization (#1451)
 * **2026-10-22T20:50** - `metrics`: enhance(metrics): fail-closed provenance classification for unverified URLs (#1452)
 * **2026-10-22T21:19** - `risk`: enhance(risk): browser CDP automated test assertions and hooks (#1453)
+* **2026-10-22T21:47** - `nemotron`: enhance(nemotron): TPC-DS merchandise domain exclusion ruleset (#1454)
