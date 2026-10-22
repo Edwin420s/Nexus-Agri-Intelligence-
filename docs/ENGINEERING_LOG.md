@@ -425,3 +425,4 @@
 * **2026-10-22T06:35** - `nemotron`: refactor(nemotron): fail-closed provenance classification for unverified URLs (#1422)
 * **2026-10-22T07:03** - `telemetry`: refactor(telemetry): browser CDP automated test assertions and hooks (#1423)
 * **2026-10-22T07:32** - `api`: refactor(api): TPC-DS merchandise domain exclusion ruleset (#1424)
+* **2026-10-22T08:01** - `ui`: refactor(ui): Nakuru highland potato frost cessation heuristics (#1425)
