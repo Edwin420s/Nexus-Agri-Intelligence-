@@ -444,3 +444,4 @@
 * **2026-10-22T15:37** - `ui`: calibrate(ui): fail-safe deterministic report synthesis fallbacks (#1441)
 * **2026-10-22T16:05** - `store`: calibrate(store): Machakos French bean GlobalGAP MRL compliance flags (#1442)
 * **2026-10-22T16:34** - `types`: calibrate(types): cross-session H-MEM memory mining from dossier text (#1443)
+* **2026-10-22T17:02** - `trace`: calibrate(trace): secret-redacted JSONL telemetry buffer flush (#1444)
