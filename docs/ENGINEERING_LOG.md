@@ -498,3 +498,4 @@
 * **2026-10-23T17:17** - `tests`: streamline(tests): interactive farmgate price sensitivity stress curve (#1495)
 * **2026-10-23T17:45** - `engine`: validate(engine): regulatory Markdown due diligence briefing format (#1496)
 * **2026-10-23T18:14** - `zetaris`: validate(zetaris): in-memory LRU rate-limiting per client IP address (#1497)
+* **2026-10-23T18:42** - `hmem`: validate(hmem): certified seed tuber working capital ratios (#1498)
