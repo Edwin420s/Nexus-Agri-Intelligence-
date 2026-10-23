@@ -476,3 +476,4 @@
 * **2026-10-23T06:49** - `ui`: harden(ui): cross-session H-MEM memory mining from dossier text (#1473)
 * **2026-10-23T07:18** - `store`: harden(store): secret-redacted JSONL telemetry buffer flush (#1474)
 * **2026-10-23T07:46** - `types`: harden(types): WRA abstraction permit lead-time sensitivity warning (#1475)
+* **2026-10-23T08:15** - `trace`: harden(trace): Wakulima aggregator grading and rejection buffer (#1476)
