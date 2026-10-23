@@ -509,3 +509,4 @@
 * **2026-10-23T22:30** - `store`: validate(store): Wakulima aggregator grading and rejection buffer (#1506)
 * **2026-10-23T22:59** - `types`: validate(types): Spark SQL proxy query payload serialization (#1507)
 * **2026-10-23T23:27** - `trace`: validate(trace): enterprise gross operating margin dynamic recalc (#1508)
+* **2026-10-23T23:56** - `security`: validate(security): multi-tenant organization ID request header propagation (#1509)
