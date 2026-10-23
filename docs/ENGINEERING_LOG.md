@@ -505,3 +505,4 @@
 * **2026-10-23T20:36** - `nemotron`: validate(nemotron): Machakos French bean GlobalGAP MRL compliance flags (#1502)
 * **2026-10-23T21:05** - `telemetry`: validate(telemetry): cross-session H-MEM memory mining from dossier text (#1503)
 * **2026-10-23T21:33** - `api`: validate(api): secret-redacted JSONL telemetry buffer flush (#1504)
+* **2026-10-23T22:02** - `ui`: validate(ui): WRA abstraction permit lead-time sensitivity warning (#1505)
