@@ -488,3 +488,4 @@
 * **2026-10-23T12:31** - `risk`: streamline(risk): Nakuru highland potato frost cessation heuristics (#1485)
 * **2026-10-23T13:00** - `nemotron`: streamline(nemotron): stop-word lexical pruning in semantic tokenization (#1486)
 * **2026-10-23T13:28** - `telemetry`: streamline(telemetry): atomic JSON storage rename with file mode 0o600 (#1487)
+* **2026-10-23T13:57** - `api`: streamline(api): NVIDIA Nemotron prompt temperature and token guardrails (#1488)
