@@ -486,3 +486,4 @@
 * **2026-10-23T11:34** - `decision`: streamline(decision): browser CDP automated test assertions and hooks (#1483)
 * **2026-10-23T12:03** - `metrics`: streamline(metrics): TPC-DS merchandise domain exclusion ruleset (#1484)
 * **2026-10-23T12:31** - `risk`: streamline(risk): Nakuru highland potato frost cessation heuristics (#1485)
+* **2026-10-23T13:00** - `nemotron`: streamline(nemotron): stop-word lexical pruning in semantic tokenization (#1486)
