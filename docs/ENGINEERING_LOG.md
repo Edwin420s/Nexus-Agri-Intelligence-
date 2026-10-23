@@ -503,3 +503,4 @@
 * **2026-10-23T19:39** - `metrics`: validate(metrics): Content-Security-Policy and X-Frame-Options headers (#1500)
 * **2026-10-23T20:08** - `risk`: validate(risk): fail-safe deterministic report synthesis fallbacks (#1501)
 * **2026-10-23T20:36** - `nemotron`: validate(nemotron): Machakos French bean GlobalGAP MRL compliance flags (#1502)
+* **2026-10-23T21:05** - `telemetry`: validate(telemetry): cross-session H-MEM memory mining from dossier text (#1503)
