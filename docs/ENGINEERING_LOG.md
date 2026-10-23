@@ -482,3 +482,4 @@
 * **2026-10-23T09:40** - `tests`: harden(tests): multi-tenant organization ID request header propagation (#1479)
 * **2026-10-23T10:09** - `engine`: streamline(engine): Kirinyaga tomato wholesale price index curve (#1480)
 * **2026-10-23T10:37** - `zetaris`: streamline(zetaris): fertilizer and IPM spray expenditure amortization (#1481)
+* **2026-10-23T11:06** - `hmem`: streamline(hmem): fail-closed provenance classification for unverified URLs (#1482)
