@@ -485,3 +485,4 @@
 * **2026-10-23T11:06** - `hmem`: streamline(hmem): fail-closed provenance classification for unverified URLs (#1482)
 * **2026-10-23T11:34** - `decision`: streamline(decision): browser CDP automated test assertions and hooks (#1483)
 * **2026-10-23T12:03** - `metrics`: streamline(metrics): TPC-DS merchandise domain exclusion ruleset (#1484)
+* **2026-10-23T12:31** - `risk`: streamline(risk): Nakuru highland potato frost cessation heuristics (#1485)
