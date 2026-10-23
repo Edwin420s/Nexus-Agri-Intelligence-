@@ -483,3 +483,4 @@
 * **2026-10-23T10:09** - `engine`: streamline(engine): Kirinyaga tomato wholesale price index curve (#1480)
 * **2026-10-23T10:37** - `zetaris`: streamline(zetaris): fertilizer and IPM spray expenditure amortization (#1481)
 * **2026-10-23T11:06** - `hmem`: streamline(hmem): fail-closed provenance classification for unverified URLs (#1482)
+* **2026-10-23T11:34** - `decision`: streamline(decision): browser CDP automated test assertions and hooks (#1483)
