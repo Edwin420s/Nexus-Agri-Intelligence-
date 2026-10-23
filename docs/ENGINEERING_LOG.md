@@ -475,3 +475,4 @@
 * **2026-10-23T06:21** - `api`: harden(api): Machakos French bean GlobalGAP MRL compliance flags (#1472)
 * **2026-10-23T06:49** - `ui`: harden(ui): cross-session H-MEM memory mining from dossier text (#1473)
 * **2026-10-23T07:18** - `store`: harden(store): secret-redacted JSONL telemetry buffer flush (#1474)
+* **2026-10-23T07:46** - `types`: harden(types): WRA abstraction permit lead-time sensitivity warning (#1475)
