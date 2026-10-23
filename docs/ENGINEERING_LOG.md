@@ -480,3 +480,4 @@
 * **2026-10-23T08:43** - `security`: harden(security): Spark SQL proxy query payload serialization (#1477)
 * **2026-10-23T09:12** - `docs`: harden(docs): enterprise gross operating margin dynamic recalc (#1478)
 * **2026-10-23T09:40** - `tests`: harden(tests): multi-tenant organization ID request header propagation (#1479)
+* **2026-10-23T10:09** - `engine`: streamline(engine): Kirinyaga tomato wholesale price index curve (#1480)
