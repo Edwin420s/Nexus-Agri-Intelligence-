@@ -496,3 +496,4 @@
 * **2026-10-23T16:20** - `security`: streamline(security): Wang'uru market price deflation boundary checks (#1493)
 * **2026-10-23T16:48** - `docs`: streamline(docs): on-farm weir storage abstraction permit verification (#1494)
 * **2026-10-23T17:17** - `tests`: streamline(tests): interactive farmgate price sensitivity stress curve (#1495)
+* **2026-10-23T17:45** - `engine`: validate(engine): regulatory Markdown due diligence briefing format (#1496)
