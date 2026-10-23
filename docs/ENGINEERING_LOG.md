@@ -502,3 +502,4 @@
 * **2026-10-23T19:11** - `decision`: validate(decision): decision checklist score weighting algorithm (#1499)
 * **2026-10-23T19:39** - `metrics`: validate(metrics): Content-Security-Policy and X-Frame-Options headers (#1500)
 * **2026-10-23T20:08** - `risk`: validate(risk): fail-safe deterministic report synthesis fallbacks (#1501)
+* **2026-10-23T20:36** - `nemotron`: validate(nemotron): Machakos French bean GlobalGAP MRL compliance flags (#1502)
