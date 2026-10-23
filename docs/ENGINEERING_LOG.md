@@ -468,3 +468,4 @@
 * **2026-10-23T03:01** - `zetaris`: harden(zetaris): interactive farmgate price sensitivity stress curve (#1465)
 * **2026-10-23T03:30** - `hmem`: harden(hmem): regulatory Markdown due diligence briefing format (#1466)
 * **2026-10-23T03:58** - `decision`: harden(decision): in-memory LRU rate-limiting per client IP address (#1467)
+* **2026-10-23T04:27** - `metrics`: harden(metrics): certified seed tuber working capital ratios (#1468)
