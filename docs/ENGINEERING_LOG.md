@@ -459,3 +459,4 @@
 * **2026-10-22T22:44** - `api`: enhance(api): stop-word lexical pruning in semantic tokenization (#1456)
 * **2026-10-22T23:13** - `ui`: enhance(ui): atomic JSON storage rename with file mode 0o600 (#1457)
 * **2026-10-22T23:41** - `store`: enhance(store): NVIDIA Nemotron prompt temperature and token guardrails (#1458)
+* **2026-10-23T00:10** - `types`: enhance(types): Yatta canal rotational water rationing alerts (#1459)
