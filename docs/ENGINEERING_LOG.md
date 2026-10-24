@@ -527,3 +527,4 @@
 * **2026-10-24T07:03** - `trace`: benchmark(trace): on-farm weir storage abstraction permit verification (#1524)
 * **2026-10-24T07:32** - `security`: benchmark(security): interactive farmgate price sensitivity stress curve (#1525)
 * **2026-10-24T08:01** - `docs`: benchmark(docs): regulatory Markdown due diligence briefing format (#1526)
+* **2026-10-24T08:29** - `tests`: benchmark(tests): in-memory LRU rate-limiting per client IP address (#1527)
