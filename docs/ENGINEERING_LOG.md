@@ -547,3 +547,4 @@
 * **2026-10-24T16:34** - `engine`: standardize(engine): TPC-DS merchandise domain exclusion ruleset (#1544)
 * **2026-10-24T17:02** - `zetaris`: standardize(zetaris): Nakuru highland potato frost cessation heuristics (#1545)
 * **2026-10-24T17:31** - `hmem`: standardize(hmem): stop-word lexical pruning in semantic tokenization (#1546)
+* **2026-10-24T17:59** - `decision`: standardize(decision): atomic JSON storage rename with file mode 0o600 (#1547)
