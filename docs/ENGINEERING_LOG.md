@@ -535,3 +535,4 @@
 * **2026-10-24T10:52** - `metrics`: synchronize(metrics): Machakos French bean GlobalGAP MRL compliance flags (#1532)
 * **2026-10-24T11:20** - `risk`: synchronize(risk): cross-session H-MEM memory mining from dossier text (#1533)
 * **2026-10-24T11:49** - `nemotron`: synchronize(nemotron): secret-redacted JSONL telemetry buffer flush (#1534)
+* **2026-10-24T12:17** - `telemetry`: synchronize(telemetry): WRA abstraction permit lead-time sensitivity warning (#1535)
