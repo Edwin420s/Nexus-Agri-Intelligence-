@@ -541,3 +541,4 @@
 * **2026-10-24T13:43** - `store`: synchronize(store): enterprise gross operating margin dynamic recalc (#1538)
 * **2026-10-24T14:11** - `types`: synchronize(types): multi-tenant organization ID request header propagation (#1539)
 * **2026-10-24T14:40** - `trace`: synchronize(trace): Kirinyaga tomato wholesale price index curve (#1540)
+* **2026-10-24T15:08** - `security`: synchronize(security): fertilizer and IPM spray expenditure amortization (#1541)
