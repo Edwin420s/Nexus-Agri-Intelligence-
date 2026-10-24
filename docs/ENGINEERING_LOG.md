@@ -531,3 +531,4 @@
 * **2026-10-24T08:58** - `engine`: synchronize(engine): certified seed tuber working capital ratios (#1528)
 * **2026-10-24T09:26** - `zetaris`: synchronize(zetaris): decision checklist score weighting algorithm (#1529)
 * **2026-10-24T09:55** - `hmem`: synchronize(hmem): Content-Security-Policy and X-Frame-Options headers (#1530)
+* **2026-10-24T10:23** - `decision`: synchronize(decision): fail-safe deterministic report synthesis fallbacks (#1531)
