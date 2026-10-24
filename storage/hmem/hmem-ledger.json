@@ -289,5 +289,77 @@
     "source": "mined:investigation",
     "actor": "nexus-agri-intelligence",
     "timestamp": "2026-10-23T11:49:17.162Z"
+  },
+  {
+    "id": "32142395-8307-496c-ad40-cd4210c2a10b",
+    "content": "Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T08:52:59.459Z"
+  },
+  {
+    "id": "9a5379e7-b0e8-47a3-aa09-9f0191d9be87",
+    "content": "Outcome: INSUFFICIENT EVIDENCE; Nexus reviewed 4 record(s) across 4 named source(s). The evidence sufficiency status is INSUFFICIENT EVIDENCE (coverage score 100/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T08:52:59.459Z"
+  },
+  {
+    "id": "a98c62f6-0395-4455-844c-a813541fb63c",
+    "content": "Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T08:52:59.459Z"
+  },
+  {
+    "id": "b6111485-909a-409a-a4e1-64a3fabb6578",
+    "content": "Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T09:21:26.507Z"
+  },
+  {
+    "id": "808ca964-59a6-4cd8-bff7-2a72ab3cb4a2",
+    "content": "Outcome: INSUFFICIENT EVIDENCE; Nexus reviewed 4 record(s) across 4 named source(s). The evidence sufficiency status is INSUFFICIENT EVIDENCE (coverage score 100/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T09:21:26.507Z"
+  },
+  {
+    "id": "fa49dd62-e282-4298-bc40-88e0d62945f5",
+    "content": "Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T09:21:26.507Z"
+  },
+  {
+    "id": "fa35af39-358a-4aed-bb90-1274d8503866",
+    "content": "Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T09:47:55.852Z"
+  },
+  {
+    "id": "0bb041e2-fecd-4403-b100-b8352b76d476",
+    "content": "Outcome: INSUFFICIENT EVIDENCE; Nexus reviewed 10 record(s) across 1 named source(s). The evidence sufficiency status is INSUFFICIENT EVIDENCE (coverage score 75/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+    "type": "fact",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T09:47:55.853Z"
+  },
+  {
+    "id": "bf392bc4-2f79-4fea-8d68-373c4ef184be",
+    "content": "Evidence: [1] ought; [3] pri; [5] anti; [7] ation; [9] n st; [11] oughtought",
+    "type": "general",
+    "source": "mined:investigation",
+    "actor": "nexus-agri-intelligence",
+    "timestamp": "2026-10-24T09:47:55.853Z"
   }
 ]

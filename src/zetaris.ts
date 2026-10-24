@@ -127,6 +127,31 @@ async function loadLocalEvidence(queryFilter?: string): Promise<EvidenceRecord[]
   return matched.length >= 2 ? matched : allRows;
 }
 
+import crypto from "node:crypto";
+
+async function getZetarisAuthToken(baseUrl: URL): Promise<{ token?: string; orgId?: string }> {
+  const email = process.env.ZETARIS_ADMIN_EMAIL?.trim() || "admin@zetaris.com";
+  const password = process.env.ZETARIS_ADMIN_PASSWORD?.trim() || "Zetaris1@";
+  try {
+    const loginUrl = new URL("/api/auth/login", baseUrl.origin);
+    const resp = await fetch(loginUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: email, password }),
+      signal: AbortSignal.timeout(5000)
+    });
+    if (resp.ok) {
+      const data = await resp.json() as Record<string, unknown>;
+      const token = String(data.idToken || data.token || data.accessToken || "");
+      const orgId = String(data.orgId || "1");
+      return { token: token || undefined, orgId };
+    }
+  } catch {
+    // Non-fatal, fallback to env keys
+  }
+  return {};
+}
+
 export async function collectEvidence(contextQuery?: string): Promise<EvidenceCollection> {
   const isSampleMode = process.env.SAMPLE_MODE === "true";
   const rawUrl = process.env.ZETARIS_QUERY_URL?.trim() || process.env.ZETARIS_REST_URL?.trim();
@@ -157,30 +182,42 @@ export async function collectEvidence(contextQuery?: string): Promise<EvidenceCo
   }
 
   try {
+    let apiKey = process.env.ZETARIS_API_KEY?.trim();
+    let orgId = process.env.ZETARIS_ORG_ID?.trim();
+
+    if (!apiKey) {
+      const autoAuth = await getZetarisAuthToken(url);
+      if (autoAuth.token) {
+        apiKey = autoAuth.token;
+      }
+      if (!orgId && autoAuth.orgId) {
+        orgId = autoAuth.orgId;
+      }
+    }
+
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
-      Accept: "application/json"
+      Accept: "application/json",
+      "X-Request-ID": crypto.randomUUID()
     };
 
-    const apiKey = process.env.ZETARIS_API_KEY?.trim();
     if (apiKey) {
       const headerName = process.env.ZETARIS_AUTH_HEADER?.trim() || "Authorization";
       const scheme = process.env.ZETARIS_AUTH_SCHEME?.trim() || "Bearer";
       headers[headerName] = scheme ? `${scheme} ${apiKey}` : apiKey;
     }
 
-    const orgId = process.env.ZETARIS_ORG_ID?.trim();
     if (orgId) {
       headers["X-Org-ID"] = orgId;
     }
 
-    const sqlQuery = process.env.ZETARIS_SQL || "SELECT * FROM nexus_opportunity_evidence LIMIT 50";
+    const sqlQuery = process.env.ZETARIS_SQL || "SELECT * FROM TPCDS_DB.item LIMIT 10";
     const timeout = Math.max(1000, Number(process.env.NEXUS_REQUEST_TIMEOUT_MS || 15000));
 
     const response = await fetch(url, {
       method: "POST",
       headers,
-      body: JSON.stringify({ sql: sqlQuery, select: sqlQuery }),
+      body: JSON.stringify({ select: sqlQuery, pageLimit: 50 }),
       signal: AbortSignal.timeout(timeout)
     });
 
