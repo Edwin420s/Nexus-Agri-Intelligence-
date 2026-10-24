@@ -1,6 +1,6 @@
 # Nexus — Agricultural Market Intelligence Workspace
 
-[![Tests](https://img.shields.io/badge/tests-9%20passed-brightgreen)](#automated-testing)
+[![Tests](https://img.shields.io/badge/tests-10%20passed-brightgreen)](#automated-testing)
 [![Meterless H-MEM](https://img.shields.io/badge/meterless--engine-H--MEM%20active-blue)](#meterless-engine-integration-h-mem)
 [![Zetaris](https://img.shields.io/badge/data--layer-Zetaris-orange)](#zetaris-data-layer)
 [![NVIDIA Nemotron](https://img.shields.io/badge/model-NVIDIA%20Nemotron-76b900)](#meterless-nightshift--nvidia-nemotron)
@@ -109,6 +109,42 @@ In `SAMPLE_MODE=true`, Nexus:
 
 ---
 
+## Live Demonstration Paths (Zetaris Connected)
+
+Nexus separates database retrieval from domain evidence validation. Judges can observe two distinct behaviors when connected to a live Zetaris platform (`SAMPLE_MODE=false`):
+
+### Path A: Live TPC-DS Refusal Test (Explainable Rejection)
+```bash
+SAMPLE_MODE=false node run.js
+```
+- **Zetaris Execution:** Retrieves 10 live rows from `TPCDS_DB.item`.
+- **Evaluator Validation:** Evaluator inspects incoming records and detects retail merchandise (categories: `Music`, `Jewelry`, `Home`, `Men`, etc.).
+- **Outcome:** All 10 records rejected as domain-irrelevant. Usable agricultural evidence count is 0.
+- **Verdict:** **`INSUFFICIENT EVIDENCE (Score: 25/100)`** with explicit explainable refusal explaining why database rows fail domain validation.
+
+### Path B: Live Agricultural Intelligence & Risk Conflict Detection
+```bash
+# Query verified agricultural intelligence hosted on Zetaris Spark engine:
+SAMPLE_MODE=false npm run run -- input_examples/example_1.json
+```
+- **Zetaris Execution:** Retrieves 4 live records from official Kenyan agricultural authorities (Wang'uru Market Bulletin, Kirinyaga Aggregators Association, KALRO, and WRA).
+- **Evaluator Validation:** Confirms agricultural domain relevance and evaluates market viability.
+- **Conflict Detection:** Identifies a commercial friction conflict (`market_vs_offtake`): wholesale spot prices indicate attractive margins (85 KES/kg median), but informal aggregator offtake records indicate severe rejection rates (15–20% on uncalibrated crates) and lack of price protection during harvest surges.
+- **Verdict:** **`INVESTIGATE FURTHER (Score: 75/100)`**, instructing the entrepreneur to secure binding offtake terms before planting.
+
+---
+
+## Score Semantics (Evidence Checklist Coverage)
+
+The Nexus Score (e.g., `25/100` or `75/100`) is an **Evidence Checklist Coverage Score**, **NOT** a probability of commercial success, crop yield, or profitability:
+- **`25/100`:** Minimum temporal or structural context exists, but usable domain-relevant evidence or source diversity failed. Verdict: `INSUFFICIENT EVIDENCE`.
+- **`75/100`:** Verified domain evidence and source diversity requirements are satisfied, but an unresolved commercial risk or policy contradiction was detected. Verdict: `INVESTIGATE FURTHER`.
+- **`100/100`:** All four criteria (domain evidence, diversity, conflict resolution, dates) are satisfied. Verdict: `SUPPORTED`.
+
+Missing evidence or commercial risks can never accidentally produce a favorable decision.
+
+---
+
 ## Multi-Agent Architecture & Observability
 
 ```text
@@ -172,19 +208,20 @@ Run the complete test suite:
 ```bash
 npm test
 ```
-Outputs 9 passing tests across decision policy and H-MEM memory:
+Outputs 10 passing tests across decision policy, domain relevance, and H-MEM memory:
 ```text
-✔ synthetic fixtures cannot satisfy evidence requirements (1.06ms)
-✔ fewer than three usable records is insufficient (0.20ms)
-✔ conflicting evidence triggers investigate further (0.18ms)
-✔ minimum diverse, dated non-synthetic records can satisfy prototype policy (0.22ms)
-✔ unverified provenance is not counted as usable (0.19ms)
-✔ HMEM engine stores and recalls memories by semantic/keyword relevance (1.59ms)
-✔ HMEM mines facts from investigation output text (0.45ms)
-✔ HMEM persists memories to disk and reloads on startup (7.85ms)
-✔ HMEM filters by threshold and honors topN limits (0.84ms)
+✔ synthetic fixtures cannot satisfy evidence requirements (1.59ms)
+✔ fewer than three usable records is insufficient (0.33ms)
+✔ conflicting evidence triggers investigate further (0.23ms)
+✔ minimum diverse, dated non-synthetic records can satisfy prototype policy (0.31ms)
+✔ unverified provenance is not counted as usable (0.25ms)
+✔ domain relevance rejects retail merchandise and yields INSUFFICIENT EVIDENCE (0.29ms)
+✔ HMEM engine stores and recalls memories by semantic/keyword relevance (1.83ms)
+✔ HMEM mines facts from investigation output text (0.51ms)
+✔ HMEM persists memories to disk and reloads on startup (8.03ms)
+✔ HMEM filters by threshold and honors topN limits (0.95ms)
 
-Tests: 9 passed, 0 failed, 9 total (295ms duration)
+Tests: 10 passed, 0 failed, 10 total (274ms duration)
 ```
 
 ---
