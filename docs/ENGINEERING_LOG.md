@@ -545,3 +545,4 @@
 * **2026-10-24T15:37** - `docs`: synchronize(docs): fail-closed provenance classification for unverified URLs (#1542)
 * **2026-10-24T16:05** - `tests`: synchronize(tests): browser CDP automated test assertions and hooks (#1543)
 * **2026-10-24T16:34** - `engine`: standardize(engine): TPC-DS merchandise domain exclusion ruleset (#1544)
+* **2026-10-24T17:02** - `zetaris`: standardize(zetaris): Nakuru highland potato frost cessation heuristics (#1545)
