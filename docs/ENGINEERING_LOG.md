@@ -514,3 +514,4 @@
 * **2026-10-24T00:53** - `tests`: validate(tests): fertilizer and IPM spray expenditure amortization (#1511)
 * **2026-10-24T01:21** - `engine`: benchmark(engine): fail-closed provenance classification for unverified URLs (#1512)
 * **2026-10-24T01:50** - `zetaris`: benchmark(zetaris): browser CDP automated test assertions and hooks (#1513)
+* **2026-10-24T02:18** - `hmem`: benchmark(hmem): TPC-DS merchandise domain exclusion ruleset (#1514)
