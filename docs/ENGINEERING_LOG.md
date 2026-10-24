@@ -515,3 +515,4 @@
 * **2026-10-24T01:21** - `engine`: benchmark(engine): fail-closed provenance classification for unverified URLs (#1512)
 * **2026-10-24T01:50** - `zetaris`: benchmark(zetaris): browser CDP automated test assertions and hooks (#1513)
 * **2026-10-24T02:18** - `hmem`: benchmark(hmem): TPC-DS merchandise domain exclusion ruleset (#1514)
+* **2026-10-24T02:47** - `decision`: benchmark(decision): Nakuru highland potato frost cessation heuristics (#1515)
