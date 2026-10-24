@@ -517,3 +517,4 @@
 * **2026-10-24T02:18** - `hmem`: benchmark(hmem): TPC-DS merchandise domain exclusion ruleset (#1514)
 * **2026-10-24T02:47** - `decision`: benchmark(decision): Nakuru highland potato frost cessation heuristics (#1515)
 * **2026-10-24T03:15** - `metrics`: benchmark(metrics): stop-word lexical pruning in semantic tokenization (#1516)
+* **2026-10-24T03:44** - `risk`: benchmark(risk): atomic JSON storage rename with file mode 0o600 (#1517)
