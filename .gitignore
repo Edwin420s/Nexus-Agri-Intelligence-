@@ -2,8 +2,9 @@ node_modules/
 dist/
 .env
 .nexus/
-storage/*.json
+storage/**
 !storage/.gitkeep
+logs/trace-run-*.jsonl
 vendor/
 .DS_Store
 *.log

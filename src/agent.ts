@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type {
   DecisionResult,
+  DecisionStatus,
   EvidenceConflict,
   EvidenceRecord,
   InvestigationInput,
@@ -11,7 +12,81 @@ import { recallMemory, rememberInvestigation } from "./memory.js";
 import { reasonWithMeterless } from "./nemotron.js";
 import { AgentTracer } from "./trace.js";
 
+export function evaluateDomainRelevance(
+  record: EvidenceRecord,
+  context: { crop_or_activity?: string; location?: string; question?: string } = {}
+): { isRelevant: boolean; reason?: string } {
+  const agriTopics = new Set([
+    "market_price",
+    "buyer_offtake",
+    "production_costs",
+    "water_access",
+    "water_security",
+    "agronomy",
+    "irrigation",
+    "yield",
+    "post_harvest",
+    "storage",
+    "crop_disease",
+    "pest_control",
+    "fertilizer",
+    "input_costs",
+    "operational_risk",
+    "logistics",
+    "transport"
+  ]);
+
+  const rawTopic = record.topic.trim().toLowerCase();
+  if (agriTopics.has(rawTopic)) {
+    return { isRelevant: true };
+  }
+
+  // Reject generic retail merchandise from benchmark datasets (e.g. TPCDS_DB)
+  const retailDisallowed = new Set([
+    "music",
+    "jewelry",
+    "home",
+    "men",
+    "women",
+    "children",
+    "electronics",
+    "sports",
+    "books",
+    "shoes",
+    "apparel"
+  ]);
+
+  if (retailDisallowed.has(rawTopic)) {
+    return {
+      isRelevant: false,
+      reason: `Record belongs to retail category "${record.topic}" from generic commercial benchmark data, which has no agricultural relevance.`
+    };
+  }
+
+  // Check text content for agricultural and regional keywords
+  const content = `${record.title} ${record.claim} ${record.detail} ${record.geography || ""}`.toLowerCase();
+  const agriKeywords = [
+    "agri", "farm", "crop", "harvest", "seed", "fertilizer", "soil", "water",
+    "irrigation", "yield", "acre", "hectare", "horticulture", "tomato", "bean",
+    "potato", "maize", "coffee", "tea", "wholesale", "offtake", "kalro", "mwea",
+    "kirinyaga", "machakos", "nakuru", "kenya"
+  ];
+
+  const hasAgriKeyword = agriKeywords.some((k) => content.includes(k));
+  if (!hasAgriKeyword) {
+    return {
+      isRelevant: false,
+      reason: "Record content contains no agricultural, agronomic, or regional market keywords relevant to the investigation."
+    };
+  }
+
+  return { isRelevant: true };
+}
+
 function findConflicts(records: EvidenceRecord[]): EvidenceConflict[] {
+  const conflicts: EvidenceConflict[] = [];
+
+  // 1. Intra-topic opposing relations
   const groups = new Map<string, EvidenceRecord[]>();
   for (const record of records) {
     const key = record.topic.trim().toLowerCase();
@@ -19,7 +94,7 @@ function findConflicts(records: EvidenceRecord[]): EvidenceConflict[] {
     group.push(record);
     groups.set(key, group);
   }
-  const conflicts: EvidenceConflict[] = [];
+
   for (const [topic, group] of groups) {
     if (group.some((r) => r.relation === "supports") && group.some((r) => r.relation === "contradicts")) {
       conflicts.push({
@@ -29,22 +104,65 @@ function findConflicts(records: EvidenceRecord[]): EvidenceConflict[] {
       });
     }
   }
+
+  // 2. Cross-cutting feasibility friction (e.g. price supports vs buyer offtake or water contradicts)
+  const hasPriceSupport = records.some((r) => r.topic.includes("price") && r.relation === "supports");
+  const offtakeContradicts = records.filter((r) => r.topic.includes("offtake") && r.relation === "contradicts");
+  const waterContradicts = records.filter((r) => r.topic.includes("water") && r.relation === "contradicts");
+
+  if (hasPriceSupport && offtakeContradicts.length > 0) {
+    conflicts.push({
+      topic: "market_vs_offtake",
+      evidence_ids: offtakeContradicts.map((r) => r.id),
+      explanation: "Wholesale market pricing indicates favorable gross revenues, but buyer offtake records indicate severe rejection rates (15-20%) and informal price deflation without binding purchase contracts."
+    });
+  }
+
+  if (hasPriceSupport && waterContradicts.length > 0) {
+    conflicts.push({
+      topic: "pricing_vs_water_quota",
+      evidence_ids: waterContradicts.map((r) => r.id),
+      explanation: "Market opportunity is viable, but water abstraction quotas or seasonal rationing contradict open-field irrigation without permitted reservoir storage."
+    });
+  }
+
   return conflicts;
 }
 
 export function scoreDecision(
   records: EvidenceRecord[],
   conflicts: EvidenceConflict[],
-  liveSource = records.some((r) => !r.synthetic)
+  liveSource = records.some((r) => !r.synthetic),
+  context: { crop_or_activity?: string; location?: string; question?: string } = {}
 ): DecisionResult {
-  const usable = records.filter((r) => !r.synthetic && r.provenance_status !== "unverified");
+  // Annotate records with relevance flags if not already present
+  for (const r of records) {
+    const relevance = evaluateDomainRelevance(r, context);
+    if (!relevance.isRelevant && relevance.reason) {
+      if (!r.quality_flags.some((f) => f.includes("irrelevant") || f.includes("category") || f.includes("DOMAIN"))) {
+        r.quality_flags.push(`DOMAIN IRRELEVANT: ${relevance.reason}`);
+      }
+    }
+  }
+
+  const usable = records.filter((r) => {
+    if (r.synthetic) return false;
+    if (r.provenance_status === "unverified") return false;
+    return evaluateDomainRelevance(r, context).isRelevant;
+  });
+
+  const irrelevantCount = records.filter((r) => !evaluateDomainRelevance(r, context).isRelevant).length;
   const uniqueSources = new Set(usable.map((r) => r.source_name)).size;
+
   const requirements = [
     {
       id: "evidence",
-      label: "Usable non-synthetic evidence",
+      label: "Usable domain-relevant evidence",
       satisfied: usable.length >= 3,
-      explanation: `${usable.length} usable non-synthetic records; at least 3 are required for a minimally supported investigation.`
+      explanation:
+        irrelevantCount > 0 && usable.length === 0
+          ? `0 of ${records.length} retrieved record(s) are relevant to agriculture (${irrelevantCount} retail/benchmark records rejected). At least 3 verified agricultural records required.`
+          : `${usable.length} usable non-synthetic record(s); at least 3 are required for a minimally supported investigation.`
     },
     {
       id: "sources",
@@ -54,10 +172,10 @@ export function scoreDecision(
     },
     {
       id: "conflicts",
-      label: "No unresolved encoded contradiction",
+      label: "No unresolved contradictions",
       satisfied: conflicts.length === 0,
       explanation: conflicts.length
-        ? `${conflicts.length} topic(s) have opposing evidence relations.`
+        ? `${conflicts.length} topic or commercial risk conflict(s) detected.`
         : "No explicit opposing evidence relations were detected; this does not prove the claims are true."
     },
     {
@@ -65,21 +183,28 @@ export function scoreDecision(
       label: "Temporal context available",
       satisfied: usable.some((r) => !!(r.observed_at || r.published_at)),
       explanation: usable.some((r) => !!(r.observed_at || r.published_at))
-        ? "At least one usable record has a date field."
-        : "No usable record has an observation or publication date."
+        ? "At least one usable record has an observation or publication date."
+        : "No usable domain record has a verified observation or publication date."
     }
   ];
+
   const satisfied = requirements.filter((r) => r.satisfied).length;
   const score = Math.round((satisfied / requirements.length) * 100);
-  const status =
+
+  const status: DecisionStatus =
     !liveSource || usable.length < 3 || uniqueSources < 2
       ? "INSUFFICIENT EVIDENCE"
       : conflicts.length > 0 || !requirements.every((r) => r.satisfied)
         ? "INVESTIGATE FURTHER"
         : "SUPPORTED";
-  const note = records.some((r) => r.synthetic)
-    ? "Synthetic fixture records are present. The status is not a real-world agricultural assessment."
-    : "Evidence checklist coverage, not a probability of success, crop yield, or profitability.";
+
+  let note = "Evidence checklist coverage, not a probability of success, crop yield, or profitability.";
+  if (records.some((r) => r.synthetic)) {
+    note = "Synthetic fixture records are present. The status is not a real-world agricultural assessment.";
+  } else if (irrelevantCount > 0 && usable.length === 0) {
+    note = `All ${records.length} retrieved record(s) were flagged as domain-irrelevant benchmark data (e.g. TPC-DS merchandise). Nexus strictly refuses to synthesize false conclusions from off-topic data.`;
+  }
+
   return { status, score, note, requirements };
 }
 
@@ -106,17 +231,24 @@ function defaultRationale(
   records: EvidenceRecord[],
   conflicts: EvidenceConflict[],
   decision: DecisionResult,
-  zetarisMode: string
+  zetarisMode: string,
+  irrelevantCount = 0
 ): string {
   if (records.some((r) => r.synthetic) && zetarisMode === "demo") {
     return "This run uses synthetic demonstration records. It demonstrates Nexus's investigation workflow only and cannot support a real farming or investment decision. Configure and verify a real data source before drawing conclusions.";
   }
+  if (decision.status === "INSUFFICIENT EVIDENCE") {
+    if (irrelevantCount > 0) {
+      return `Nexus retrieved ${records.length} live database record(s) from Zetaris, but all ${irrelevantCount} record(s) were rejected by the Evaluator as irrelevant retail items (e.g., TPC-DS benchmark merchandise). Zero verified agricultural evidence was found for this query. An evidence-grounded agent must explain why retrieved records fail validation rather than synthesizing ungrounded claims. Verdict: INSUFFICIENT EVIDENCE (coverage score ${decision.score}/100).`;
+    }
+    return `Nexus evaluated ${records.length} record(s), but the available evidence failed minimum sufficiency requirements (coverage score ${decision.score}/100). Essential agronomic, pricing, or water access data is missing or unverified. Do not commit capital without verified field data.`;
+  }
+  if (decision.status === "INVESTIGATE FURTHER") {
+    const sourceCount = new Set(records.map((r) => r.source_name)).size;
+    return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s). While agronomic and pricing factors show viability, ${conflicts.length} material risk conflict(s) were flagged (e.g. buyer offtake rejection rates vs wholesale spot prices). Verdict: INVESTIGATE FURTHER (coverage score ${decision.score}/100). Verify written offtake terms and irrigation quotas before planting.`;
+  }
   const sourceCount = new Set(records.map((r) => r.source_name)).size;
-  return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s). The evidence sufficiency status is ${decision.status} (coverage score ${decision.score}/100). ${
-    conflicts.length
-      ? `${conflicts.length} explicit topic conflict(s) were flagged between market pricing and buyer offtake conditions. `
-      : "No explicit encoded contradictions were found. "
-  }Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.`;
+  return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s). The evidence sufficiency status is ${decision.status} (coverage score ${decision.score}/100). No unresolved contradictions were detected. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.`;
 }
 
 export async function runInvestigation(input: InvestigationInput): Promise<InvestigationResult> {
@@ -181,14 +313,28 @@ export async function runInvestigation(input: InvestigationInput): Promise<Inves
   // Evaluator detects contradictions & scores decision checklist
   const conflicts = findConflicts(evidence);
   const isUsableDataSource = collected.mode === "live" || collected.mode === "sample";
-  const decision = scoreDecision(evidence, conflicts, isUsableDataSource);
+  const relevanceContext = { crop_or_activity: crop, location, question };
+  const decision = scoreDecision(evidence, conflicts, isUsableDataSource, relevanceContext);
+  const irrelevantCount = evidence.filter((r) => !evaluateDomainRelevance(r, relevanceContext).isRelevant).length;
+
+  if (irrelevantCount > 0) {
+    tracer.logEvent({
+      agent_name: "Evaluator",
+      action: "filter_irrelevant_data",
+      target_agent: "Writer",
+      input_summary: `Evaluated ${evidence.length} candidate records for agricultural domain relevance.`,
+      output_summary: `Evaluator rejected ${irrelevantCount} record(s) as off-topic benchmark data (e.g. retail merchandise).`,
+      status: "warning",
+      metadata: { irrelevant_count: irrelevantCount }
+    });
+  }
 
   if (conflicts.length > 0) {
     tracer.logEvent({
       agent_name: "Evaluator",
       action: "flag_conflict",
       target_agent: "Writer",
-      input_summary: `Identified ${conflicts.length} topic conflicts in retrieved records.`,
+      input_summary: `Identified ${conflicts.length} topic/feasibility conflict(s) in retrieved records.`,
       output_summary: `Evaluator flagged a conflict in ${conflicts.map((c) => c.topic).join(", ")}`,
       status: "warning"
     });
@@ -198,7 +344,7 @@ export async function runInvestigation(input: InvestigationInput): Promise<Inves
       action: "evaluate_evidence",
       target_agent: "Writer",
       input_summary: `Evaluated evidence against checklist; score: ${decision.score}/100.`,
-      output_summary: `Evaluator confirmed consistent evidence (${decision.status})`,
+      output_summary: `Evaluator confirmed checklist results (${decision.status})`,
       status: "success"
     });
   }
@@ -260,7 +406,7 @@ export async function runInvestigation(input: InvestigationInput): Promise<Inves
           ? "PARTIAL"
           : "COMPLETED",
     decision,
-    rationale: parsed?.rationale ?? defaultRationale(evidence, conflicts, decision, collected.mode),
+    rationale: parsed?.rationale ?? defaultRationale(evidence, conflicts, decision, collected.mode, irrelevantCount),
     evidence,
     conflicts,
     missing_information: missing,

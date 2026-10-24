@@ -28,42 +28,67 @@ function httpUrl(value: unknown): string | undefined {
 }
 
 function mapRow(row: Record<string, unknown>, index: number): EvidenceRecord {
-  const detail = String(row.detail ?? row.description ?? row.evidence ?? row.text ?? row.claim ?? JSON.stringify(row));
-  const sourceUrl = httpUrl(row.source_url ?? row.url);
-  const rawReliability = Number(row.reliability);
-  const flags: string[] = Array.isArray(row.quality_flags) ? (row.quality_flags as string[]) : [];
+  const isTpcds = "i_item_sk" in row;
+  const rawTitle = row.title ?? row.name ?? row.i_product_name ?? row.claim;
+  const rawDetail = row.detail ?? row.description ?? row.evidence ?? row.text ?? row.i_item_desc ?? row.claim ?? JSON.stringify(row);
+  const detail = String(rawDetail);
+  const title = String(rawTitle ?? `Evidence record ${index + 1}`);
 
-  if (!sourceUrl) flags.push("No validated HTTP(S) source URL was provided.");
-  if (!row.observed_at && !row.updated_at && !row.published_at) {
+  const sourceUrl = httpUrl(row.source_url ?? row.url);
+  const rawReliability = row.reliability !== undefined && row.reliability !== null ? Number(row.reliability) : NaN;
+  const flags: string[] = Array.isArray(row.quality_flags) ? [...(row.quality_flags as string[])] : [];
+
+  if (!sourceUrl) {
+    flags.push(isTpcds
+      ? "Raw TPC-DS benchmark table row from Zetaris; no independent agricultural source URL."
+      : "No validated HTTP(S) source URL was provided in raw record.");
+  }
+
+  const rawObserved = row.observed_at ?? row.updated_at ?? row.published_at ?? row.i_rec_start_date;
+  if (!rawObserved) {
     flags.push("No observation, update, or publication date was provided.");
   }
 
-  const isSynthetic = Boolean(row.synthetic);
-  const provenance: ProvenanceStatus = isSynthetic
-    ? "synthetic"
-    : sourceUrl && (row.observed_at || row.updated_at || row.published_at)
-      ? "partial"
-      : "unverified";
+  const isSynthetic = row.synthetic === true || row.synthetic === "true" || row.synthetic === 1 || row.synthetic === "1";
+  const rawTopic = String(row.topic ?? row.category ?? row.i_category ?? "general");
+
+  // Determine honest provenance status
+  let provenance: ProvenanceStatus = "unverified";
+  if (isSynthetic) {
+    provenance = "synthetic";
+  } else if (sourceUrl && rawObserved) {
+    provenance = row.provenance_status === "verified" ? "verified" : "partial";
+  }
+
+  // Derive source name honestly
+  const defaultSourceName = isTpcds ? "TPCDS_DB.item (Zetaris Federated Data Lake)" : "Zetaris data source";
+  const sourceName = String(row.source_name ?? row.source ?? row.dataset ?? defaultSourceName);
+
+  // Derive relation: default to 'context' unless explicitly stated in original data
+  const rawRel = row.relation ?? row.supports;
+  const rel = rawRel ? relation(rawRel) : "context";
 
   return {
-    id: String(row.id ?? row.evidence_id ?? `zetaris-${index + 1}`),
-    source_name: String(row.source_name ?? row.source ?? row.dataset ?? "Zetaris data source"),
+    id: String(row.id ?? row.evidence_id ?? row.i_item_sk ?? `zetaris-${index + 1}`),
+    source_name: sourceName,
     ...(sourceUrl ? { source_url: sourceUrl } : {}),
-    title: String(row.title ?? row.name ?? row.claim ?? `Evidence record ${index + 1}`),
-    claim: String(row.claim ?? row.title ?? row.name ?? detail.slice(0, 180)),
+    title,
+    claim: String(row.claim ?? title ?? detail.slice(0, 180)),
     detail,
-    topic: String(row.topic ?? row.category ?? "general"),
-    relation: relation(row.relation ?? row.supports),
+    topic: rawTopic,
+    relation: rel,
     ...(Number.isFinite(rawReliability) ? { reliability: Math.max(0, Math.min(1, rawReliability)) } : {}),
-    ...(row.observed_at || row.updated_at ? { observed_at: String(row.observed_at ?? row.updated_at) } : {}),
+    ...(rawObserved ? { observed_at: String(rawObserved) } : {}),
     ...(row.published_at ? { published_at: String(row.published_at) } : {}),
     ...(row.geography || row.location ? { geography: String(row.geography ?? row.location) } : {}),
-    ...(row.unit ? { unit: String(row.unit) } : {}),
+    ...(row.unit || row.i_units ? { unit: String(row.unit ?? row.i_units) } : {}),
     ...(row.currency ? { currency: String(row.currency) } : {}),
     provenance_status: provenance,
     quality_flags: flags,
     synthetic: isSynthetic,
-    ...(typeof row.raw_value === "string" || typeof row.raw_value === "number" ? { raw_value: row.raw_value } : {})
+    ...(typeof row.raw_value === "string" || typeof row.raw_value === "number" || typeof row.i_wholesale_cost === "string"
+      ? { raw_value: (row.raw_value ?? row.i_wholesale_cost) as string | number }
+      : {})
   };
 }
 
@@ -138,7 +163,7 @@ async function getZetarisAuthToken(baseUrl: URL): Promise<{ token?: string; orgI
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: email, password }),
-      signal: AbortSignal.timeout(5000)
+      signal: AbortSignal.timeout(12000)
     });
     if (resp.ok) {
       const data = await resp.json() as Record<string, unknown>;
