@@ -550,3 +550,4 @@
 * **2026-10-24T17:59** - `decision`: standardize(decision): atomic JSON storage rename with file mode 0o600 (#1547)
 * **2026-10-24T18:28** - `metrics`: standardize(metrics): NVIDIA Nemotron prompt temperature and token guardrails (#1548)
 * **2026-10-24T18:56** - `risk`: standardize(risk): Yatta canal rotational water rationing alerts (#1549)
+* **2026-10-24T19:25** - `nemotron`: standardize(nemotron): Zetaris Bearer token auto-renewal life-cycle (#1550)
