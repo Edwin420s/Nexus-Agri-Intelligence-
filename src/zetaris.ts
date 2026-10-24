@@ -122,16 +122,7 @@ function getProjectRoot(): string {
 async function loadLocalEvidence(queryFilter?: string): Promise<EvidenceRecord[]> {
   const rootDir = getProjectRoot();
   const agriFile = path.resolve(rootDir, "data", "agricultural-evidence.json");
-  const fallbackDemo = path.resolve(rootDir, "data", "demo-evidence.json");
-
-  let filePath = agriFile;
-  try {
-    await fs.access(agriFile);
-  } catch {
-    filePath = fallbackDemo;
-  }
-
-  const raw = await fs.readFile(filePath, "utf8");
+  const raw = await fs.readFile(agriFile, "utf8");
   const parsed = JSON.parse(raw) as { records?: Record<string, unknown>[] };
   const allRows = (parsed.records ?? []).map(mapRow);
 
