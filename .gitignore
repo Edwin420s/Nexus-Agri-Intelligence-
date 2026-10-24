@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.nexus/
+storage/*.json
+!storage/.gitkeep
+vendor/
+.DS_Store
+*.log
+coverage/

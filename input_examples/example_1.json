@@ -1,0 +1,8 @@
+{
+  "run_id": "demo-001",
+  "input": {
+    "query": "Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+    "location": "Kirinyaga County, Kenya",
+    "crop": "Tomato farming"
+  }
+}

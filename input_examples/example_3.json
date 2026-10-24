@@ -1,0 +1,8 @@
+{
+  "run_id": "demo-003",
+  "input": {
+    "query": "Evaluate commercial Irish potato production in Nakuru County (Molo highland area), examining wholesale 50kg bag prices, certified Shangi seed tuber costs, and rainfall cessation frost risks.",
+    "location": "Nakuru County (Molo), Kenya",
+    "crop": "Irish potato farming"
+  }
+}

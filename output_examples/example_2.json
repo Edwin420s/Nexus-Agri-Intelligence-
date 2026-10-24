@@ -1,0 +1,107 @@
+{
+  "id": "880f5bb3-0890-423b-984a-233d1ea1fc6f",
+  "run_id": "demo-002",
+  "question": "Investigate export-grade French beans contract farming feasibility in Machakos County (Yatta), focusing on packhouse contract prices, canal rotational rationing risks, and GlobalGAP compliance requirements.",
+  "location": "Machakos County (Yatta), Kenya",
+  "crop_or_activity": "French beans export",
+  "status": "PARTIAL",
+  "decision": {
+    "status": "INSUFFICIENT EVIDENCE",
+    "score": 75,
+    "note": "Evidence checklist coverage, not a probability of success, crop yield, or profitability.",
+    "requirements": [
+      {
+        "id": "evidence",
+        "label": "Usable non-synthetic evidence",
+        "satisfied": false,
+        "explanation": "2 usable non-synthetic records; at least 3 are required for a minimally supported investigation."
+      },
+      {
+        "id": "sources",
+        "label": "Source diversity",
+        "satisfied": true,
+        "explanation": "2 distinct usable source(s); at least 2 are required for this prototype's minimum cross-check."
+      },
+      {
+        "id": "conflicts",
+        "label": "No unresolved encoded contradiction",
+        "satisfied": true,
+        "explanation": "No explicit opposing evidence relations were detected; this does not prove the claims are true."
+      },
+      {
+        "id": "dates",
+        "label": "Temporal context available",
+        "satisfied": true,
+        "explanation": "At least one usable record has a date field."
+      }
+    ]
+  },
+  "rationale": "Nexus reviewed 2 record(s) across 2 named source(s). The evidence sufficiency status is INSUFFICIENT EVIDENCE (coverage score 75/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+  "evidence": [
+    {
+      "id": "zetaris-mach-001",
+      "source_name": "Horticultural Crops Directorate (HCD) Export Monitor",
+      "source_url": "https://hcd.agricultureauthority.go.ke/export-statistics",
+      "title": "French beans export contract pricing in Machakos / Yatta",
+      "claim": "Export packhouses offer contract pricing of 95-120 KES/kg for extra-fine French beans meeting GlobalGAP compliance.",
+      "detail": "Fixed-price contract agreements protect growers against local market price collapses, but non-compliant batches with MRL (Maximum Residue Limit) exceedances are rejected at the packhouse gate without compensation.",
+      "topic": "market_price",
+      "relation": "supports",
+      "reliability": 0.9,
+      "observed_at": "2026-10-05",
+      "geography": "Machakos County (Yatta, Matuu)",
+      "unit": "KES/kg",
+      "currency": "KES",
+      "provenance_status": "partial",
+      "quality_flags": [
+        "Requires strict spray diary record-keeping and GlobalGAP certification."
+      ],
+      "synthetic": false,
+      "raw_value": 105
+    },
+    {
+      "id": "zetaris-mach-002",
+      "source_name": "Yatta Canal Irrigation Users Association",
+      "source_url": "https://machakosgovernment.co.ke/agriculture",
+      "title": "Yatta canal water rotational rationing",
+      "claim": "Canal maintenance and low river intake cause 2-day-per-week water shutdowns during dry periods.",
+      "detail": "Growers reliant exclusively on direct canal tapping without buffer storage suffer blossom drop and pod curvature, reducing export grade pack-out from 80% to below 45%.",
+      "topic": "water_access",
+      "relation": "contradicts",
+      "reliability": 0.84,
+      "observed_at": "2026-09-20",
+      "geography": "Machakos County (Yatta)",
+      "unit": "water_reliability",
+      "provenance_status": "partial",
+      "quality_flags": [
+        "Buffer water pan required for continuous drip."
+      ],
+      "synthetic": false
+    }
+  ],
+  "conflicts": [],
+  "missing_information": [
+    "Confirm the source dates and grading methodology for wholesale price claims.",
+    "Verify farm-specific water abstraction quotas and on-farm buffer storage capacity.",
+    "Obtain written offtake terms or binding purchase agreements before transplanting."
+  ],
+  "next_actions": [
+    "Inspect the cited source URLs and verify date and grade relevance to Kirinyaga.",
+    "Obtain current local supplier quotations for drip irrigation and certified seed.",
+    "Re-run the investigation once farm-specific cost and water permits are established."
+  ],
+  "memory_context": "[Memory-1] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-2] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-3] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+  "memory_source": "Meterless H-MEM Engine (persistent)",
+  "model_mode": "deterministic-fallback",
+  "zetaris_mode": "sample",
+  "warnings": [
+    "Running in standalone SAMPLE_MODE with verified Kenyan agricultural dataset.",
+    "Running in SAMPLE_MODE; deterministic synthesis applied for target model nvidia/nemotron-3-super-120b-a12b."
+  ],
+  "created_at": "2026-10-23T11:09:41.476Z",
+  "completed_at": "2026-10-23T11:09:41.476Z",
+  "source_count": 2,
+  "report_version": 1,
+  "trace_log_path": "/home/skywalker/Projects/prj/OpenAgentHackathon2026/Nexus-Open-Agent-Hackathon2/logs/trace-demo-002.jsonl",
+  "duration_seconds": 0
+}

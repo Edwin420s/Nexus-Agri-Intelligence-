@@ -1,0 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { scoreDecision } from "../src/agent.js";
+import type { EvidenceRecord } from "../src/types.js";
+const rec = (id: string, source: string, relation: "supports"|"contradicts"|"context" = "context", synthetic = false): EvidenceRecord => ({ id, source_name: source, title: id, claim: id, detail: id, topic: "topic", relation, reliability: 0.8, provenance_status: synthetic ? "synthetic" : "partial", quality_flags: [], synthetic, observed_at: "2026-10-01" });
+test("synthetic fixtures cannot satisfy evidence requirements", () => { const d = scoreDecision([rec("1","A","context",true),rec("2","B","context",true),rec("3","C","context",true)], [], false); assert.equal(d.status, "INSUFFICIENT EVIDENCE"); assert.ok(d.score <= 50); });
+test("fewer than three usable records is insufficient", () => { const d = scoreDecision([rec("1","A"),rec("2","B")], [], true); assert.equal(d.status, "INSUFFICIENT EVIDENCE"); });
+test("conflicting evidence triggers investigate further", () => { const rows = [rec("1","A","supports"),rec("2","B","contradicts"),rec("3","C")]; const d = scoreDecision(rows, [{topic:"topic",evidence_ids:["1","2"],explanation:"conflict"}], true); assert.equal(d.status, "INVESTIGATE FURTHER"); });
+test("minimum diverse, dated non-synthetic records can satisfy prototype policy", () => { const d = scoreDecision([rec("1","A"),rec("2","B"),rec("3","C")], [], true); assert.equal(d.status, "SUPPORTED"); assert.equal(d.score, 100); });
+test("unverified provenance is not counted as usable", () => { const rows = [rec("1","A"),rec("2","B"),rec("3","C")].map(r => ({...r, provenance_status:"unverified" as const})); const d = scoreDecision(rows, [], true); assert.equal(d.status, "INSUFFICIENT EVIDENCE"); });

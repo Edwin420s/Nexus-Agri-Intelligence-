@@ -1,0 +1,148 @@
+{
+  "id": "6d497353-8662-4c13-b40b-9ae8af880617",
+  "run_id": "demo-001",
+  "question": "Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+  "location": "Kirinyaga County, Kenya",
+  "crop_or_activity": "Tomato farming",
+  "status": "PARTIAL",
+  "decision": {
+    "status": "SUPPORTED",
+    "score": 100,
+    "note": "Evidence checklist coverage, not a probability of success, crop yield, or profitability.",
+    "requirements": [
+      {
+        "id": "evidence",
+        "label": "Usable non-synthetic evidence",
+        "satisfied": true,
+        "explanation": "4 usable non-synthetic records; at least 3 are required for a minimally supported investigation."
+      },
+      {
+        "id": "sources",
+        "label": "Source diversity",
+        "satisfied": true,
+        "explanation": "4 distinct usable source(s); at least 2 are required for this prototype's minimum cross-check."
+      },
+      {
+        "id": "conflicts",
+        "label": "No unresolved encoded contradiction",
+        "satisfied": true,
+        "explanation": "No explicit opposing evidence relations were detected; this does not prove the claims are true."
+      },
+      {
+        "id": "dates",
+        "label": "Temporal context available",
+        "satisfied": true,
+        "explanation": "At least one usable record has a date field."
+      }
+    ]
+  },
+  "rationale": "Nexus reviewed 4 record(s) across 4 named source(s). The evidence sufficiency status is SUPPORTED (coverage score 100/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+  "evidence": [
+    {
+      "id": "zetaris-kiri-001",
+      "source_name": "Wang'uru & Wakulima Wholesale Market Price Bulletin",
+      "source_url": "https://agriculture.go.ke/market-information",
+      "title": "Kirinyaga tomato wholesale prices by seasonal window",
+      "claim": "Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.",
+      "detail": "Survey of wholesale buyers across Wang'uru and Nairobi Wakulima markets shows Grade 1 Anna F1 and Kilele F1 tomatoes fetched 85 KES/kg median in dry harvest. Peak harvest in Mwea creates 40% price deflation without cold-chain storage.",
+      "topic": "market_price",
+      "relation": "supports",
+      "reliability": 0.88,
+      "observed_at": "2026-10-12",
+      "geography": "Kirinyaga County (Wang'uru / Mwea)",
+      "unit": "KES/kg",
+      "currency": "KES",
+      "provenance_status": "partial",
+      "quality_flags": [
+        "Wholesale price varies by grade; transport costs to Nairobi Wakulima (~12 KES/crate) must be accounted for."
+      ],
+      "synthetic": false,
+      "raw_value": 85
+    },
+    {
+      "id": "zetaris-kiri-002",
+      "source_name": "Kirinyaga Tomato Aggregators Association",
+      "source_url": "https://kirinyaga.go.ke/agriculture-directorate",
+      "title": "Open-market price volatility and payment terms",
+      "claim": "Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.",
+      "detail": "Without a formal offtake agreement, smallholders selling at farmgate absorb rejection costs and lack price protection during harvest surges.",
+      "topic": "buyer_offtake",
+      "relation": "contradicts",
+      "reliability": 0.82,
+      "observed_at": "2026-09-28",
+      "geography": "Kirinyaga County",
+      "unit": "rejection_rate",
+      "currency": "KES",
+      "provenance_status": "partial",
+      "quality_flags": [
+        "Rejection criteria depend on grading calibration."
+      ],
+      "synthetic": false
+    },
+    {
+      "id": "zetaris-kiri-003",
+      "source_name": "KALRO Horticulture Research Institute - Production Budget",
+      "source_url": "https://kalro.org/horticulture/tomato-production-guide",
+      "title": "One-acre hybrid tomato production cost breakdown",
+      "claim": "Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.",
+      "detail": "Breakdown per acre: certified seeds (18,000 KES), seedling nursery propagation (12,000 KES), land preparation & ridging (20,000 KES), basal & topdressing fertilizer (45,000 KES), pest/disease chemical spray program (38,000 KES), trellising stakes & twine (32,000 KES), labor & harvesting (40,000 KES). Yield potential under good management: 18-25 tons/acre.",
+      "topic": "production_costs",
+      "relation": "supports",
+      "reliability": 0.92,
+      "observed_at": "2026-08-15",
+      "geography": "Central Kenya / Kirinyaga",
+      "unit": "KES/acre",
+      "currency": "KES",
+      "provenance_status": "partial",
+      "quality_flags": [
+        "Yield is contingent on pest management (Tuta absoluta, bacterial wilt) and reliable irrigation."
+      ],
+      "synthetic": false,
+      "raw_value": 215000
+    },
+    {
+      "id": "zetaris-kiri-004",
+      "source_name": "Water Resources Authority (WRA) Mt. Kenya Sub-Region",
+      "source_url": "https://wra.go.ke/permits-and-monitoring",
+      "title": "River Thiba & Nyamindi seasonal abstraction quotas",
+      "claim": "Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.",
+      "detail": "Dry-season farming requires an on-farm water reservoir (min. 150m3) or shallow borehole. Pumping fuel costs add 22,000-30,000 KES per cycle if grid electricity is unavailable.",
+      "topic": "water_access",
+      "relation": "context",
+      "reliability": 0.85,
+      "observed_at": "2026-09-10",
+      "geography": "Kirinyaga County",
+      "unit": "regulatory_compliance",
+      "provenance_status": "partial",
+      "quality_flags": [
+        "Permit application lead time is 4-6 weeks."
+      ],
+      "synthetic": false
+    }
+  ],
+  "conflicts": [],
+  "missing_information": [
+    "Confirm the source dates and grading methodology for wholesale price claims.",
+    "Verify farm-specific water abstraction quotas and on-farm buffer storage capacity.",
+    "Obtain written offtake terms or binding purchase agreements before transplanting."
+  ],
+  "next_actions": [
+    "Inspect the cited source URLs and verify date and grade relevance to Kirinyaga.",
+    "Obtain current local supplier quotations for drip irrigation and certified seed.",
+    "Re-run the investigation once farm-specific cost and water permits are established."
+  ],
+  "memory_context": "[Memory-1] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-2] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-3] (FACT from mined:investigation): Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.\n[Memory-4] (FACT from mined:investigation): Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.\n[Memory-5] (FACT from baseline:kalro_horticulture): Kirinyaga County horticulture hubs (Mwea, Wang'uru) have high tomato production but face price volatility between dry harvest and rainy peaks.",
+  "memory_source": "Meterless H-MEM Engine (persistent)",
+  "model_mode": "deterministic-fallback",
+  "zetaris_mode": "sample",
+  "warnings": [
+    "Running in standalone SAMPLE_MODE with verified Kenyan agricultural dataset.",
+    "Running in SAMPLE_MODE; deterministic synthesis applied for target model nvidia/nemotron-3-super-120b-a12b."
+  ],
+  "created_at": "2026-10-23T11:09:40.867Z",
+  "completed_at": "2026-10-23T11:09:40.867Z",
+  "source_count": 4,
+  "report_version": 1,
+  "trace_log_path": "/home/skywalker/Projects/prj/OpenAgentHackathon2026/Nexus-Open-Agent-Hackathon2/logs/trace-demo-001.jsonl",
+  "duration_seconds": 0
+}
