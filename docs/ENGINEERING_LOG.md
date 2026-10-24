@@ -556,3 +556,4 @@
 * **2026-10-24T20:50** - `ui`: standardize(ui): Wang'uru market price deflation boundary checks (#1553)
 * **2026-10-24T21:19** - `store`: standardize(store): on-farm weir storage abstraction permit verification (#1554)
 * **2026-10-24T21:47** - `types`: standardize(types): interactive farmgate price sensitivity stress curve (#1555)
+* **2026-10-24T22:16** - `trace`: standardize(trace): regulatory Markdown due diligence briefing format (#1556)
