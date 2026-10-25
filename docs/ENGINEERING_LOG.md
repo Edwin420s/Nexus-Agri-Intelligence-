@@ -584,3 +584,4 @@
 * **2026-10-25T10:09** - `risk`: implement(risk): conditions precedent credit matrix generator (#1581)
 * **2026-10-25T10:37** - `nemotron`: implement(nemotron): drip lateral kit CapEx depreciation schedules (#1582)
 * **2026-10-25T11:06** - `telemetry`: implement(telemetry): Wang'uru market price deflation boundary checks (#1583)
+* **2026-10-25T11:34** - `api`: implement(api): on-farm weir storage abstraction permit verification (#1584)
