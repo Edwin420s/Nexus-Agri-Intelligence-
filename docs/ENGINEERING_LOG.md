@@ -561,3 +561,4 @@
 * **2026-10-24T23:13** - `docs`: standardize(docs): certified seed tuber working capital ratios (#1558)
 * **2026-10-24T23:41** - `tests`: standardize(tests): decision checklist score weighting algorithm (#1559)
 * **2026-10-25T00:10** - `engine`: align(engine): Content-Security-Policy and X-Frame-Options headers (#1560)
+* **2026-10-25T00:39** - `zetaris`: align(zetaris): fail-safe deterministic report synthesis fallbacks (#1561)
