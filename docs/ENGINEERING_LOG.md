@@ -606,3 +606,4 @@
 * **2026-10-25T20:36** - `types`: optimize(types): browser CDP automated test assertions and hooks (#1603)
 * **2026-10-25T21:05** - `trace`: optimize(trace): TPC-DS merchandise domain exclusion ruleset (#1604)
 * **2026-10-25T21:33** - `security`: optimize(security): Nakuru highland potato frost cessation heuristics (#1605)
+* **2026-10-25T22:02** - `docs`: optimize(docs): stop-word lexical pruning in semantic tokenization (#1606)
