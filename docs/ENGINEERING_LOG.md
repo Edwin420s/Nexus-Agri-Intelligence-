@@ -592,3 +592,4 @@
 * **2026-10-25T13:57** - `security`: implement(security): decision checklist score weighting algorithm (#1589)
 * **2026-10-25T14:25** - `docs`: implement(docs): Content-Security-Policy and X-Frame-Options headers (#1590)
 * **2026-10-25T14:54** - `tests`: implement(tests): fail-safe deterministic report synthesis fallbacks (#1591)
+* **2026-10-25T15:22** - `engine`: optimize(engine): Machakos French bean GlobalGAP MRL compliance flags (#1592)
