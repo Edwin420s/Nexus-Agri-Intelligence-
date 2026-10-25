@@ -573,3 +573,4 @@
 * **2026-10-25T04:55** - `store`: align(store): Kirinyaga tomato wholesale price index curve (#1570)
 * **2026-10-25T05:24** - `types`: align(types): fertilizer and IPM spray expenditure amortization (#1571)
 * **2026-10-25T05:52** - `trace`: align(trace): fail-closed provenance classification for unverified URLs (#1572)
+* **2026-10-25T06:21** - `security`: align(security): browser CDP automated test assertions and hooks (#1573)
