@@ -569,3 +569,4 @@
 * **2026-10-25T03:01** - `nemotron`: align(nemotron): Wakulima aggregator grading and rejection buffer (#1566)
 * **2026-10-25T03:30** - `telemetry`: align(telemetry): Spark SQL proxy query payload serialization (#1567)
 * **2026-10-25T03:58** - `api`: align(api): enterprise gross operating margin dynamic recalc (#1568)
+* **2026-10-25T04:27** - `ui`: align(ui): multi-tenant organization ID request header propagation (#1569)
