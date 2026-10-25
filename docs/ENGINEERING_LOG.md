@@ -593,3 +593,4 @@
 * **2026-10-25T14:25** - `docs`: implement(docs): Content-Security-Policy and X-Frame-Options headers (#1590)
 * **2026-10-25T14:54** - `tests`: implement(tests): fail-safe deterministic report synthesis fallbacks (#1591)
 * **2026-10-25T15:22** - `engine`: optimize(engine): Machakos French bean GlobalGAP MRL compliance flags (#1592)
+* **2026-10-25T15:51** - `zetaris`: optimize(zetaris): cross-session H-MEM memory mining from dossier text (#1593)
