@@ -590,3 +590,4 @@
 * **2026-10-25T13:00** - `types`: implement(types): in-memory LRU rate-limiting per client IP address (#1587)
 * **2026-10-25T13:28** - `trace`: implement(trace): certified seed tuber working capital ratios (#1588)
 * **2026-10-25T13:57** - `security`: implement(security): decision checklist score weighting algorithm (#1589)
+* **2026-10-25T14:25** - `docs`: implement(docs): Content-Security-Policy and X-Frame-Options headers (#1590)
