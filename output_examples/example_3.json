@@ -1,5 +1,5 @@
 {
-  "id": "55f54442-7445-4e73-a8ad-05510b439b89",
+  "id": "aed82369-947e-445f-95a0-58c1c377f450",
   "run_id": "demo-003",
   "question": "Evaluate commercial Irish potato production in Nakuru County (Molo highland area), examining wholesale 50kg bag prices, certified Shangi seed tuber costs, and rainfall cessation frost risks.",
   "location": "Nakuru County (Molo), Kenya",
@@ -12,9 +12,9 @@
     "requirements": [
       {
         "id": "evidence",
-        "label": "Usable non-synthetic evidence",
+        "label": "Usable domain-relevant evidence",
         "satisfied": false,
-        "explanation": "2 usable non-synthetic records; at least 3 are required for a minimally supported investigation."
+        "explanation": "2 usable non-synthetic record(s); at least 3 are required for a minimally supported investigation."
       },
       {
         "id": "sources",
@@ -24,7 +24,7 @@
       },
       {
         "id": "conflicts",
-        "label": "No unresolved encoded contradiction",
+        "label": "No unresolved contradictions",
         "satisfied": true,
         "explanation": "No explicit opposing evidence relations were detected; this does not prove the claims are true."
       },
@@ -32,11 +32,11 @@
         "id": "dates",
         "label": "Temporal context available",
         "satisfied": true,
-        "explanation": "At least one usable record has a date field."
+        "explanation": "At least one usable record has an observation or publication date."
       }
     ]
   },
-  "rationale": "Nexus reviewed 2 record(s) across 2 named source(s). The evidence sufficiency status is INSUFFICIENT EVIDENCE (coverage score 75/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+  "rationale": "Nexus evaluated 2 record(s), but the available evidence failed minimum sufficiency requirements (coverage score 75/100). Essential agronomic, pricing, or water access data is missing or unverified. Do not commit capital without verified field data.",
   "evidence": [
     {
       "id": "zetaris-nak-001",
@@ -90,18 +90,91 @@
     "Obtain current local supplier quotations for drip irrigation and certified seed.",
     "Re-run the investigation once farm-specific cost and water permits are established."
   ],
-  "memory_context": "[Memory-1] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-2] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-3] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-4] (FACT from mined:investigation): Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.\n[Memory-5] (FACT from mined:investigation): Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.",
+  "memory_context": "[Memory-1] (FACT from mined:investigation): Question: Evaluate commercial Irish potato production in Nakuru County (Molo highland area), examining wholesale 50kg bag prices, certified Shangi seed tuber costs, and rainfall cessation frost risks.\n[Memory-2] (FACT from mined:investigation): Question: Evaluate commercial Irish potato production in Nakuru County (Molo highland area), examining wholesale 50kg bag prices, certified Shangi seed tuber costs, and rainfall cessation frost risks.\n[Memory-3] (FACT from mined:investigation): Question: Evaluate commercial Irish potato production in Nakuru County (Molo highland area), examining wholesale 50kg bag prices, certified Shangi seed tuber costs, and rainfall cessation frost risks.\n[Memory-4] (ASSUMPTION from mined:investigation): Evidence: [zetaris-nak-001] A 50kg bag of Shangi variety wholesale in Nakuru traded at 2,400-3,200 KES (48-64 KES/kg) during off-season.; [zetaris-nak-002] Highland frost events in late November and unpredictable rainfall cessation pose risks to late-planted tubers.\n[Memory-5] (ASSUMPTION from mined:investigation): Evidence: [zetaris-nak-001] A 50kg bag of Shangi variety wholesale in Nakuru traded at 2,400-3,200 KES (48-64 KES/kg) during off-season.; [zetaris-nak-002] Highland frost events in late November and unpredictable rainfall cessation pose risks to late-planted tubers.",
   "memory_source": "Meterless H-MEM Engine (persistent)",
   "model_mode": "deterministic-fallback",
-  "zetaris_mode": "sample",
+  "zetaris_mode": "demo",
   "warnings": [
-    "Running in standalone SAMPLE_MODE with verified Kenyan agricultural dataset.",
-    "Running in SAMPLE_MODE; deterministic synthesis applied for target model nvidia/nemotron-3-super-120b-a12b."
+    "Zetaris endpoint not configured; operating in local agricultural sample mode.",
+    "Meterless Nightshift credentials not configured; used deterministic synthesis for nvidia/nemotron-3-super-120b-a12b."
   ],
-  "created_at": "2026-10-23T11:09:42.081Z",
-  "completed_at": "2026-10-23T11:09:42.081Z",
+  "created_at": "2026-10-24T22:33:19.945Z",
+  "completed_at": "2026-10-24T22:33:19.945Z",
   "source_count": 2,
   "report_version": 1,
   "trace_log_path": "/home/skywalker/Projects/prj/OpenAgentHackathon2026/Nexus-Open-Agent-Hackathon2/logs/trace-demo-003.jsonl",
-  "duration_seconds": 0
+  "duration_seconds": 0,
+  "financial_metrics": {
+    "currency": "KES",
+    "estimated_capex": 90000,
+    "estimated_opex_per_acre": 180000,
+    "expected_yield_kg_per_acre": {
+      "min": 4000,
+      "max": 6000,
+      "median": 5000
+    },
+    "breakeven_price_per_kg": 36,
+    "benchmark_wholesale_price": 56,
+    "gross_margin_percent": 35.7,
+    "payback_period_months": 5.2,
+    "sensitivity_notes": "Certified seed tubers represent 38.5% of cash operating expenses. High off-season wholesale price of 2,800 KES/bag yields a 35.7% margin. Severe late blight or bacterial wilt from uncertified seed can depress marketable yield below 50 bags (2,500 kg), causing net financial loss. Early planting is required to escape late-November highland frosts."
+  },
+  "risk_matrix": [
+    {
+      "category": "commercial",
+      "title": "High Seed Tuber Working Capital Requirement",
+      "severity": "HIGH",
+      "impact": "Certified Shangi seed tubers consume nearly 40% of upfront working capital before land preparation.",
+      "mitigation": "Disburse seed capital via supplier vouchers directly to certified NPCK/KALRO multipliers to prevent diverted funds.",
+      "source_evidence_id": "zetaris-nak-001"
+    },
+    {
+      "category": "climate",
+      "title": "Highland Frost and Unseasonal Harvest Rains",
+      "severity": "HIGH",
+      "impact": "Late-November frost burns foliage; unseasonal rain during lifting accelerates Erwinia soft rot in ambient storage.",
+      "mitigation": "Calibrate planting date to early October and construct a ventilated diffuse-light store (DLS) on farm.",
+      "source_evidence_id": "zetaris-nak-002"
+    }
+  ],
+  "telemetry": {
+    "pipeline_steps": [
+      {
+        "agent": "Planner",
+        "action": "start_and_plan",
+        "status": "success",
+        "duration_ms": 1,
+        "summary": "Decomposed query for Irish potato farming in Nakuru County (Molo), Kenya into structured due-diligence objectives."
+      },
+      {
+        "agent": "Researcher",
+        "action": "query_zetaris",
+        "status": "success",
+        "duration_ms": 1,
+        "summary": "Retrieved 2 records via Zetaris connector (demo mode)."
+      },
+      {
+        "agent": "MemoryAgent",
+        "action": "recall_hmem",
+        "status": "success",
+        "duration_ms": 1,
+        "summary": "Queried Meterless H-MEM ledger; recalled 5 prior knowledge facts."
+      },
+      {
+        "agent": "Evaluator",
+        "action": "evaluate_and_score",
+        "status": "success",
+        "duration_ms": 1,
+        "summary": "Evaluated evidence checklist (status: INSUFFICIENT EVIDENCE, score: 75/100, conflicts: 0)."
+      },
+      {
+        "agent": "Writer",
+        "action": "synthesize_dossier",
+        "status": "success",
+        "duration_ms": 1,
+        "summary": "Synthesized reconciliation dossier with nvidia/nemotron-3-super-120b-a12b (fallback)."
+      }
+    ],
+    "total_duration_seconds": 0
+  }
 }

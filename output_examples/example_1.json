@@ -1,20 +1,20 @@
 {
-  "id": "6d497353-8662-4c13-b40b-9ae8af880617",
+  "id": "7e675549-ac4c-450d-afbf-1f4dae4ec88f",
   "run_id": "demo-001",
   "question": "Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
   "location": "Kirinyaga County, Kenya",
   "crop_or_activity": "Tomato farming",
   "status": "PARTIAL",
   "decision": {
-    "status": "SUPPORTED",
-    "score": 100,
+    "status": "INSUFFICIENT EVIDENCE",
+    "score": 75,
     "note": "Evidence checklist coverage, not a probability of success, crop yield, or profitability.",
     "requirements": [
       {
         "id": "evidence",
-        "label": "Usable non-synthetic evidence",
+        "label": "Usable domain-relevant evidence",
         "satisfied": true,
-        "explanation": "4 usable non-synthetic records; at least 3 are required for a minimally supported investigation."
+        "explanation": "4 usable non-synthetic record(s); at least 3 are required for a minimally supported investigation."
       },
       {
         "id": "sources",
@@ -24,19 +24,19 @@
       },
       {
         "id": "conflicts",
-        "label": "No unresolved encoded contradiction",
-        "satisfied": true,
-        "explanation": "No explicit opposing evidence relations were detected; this does not prove the claims are true."
+        "label": "No unresolved contradictions",
+        "satisfied": false,
+        "explanation": "1 topic or commercial risk conflict(s) detected."
       },
       {
         "id": "dates",
         "label": "Temporal context available",
         "satisfied": true,
-        "explanation": "At least one usable record has a date field."
+        "explanation": "At least one usable record has an observation or publication date."
       }
     ]
   },
-  "rationale": "Nexus reviewed 4 record(s) across 4 named source(s). The evidence sufficiency status is SUPPORTED (coverage score 100/100). No explicit encoded contradictions were found. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.",
+  "rationale": "Nexus evaluated 4 record(s), but the available evidence failed minimum sufficiency requirements (coverage score 75/100). Essential agronomic, pricing, or water access data is missing or unverified. Do not commit capital without verified field data.",
   "evidence": [
     {
       "id": "zetaris-kiri-001",
@@ -120,7 +120,15 @@
       "synthetic": false
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    {
+      "topic": "market_vs_offtake",
+      "evidence_ids": [
+        "zetaris-kiri-002"
+      ],
+      "explanation": "Wholesale market pricing indicates favorable gross revenues, but buyer offtake records indicate severe rejection rates (15-20%) and informal price deflation without binding purchase contracts."
+    }
+  ],
   "missing_information": [
     "Confirm the source dates and grading methodology for wholesale price claims.",
     "Verify farm-specific water abstraction quotas and on-farm buffer storage capacity.",
@@ -131,18 +139,115 @@
     "Obtain current local supplier quotations for drip irrigation and certified seed.",
     "Re-run the investigation once farm-specific cost and water permits are established."
   ],
-  "memory_context": "[Memory-1] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-2] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-3] (FACT from mined:investigation): Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.\n[Memory-4] (FACT from mined:investigation): Evidence: [zetaris-kiri-001] Wholesale tomato prices in Wang'uru market averaged 78-95 KES/kg during dry season (July-Sept) but dropped to 42-55 KES/kg during peak rain glut.; [zetaris-kiri-002] Middlemen and informal aggregators in Wang'uru pay cash on delivery but enforce a 15-20% rejection rate on uncalibrated crates.; [zetaris-kiri-003] Total production cost for 1 acre of open-field hybrid tomatoes (Anna F1 / Kilele) is approximately 195,000 to 240,000 KES.; [zetaris-kiri-004] Unregulated furrow water abstraction is prohibited during dry months; drip irrigation with permitted storage weir is mandatory.\n[Memory-5] (FACT from baseline:kalro_horticulture): Kirinyaga County horticulture hubs (Mwea, Wang'uru) have high tomato production but face price volatility between dry harvest and rainy peaks.",
+  "memory_context": "[Memory-1] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-2] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-3] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-4] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.\n[Memory-5] (FACT from mined:investigation): Question: Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
   "memory_source": "Meterless H-MEM Engine (persistent)",
   "model_mode": "deterministic-fallback",
-  "zetaris_mode": "sample",
+  "zetaris_mode": "demo",
   "warnings": [
-    "Running in standalone SAMPLE_MODE with verified Kenyan agricultural dataset.",
-    "Running in SAMPLE_MODE; deterministic synthesis applied for target model nvidia/nemotron-3-super-120b-a12b."
+    "Zetaris endpoint not configured; operating in local agricultural sample mode.",
+    "Meterless Nightshift credentials not configured; used deterministic synthesis for nvidia/nemotron-3-super-120b-a12b."
   ],
-  "created_at": "2026-10-23T11:09:40.867Z",
-  "completed_at": "2026-10-23T11:09:40.867Z",
+  "created_at": "2026-10-24T22:33:19.927Z",
+  "completed_at": "2026-10-24T22:33:19.927Z",
   "source_count": 4,
   "report_version": 1,
   "trace_log_path": "/home/skywalker/Projects/prj/OpenAgentHackathon2026/Nexus-Open-Agent-Hackathon2/logs/trace-demo-001.jsonl",
-  "duration_seconds": 0
+  "duration_seconds": 0,
+  "financial_metrics": {
+    "currency": "KES",
+    "estimated_capex": 150000,
+    "estimated_opex_per_acre": 215000,
+    "expected_yield_kg_per_acre": {
+      "min": 18000,
+      "max": 25000,
+      "median": 21500
+    },
+    "breakeven_price_per_kg": 12.1,
+    "benchmark_wholesale_price": 85,
+    "gross_margin_percent": 85.7,
+    "payback_period_months": 4.5,
+    "sensitivity_notes": "At wholesale spot price of 85 KES/kg, enterprise gross margin is 85.7%. If sold during peak harvest rain glut at 45 KES/kg with 20% aggregator crate rejection, gross revenue falls to 774,000 KES, reducing operating margin to 72.2%. Production remains cash-positive above 12.1 KES/kg breakeven. Primary financial exposure is informal aggregator rejection and lack of cold storage."
+  },
+  "risk_matrix": [
+    {
+      "category": "commercial",
+      "title": "Informal Aggregator Offtake Volatility & Crate Rejection",
+      "severity": "HIGH",
+      "impact": "Middlemen in Wang'uru enforce 15–20% crate rejections on uncalibrated produce, shifting grading risk onto smallholders.",
+      "mitigation": "Require binding offtake contracts with transparent Grade 1/2 calibration before loan disbursement.",
+      "source_evidence_id": "zetaris-kiri-002"
+    },
+    {
+      "category": "regulatory",
+      "title": "Water Resources Authority (WRA) Abstraction Restrictions",
+      "severity": "MEDIUM",
+      "impact": "Unregulated furrow water pumping from Rivers Thiba/Nyamindi is prohibited during dry months; permits are mandatory.",
+      "mitigation": "Mandate valid WRA abstraction permits and verify on-farm water reservoir capacity (min. 150m³ storage weir).",
+      "source_evidence_id": "zetaris-kiri-004"
+    },
+    {
+      "category": "agronomic",
+      "title": "Tuta Absoluta & Bacterial Wilt Vulnerability",
+      "severity": "HIGH",
+      "impact": "Severe leafminer infestation and soil-borne wilt can reduce harvestable yield by 40–60% without preventive rotation.",
+      "mitigation": "Underwrite loan conditional on KALRO-certified hybrid seeds (Anna F1 / Kilele) and structured IPM spray calendar.",
+      "source_evidence_id": "zetaris-kiri-003"
+    },
+    {
+      "category": "climate",
+      "title": "Seasonal Rain Harvest Price Deflation",
+      "severity": "MEDIUM",
+      "impact": "Peak harvest supply in Mwea causes open-market prices to plunge from 85 KES/kg to 42–55 KES/kg.",
+      "mitigation": "Structure planting calendar for off-peak harvest window (July–September) using drip irrigation to capture high prices.",
+      "source_evidence_id": "zetaris-kiri-001"
+    },
+    {
+      "category": "commercial",
+      "title": "Contradiction in market_vs_offtake",
+      "severity": "HIGH",
+      "impact": "Wholesale market pricing indicates favorable gross revenues, but buyer offtake records indicate severe rejection rates (15-20%) and informal price deflation without binding purchase contracts.",
+      "mitigation": "Require human field verification and signed purchase orders before capital commitment.",
+      "source_evidence_id": "zetaris-kiri-002"
+    }
+  ],
+  "telemetry": {
+    "pipeline_steps": [
+      {
+        "agent": "Planner",
+        "action": "start_and_plan",
+        "status": "success",
+        "duration_ms": 5,
+        "summary": "Decomposed query for Tomato farming in Kirinyaga County, Kenya into structured due-diligence objectives."
+      },
+      {
+        "agent": "Researcher",
+        "action": "query_zetaris",
+        "status": "success",
+        "duration_ms": 2,
+        "summary": "Retrieved 4 records via Zetaris connector (demo mode)."
+      },
+      {
+        "agent": "MemoryAgent",
+        "action": "recall_hmem",
+        "status": "success",
+        "duration_ms": 9,
+        "summary": "Queried Meterless H-MEM ledger; recalled 5 prior knowledge facts."
+      },
+      {
+        "agent": "Evaluator",
+        "action": "evaluate_and_score",
+        "status": "warning",
+        "duration_ms": 1,
+        "summary": "Evaluated evidence checklist (status: INSUFFICIENT EVIDENCE, score: 75/100, conflicts: 1)."
+      },
+      {
+        "agent": "Writer",
+        "action": "synthesize_dossier",
+        "status": "success",
+        "duration_ms": 1,
+        "summary": "Synthesized reconciliation dossier with nvidia/nemotron-3-super-120b-a12b (fallback)."
+      }
+    ],
+    "total_duration_seconds": 0
+  }
 }

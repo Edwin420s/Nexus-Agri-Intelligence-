@@ -4,48 +4,182 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f4f3ed" />
-  <meta name="description" content="Nexus turns agricultural market questions into evidence-linked investigations and transparent decision dossiers." />
-  <title>Nexus — Agricultural Intelligence</title>
+  <meta name="description" content="Nexus turns agricultural market questions into evidence-linked investigations, transparent unit economics, and auditable underwriting dossiers." />
+  <title>Nexus — Agribusiness Intelligence & Credit Due Diligence</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/"><span class="brand-mark">N</span><span>NEXUS<small>INTELLIGENCE WORKSPACE</small></span></a>
-    <div class="top-actions"><span class="eyebrow">OPEN AGENT HACKATHON 2026</span><span id="service-state" class="service-state">Checking services…</span></div>
+    <a class="brand" href="/">
+      <span class="brand-mark">N</span>
+      <span>NEXUS<small>AGRIBUSINESS INTELLIGENCE WORKSPACE</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="eyebrow">OPEN AGENT HACKATHON 2026 · EXPLAINABILITY TRACK</span>
+      <span id="service-state" class="service-state">Checking services…</span>
+    </div>
   </header>
+
   <main class="layout">
     <section class="intro">
       <p class="eyebrow">EVIDENCE → REASONING → DECISION</p>
       <h1>Make the decision.<br><em>Show the evidence.</em></h1>
-      <p class="intro-copy">Nexus helps Kenyan agribusiness entrepreneurs investigate opportunities, inspect evidence, and see what remains uncertain before committing resources.</p>
+      <p class="intro-copy">Nexus provides autonomous, regulatory-grade agribusiness credit due diligence for agricultural lenders, SACCOs, and investors across East Africa. Deterministic rulesets, zero hallucinations, and cryptographically auditable provenance.</p>
+    </section>
+
+    <!-- Preset Scenario Selector -->
+    <section class="preset-section">
+      <span class="preset-label">Select Due-Diligence Scenario:</span>
+      <div class="preset-buttons">
+        <button type="button" class="preset-btn active" data-preset="tomato">🍅 Kirinyaga Tomatoes (Offtake Contradiction)</button>
+        <button type="button" class="preset-btn" data-preset="beans">🫘 Machakos French Beans (Export & Canal Water)</button>
+        <button type="button" class="preset-btn" data-preset="potato">🥔 Nakuru Irish Potatoes (Highland Wholesale)</button>
+        <button type="button" class="preset-btn" data-preset="retail">🚫 Control: TPC-DS Retail (Domain Rejection)</button>
+      </div>
     </section>
 
     <section class="query-panel">
-      <label for="question">What decision are you trying to make?</label>
-      <textarea id="question" rows="3">Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering market prices, production costs, water and seasonal risks, transport, and buyer access.</textarea>
-      <div class="form-row"><label for="location">Location<input id="location" value="Kirinyaga County, Kenya" maxlength="160" /></label><label for="crop">Crop / activity<input id="crop" value="Tomato farming" maxlength="160" /></label></div>
-      <div class="query-footer"><span>Start with a specific decision, not a general topic.</span><button id="run-button">Investigate <span aria-hidden="true">↗</span></button></div>
+      <label for="question">What opportunity or underwriting decision are you evaluating?</label>
+      <textarea id="question" rows="3">Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.</textarea>
+      <div class="form-row">
+        <label for="location">Location
+          <input id="location" value="Kirinyaga County, Kenya" maxlength="160" />
+        </label>
+        <label for="crop">Crop / Agribusiness Activity
+          <input id="crop" value="Tomato farming" maxlength="160" />
+        </label>
+      </div>
+      <div class="query-footer">
+        <span>Evaluates against live federated Zetaris data, Meterless H-MEM memory ledger, and Nemotron reasoning.</span>
+        <button id="run-button">Investigate Opportunity <span aria-hidden="true">↗</span></button>
+      </div>
     </section>
 
     <div id="notice" class="notice hidden" role="status"></div>
+
     <section id="results" class="hidden">
-      <div class="result-heading"><div><p class="eyebrow">INVESTIGATION DOSSIER</p><h2 id="result-question"></h2></div><span id="result-date" class="date-label"></span></div>
-      <div class="metrics">
-        <article class="metric decision-metric"><span class="metric-label">EVIDENCE STATUS</span><strong id="recommendation">—</strong><small id="confidence-note"></small></article>
-        <article class="metric"><span class="metric-label">EVIDENCE SCORE</span><strong id="confidence">—</strong><small>Heuristic coverage score</small></article>
-        <article class="metric"><span class="metric-label">SOURCES REVIEWED</span><strong id="source-count">—</strong><small id="source-mode"></small></article>
-        <article class="metric"><span class="metric-label">CONFLICTS</span><strong id="conflict-count">—</strong><small>Require human review</small></article>
+      <div class="result-heading">
+        <div>
+          <p class="eyebrow">INVESTIGATION DOSSIER</p>
+          <h2 id="result-question"></h2>
+        </div>
+        <span id="result-date" class="date-label"></span>
       </div>
 
+      <!-- Core Metrics Row -->
+      <div class="metrics">
+        <article class="metric decision-metric">
+          <span class="metric-label">EVIDENCE STATUS</span>
+          <strong id="recommendation">—</strong>
+          <small id="confidence-note"></small>
+        </article>
+        <article class="metric">
+          <span class="metric-label">EVIDENCE SCORE</span>
+          <strong id="confidence">—</strong>
+          <small>Checklist coverage score</small>
+        </article>
+        <article class="metric">
+          <span class="metric-label">SOURCES REVIEWED</span>
+          <strong id="source-count">—</strong>
+          <small id="source-mode"></small>
+        </article>
+        <article class="metric">
+          <span class="metric-label">MATERIAL CONFLICTS</span>
+          <strong id="conflict-count">—</strong>
+          <small>Requires human review</small>
+        </article>
+      </div>
+
+      <!-- Multi-Agent Telemetry Bar -->
+      <section class="pipeline-section">
+        <div class="section-title">
+          <span>AGENT ORCHESTRATION</span>
+          <h3>Multi-Agent Pipeline Observability</h3>
+          <span id="pipeline-total-time" class="subtle"></span>
+        </div>
+        <div id="pipeline-steps" class="pipeline-steps"></div>
+      </section>
+
+      <!-- Financial Sensitivity & Unit Economics Card -->
+      <section id="financial-section" class="card financial-card hidden">
+        <div class="section-title">
+          <span>01 UNIT ECONOMICS</span>
+          <h3>Enterprise Budget & Farmgate Sensitivity Model</h3>
+          <span class="subtle">Verified KALRO / NPCK / HCD Baselines</span>
+        </div>
+        <div class="financial-grid">
+          <div class="fin-stat"><span class="fin-label">Estimated CapEx</span><strong id="fin-capex">—</strong><small>Drip kit & buffer storage</small></div>
+          <div class="fin-stat"><span class="fin-label">Operating Cost / Acre</span><strong id="fin-opex">—</strong><small>Certified seed, IPM, labor</small></div>
+          <div class="fin-stat"><span class="fin-label">Expected Median Yield</span><strong id="fin-yield">—</strong><small id="fin-yield-range">kg/acre</small></div>
+          <div class="fin-stat"><span class="fin-label">Breakeven Farmgate</span><strong id="fin-breakeven">—</strong><small>Unit cost of production</small></div>
+          <div class="fin-stat"><span class="fin-label">Gross Operating Margin</span><strong id="fin-margin">—</strong><small id="fin-margin-note">at benchmark price</small></div>
+          <div class="fin-stat"><span class="fin-label">Capital Payback Horizon</span><strong id="fin-payback">—</strong><small>Single crop cycle</small></div>
+        </div>
+        <div class="sensitivity-slider-box">
+          <div class="slider-header">
+            <label for="price-slider"><strong>Interactive Farmgate Sensitivity Stress-Test:</strong> <span id="slider-price-display">85</span> KES/kg</label>
+            <span id="slider-margin-display" class="slider-result">Gross Margin: 85.7%</span>
+          </div>
+          <input type="range" id="price-slider" min="30" max="130" value="85" step="1" />
+          <div class="slider-ticks">
+            <span>30 KES (Glut Deflation)</span>
+            <span>60 KES (Mid-Season)</span>
+            <span>85 KES (Dry Season Median)</span>
+            <span>120 KES (Premium Window)</span>
+          </div>
+          <p id="fin-sensitivity-notes" class="sensitivity-notes"></p>
+        </div>
+      </section>
+
+      <!-- Structured Risk Matrix Card -->
+      <section id="risk-section" class="card risk-card hidden">
+        <div class="section-title">
+          <span>02 CREDIT RISK</span>
+          <h3>Credit, Commercial & Agronomic Risk Matrix</h3>
+          <span class="subtle">Prerequisite Underwriting Mitigations</span>
+        </div>
+        <div id="risk-table-container" class="risk-table-container"></div>
+      </section>
+
+      <!-- Content Grid: Rationale, Gaps, Evidence Ledger, Actions -->
       <div class="content-grid">
-        <article class="card rationale-card"><div class="section-title"><span>01</span><h3>Why this result?</h3></div><p id="rationale"></p><div id="conflicts"></div></article>
-        <article class="card"><div class="section-title"><span>02</span><h3>What is missing?</h3></div><ul id="missing-list" class="action-list"></ul></article>
-        <article class="card evidence-card"><div class="section-title"><span>03</span><h3>Evidence ledger</h3><span id="evidence-label" class="subtle"></span></div><div id="evidence-list" class="evidence-list"></div></article>
-        <article class="card"><div class="section-title"><span>04</span><h3>Recommended next actions</h3></div><ol id="next-list" class="action-list"></ol><div id="warnings" class="warnings"></div></article>
+        <article class="card rationale-card">
+          <div class="section-title"><span>03</span><h3>Why this result?</h3></div>
+          <p id="rationale"></p>
+          <div id="conflicts"></div>
+        </article>
+        <article class="card">
+          <div class="section-title"><span>04</span><h3>What is missing?</h3></div>
+          <ul id="missing-list" class="action-list"></ul>
+        </article>
+        <article class="card evidence-card">
+          <div class="section-title"><span>05</span><h3>Evidence ledger</h3><span id="evidence-label" class="subtle"></span></div>
+          <div id="evidence-list" class="evidence-list"></div>
+        </article>
+        <article class="card">
+          <div class="section-title"><span>06</span><h3>Recommended next actions</h3></div>
+          <ol id="next-list" class="action-list"></ol>
+          <div id="warnings" class="warnings"></div>
+        </article>
+      </div>
+
+      <!-- Institutional Export Bar -->
+      <div class="export-bar">
+        <button id="export-md-btn" class="export-button" type="button">📄 Export Due Diligence Dossier (.md)</button>
+        <button id="export-json-btn" class="export-button secondary" type="button">💾 Export Full Audit JSON</button>
+        <span id="export-trace-path" class="subtle"></span>
       </div>
     </section>
-    <section class="history-panel"><div class="section-title"><span>05</span><h3>Recent investigations</h3><button id="refresh-history" class="secondary-button" type="button">Refresh</button></div><div id="history-list" class="history-list"><p class="subtle">Loading history…</p></div></section>
-    <footer><span>NEXUS / Evidence-first decision support</span><span>Demo fixtures are synthetic until live sources are verified.</span></footer>
+
+    <section class="history-panel">
+      <div class="section-title"><span>07</span><h3>Historical Investigations & Memory Ledger</h3><button id="refresh-history" class="secondary-button" type="button">Refresh</button></div>
+      <div id="history-list" class="history-list"><p class="subtle">Loading history…</p></div>
+    </section>
+
+    <footer>
+      <span>NEXUS · Institutional Agribusiness Intelligence & Underwriting Platform</span>
+      <span>Open Agent Hackathon 2026 · "The Agent That Can Explain Why"</span>
+    </footer>
   </main>
   <script src="/app.js"></script>
 </body>

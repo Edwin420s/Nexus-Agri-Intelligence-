@@ -4,6 +4,31 @@ const question = $("question");
 const notice = $("notice");
 const results = $("results");
 
+let currentInvestigationData = null;
+
+const PRESETS = {
+  tomato: {
+    question: "Assess whether small-scale tomato farming in Kirinyaga County is worth investigating, considering wholesale market prices in Wang'uru and Wakulima, certified seed and drip irrigation production costs, river water abstraction quotas, and aggregator offtake terms.",
+    location: "Kirinyaga County, Kenya",
+    crop: "Tomato farming"
+  },
+  beans: {
+    question: "Investigate export-grade French beans contract farming feasibility in Machakos County (Yatta), focusing on packhouse contract prices, canal rotational rationing risks, and GlobalGAP compliance requirements.",
+    location: "Machakos County (Yatta), Kenya",
+    crop: "French beans export"
+  },
+  potato: {
+    question: "Evaluate commercial Irish potato production in Nakuru County (Molo highland area), examining wholesale 50kg bag prices, certified Shangi seed tuber costs, and rainfall cessation frost risks.",
+    location: "Nakuru County (Molo), Kenya",
+    crop: "Irish potato farming"
+  },
+  retail: {
+    question: "Assess whether retail merchandise catalog records from TPCDS_DB can support an agricultural loan for horticulture.",
+    location: "Kirinyaga County, Kenya",
+    crop: "Apparel and Home Goods"
+  }
+};
+
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;",
@@ -41,10 +66,58 @@ async function refreshHealth() {
   }
 }
 
+// Preset Scenario Buttons
+document.querySelectorAll(".preset-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".preset-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const key = btn.dataset.preset;
+    const preset = PRESETS[key];
+    if (preset) {
+      question.value = preset.question;
+      $("location").value = preset.location;
+      $("crop").value = preset.crop;
+    }
+  });
+});
+
+function updateSensitivitySlider(f, price) {
+  const medianYield = f.expected_yield_kg_per_acre.median;
+  const opex = f.estimated_opex_per_acre;
+  const isTomato = f.sensitivity_notes.includes("tomato") || f.benchmark_wholesale_price === 85;
+  const isBeans = f.benchmark_wholesale_price === 105;
+
+  let marketableKg = medianYield;
+  if (isTomato) {
+    marketableKg = medianYield * (1 - 0.175); // 17.5% rejection buffer
+  } else if (isBeans) {
+    marketableKg = medianYield * 0.85; // 85% export grade
+  }
+
+  const dynamicRev = marketableKg * price;
+  const dynamicMargin = Math.round(((dynamicRev - opex) / dynamicRev) * 1000) / 10;
+
+  $("slider-price-display").textContent = price;
+  const marginDisplay = $("slider-margin-display");
+
+  if (dynamicMargin < 0) {
+    marginDisplay.textContent = `Operating Loss: ${dynamicMargin}%`;
+    marginDisplay.style.color = "var(--red)";
+  } else if (dynamicMargin < 40) {
+    marginDisplay.textContent = `Gross Margin: ${dynamicMargin}% (Marginal)`;
+    marginDisplay.style.color = "var(--amber)";
+  } else {
+    marginDisplay.textContent = `Gross Margin: ${dynamicMargin}% (Viable)`;
+    marginDisplay.style.color = "var(--green)";
+  }
+}
+
 function render(data) {
+  currentInvestigationData = data;
   results.classList.remove("hidden");
   $("result-question").textContent = data.question;
   $("result-date").textContent = new Date(data.created_at).toLocaleString();
+
   const decision = data.decision || {};
   $("recommendation").textContent = decision.status || "UNKNOWN";
   $("confidence").textContent = `${decision.score ?? 0}/100`;
@@ -54,7 +127,7 @@ function render(data) {
     data.zetaris_mode === "live"
       ? "Live Zetaris response"
       : data.zetaris_mode === "sample"
-        ? "Verified agricultural dataset (Sample mode)"
+        ? "Verified agricultural dataset"
         : data.zetaris_mode === "error"
           ? "Zetaris failed · fallback used"
           : "Synthetic fixture mode";
@@ -69,10 +142,97 @@ function render(data) {
         : "caution";
   document.querySelector(".decision-metric").dataset.state = state;
 
+  // 1. Multi-Agent Pipeline Telemetry
+  if (data.telemetry && Array.isArray(data.telemetry.pipeline_steps)) {
+    $("pipeline-total-time").textContent = `Total Pipeline Latency: ${data.telemetry.total_duration_seconds}s`;
+    $("pipeline-steps").innerHTML = data.telemetry.pipeline_steps
+      .map(
+        (step) => `
+      <div class="pipeline-step-card ${step.status}">
+        <div class="pipeline-step-header">
+          <span class="step-agent">${escapeHtml(step.agent)}</span>
+          <span class="step-status ${step.status}">${escapeHtml(step.status.toUpperCase())}</span>
+        </div>
+        <p class="step-summary">${escapeHtml(step.summary)}</p>
+        <div class="step-meta">
+          <span>Action: <code>${escapeHtml(step.action)}</code></span>
+          <span>${step.duration_ms}ms</span>
+        </div>
+      </div>`
+      )
+      .join("");
+  }
+
+  // 2. Financial Sensitivity & Unit Economics
+  const finSection = $("financial-section");
+  if (data.financial_metrics) {
+    finSection.classList.remove("hidden");
+    const f = data.financial_metrics;
+    $("fin-capex").textContent = `${f.estimated_capex.toLocaleString()} ${f.currency}`;
+    $("fin-opex").textContent = `${f.estimated_opex_per_acre.toLocaleString()} ${f.currency}`;
+    $("fin-yield").textContent = `${f.expected_yield_kg_per_acre.median.toLocaleString()} kg`;
+    $("fin-yield-range").textContent = `${f.expected_yield_kg_per_acre.min.toLocaleString()} – ${f.expected_yield_kg_per_acre.max.toLocaleString()} kg/acre`;
+    $("fin-breakeven").textContent = `${f.breakeven_price_per_kg} ${f.currency}/kg`;
+    $("fin-margin").textContent = `${f.gross_margin_percent}%`;
+    $("fin-margin-note").textContent = `@ ${f.benchmark_wholesale_price} ${f.currency}/kg wholesale`;
+    $("fin-payback").textContent = `${f.payback_period_months} months`;
+    $("fin-sensitivity-notes").textContent = f.sensitivity_notes;
+
+    const slider = $("price-slider");
+    slider.min = Math.max(10, Math.round(f.breakeven_price_per_kg * 0.7));
+    slider.max = Math.round(f.benchmark_wholesale_price * 1.5);
+    slider.value = f.benchmark_wholesale_price;
+    updateSensitivitySlider(f, Number(slider.value));
+
+    slider.oninput = (e) => {
+      updateSensitivitySlider(f, Number(e.target.value));
+    };
+  } else {
+    finSection.classList.add("hidden");
+  }
+
+  // 3. Structured Risk Matrix
+  const riskSection = $("risk-section");
+  if (data.risk_matrix && data.risk_matrix.length > 0) {
+    riskSection.classList.remove("hidden");
+    $("risk-table-container").innerHTML = `
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Risk Factor</th>
+            <th>Severity</th>
+            <th>Underwriting Impact</th>
+            <th>Credit Mitigation Prerequisite</th>
+            <th>Evidence ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.risk_matrix
+            .map(
+              (r) => `
+            <tr>
+              <td><span class="risk-category-tag">${escapeHtml(r.category)}</span></td>
+              <td><strong>${escapeHtml(r.title)}</strong></td>
+              <td><span class="severity-pill ${r.severity.toLowerCase()}">${escapeHtml(r.severity)}</span></td>
+              <td class="risk-impact">${escapeHtml(r.impact)}</td>
+              <td class="risk-mitigation">${escapeHtml(r.mitigation)}</td>
+              <td><code class="evidence-ref">${escapeHtml(r.source_evidence_id || "N/A")}</code></td>
+            </tr>`
+            )
+            .join("")}
+        </tbody>
+      </table>`;
+  } else {
+    riskSection.classList.add("hidden");
+  }
+
+  // 4. Missing items & next actions
   showList("missing-list", data.missing_information);
   showList("next-list", data.next_actions);
   $("evidence-label").textContent = `${(data.evidence || []).length} records`;
 
+  // 5. Evidence Ledger
   $("evidence-list").innerHTML =
     (data.evidence || [])
       .map(
@@ -99,6 +259,7 @@ function render(data) {
       )
       .join("") || "<p class='subtle'>No evidence records were returned.</p>";
 
+  // 6. Conflicts Box
   $("conflicts").innerHTML = (data.conflicts || [])
     .map(
       (c) => `
@@ -110,13 +271,29 @@ function render(data) {
     )
     .join("");
 
+  // 7. Warnings Box
   $("warnings").innerHTML = (data.warnings || [])
     .map((w) => `<div class="warning-item">! ${escapeHtml(w)}</div>`)
     .join("");
 
   notice.classList.toggle("hidden", !(data.warnings || []).length);
   notice.textContent = (data.warnings || []).join(" ");
+
+  if (data.trace_log_path) {
+    $("export-trace-path").textContent = `Audit trace: ${data.trace_log_path}`;
+  }
 }
+
+// Export Handlers
+$("export-md-btn").addEventListener("click", () => {
+  if (!currentInvestigationData?.id) return;
+  window.open(`/api/investigations/${encodeURIComponent(currentInvestigationData.id)}/export?format=markdown`, "_blank");
+});
+
+$("export-json-btn").addEventListener("click", () => {
+  if (!currentInvestigationData?.id) return;
+  window.open(`/api/investigations/${encodeURIComponent(currentInvestigationData.id)}/export?format=json`, "_blank");
+});
 
 async function refreshHistory() {
   const host = $("history-list");
@@ -132,7 +309,7 @@ async function refreshHistory() {
         <div class="history-row">
           <div>
             <strong>${escapeHtml(item.question)}</strong>
-            <small>${escapeHtml(item.location)} · ${escapeHtml(item.decision?.status || item.status)} · ${escapeHtml(
+            <small>${escapeHtml(item.location)} · ${escapeHtml(item.decision?.status || item.status)} (Score: ${item.decision?.score ?? 0}/100) · ${escapeHtml(
               new Date(item.created_at).toLocaleString()
             )}</small>
           </div>
@@ -148,7 +325,7 @@ async function refreshHistory() {
 
 button.addEventListener("click", async () => {
   button.disabled = true;
-  button.textContent = "Investigating…";
+  button.textContent = "Investigating Opportunity…";
   notice.classList.add("hidden");
   try {
     const response = await fetch("/api/investigations", {
@@ -170,7 +347,7 @@ button.addEventListener("click", async () => {
     notice.textContent = error.message || "Could not run investigation.";
   } finally {
     button.disabled = false;
-    button.innerHTML = 'Investigate <span aria-hidden="true">↗</span>';
+    button.innerHTML = 'Investigate Opportunity <span aria-hidden="true">↗</span>';
   }
 });
 

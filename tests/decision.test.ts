@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { scoreDecision, evaluateDomainRelevance } from "../src/agent.js";
+import {
+  scoreDecision,
+  evaluateDomainRelevance,
+  computeFinancialMetrics,
+  computeRiskMatrix
+} from "../src/agent.js";
 import type { EvidenceRecord } from "../src/types.js";
 
 const rec = (
@@ -101,3 +106,47 @@ test("domain relevance rejects retail merchandise and yields INSUFFICIENT EVIDEN
   assert.ok(d.note.includes("domain-irrelevant"));
   assert.equal(d.requirements.find((r) => r.id === "evidence")?.satisfied, false);
 });
+
+test("computeFinancialMetrics calculates deterministic unit economics for Kirinyaga tomatoes", () => {
+  const records = [rec("1", "KALRO", "supports", false, "production_costs"), rec("2", "Market", "supports", false, "market_price")];
+  const fin = computeFinancialMetrics("Tomato farming", "Kirinyaga County", records);
+  assert.ok(fin !== undefined);
+  assert.equal(fin?.currency, "KES");
+  assert.equal(fin?.estimated_capex, 150000);
+  assert.equal(fin?.estimated_opex_per_acre, 215000);
+  assert.equal(fin?.breakeven_price_per_kg, 12.1);
+  assert.equal(fin?.benchmark_wholesale_price, 85);
+  assert.equal(fin?.gross_margin_percent, 85.7);
+  assert.equal(fin?.payback_period_months, 4.5);
+  assert.ok(fin?.sensitivity_notes.includes("85 KES/kg"));
+});
+
+test("computeFinancialMetrics calculates unit economics for Machakos French beans", () => {
+  const records = [rec("1", "HCD", "supports", false, "market_price"), rec("2", "Yatta", "context", false, "water_access")];
+  const fin = computeFinancialMetrics("French beans export", "Machakos County", records);
+  assert.ok(fin !== undefined);
+  assert.equal(fin?.estimated_capex, 120000);
+  assert.equal(fin?.estimated_opex_per_acre, 145000);
+  assert.equal(fin?.breakeven_price_per_kg, 26.2);
+  assert.equal(fin?.benchmark_wholesale_price, 105);
+  assert.equal(fin?.gross_margin_percent, 76.2);
+});
+
+test("computeFinancialMetrics blocks calculations when evidence is insufficient or retail-only", () => {
+  const retailRows = [rec("1", "TPCDS", "context", false, "Music")];
+  const fin = computeFinancialMetrics("Tomato farming", "Kirinyaga County", retailRows);
+  assert.equal(fin, undefined);
+});
+
+test("computeRiskMatrix generates categorized credit risks with mitigations and source IDs", () => {
+  const records = [
+    rec("zetaris-kiri-001", "Wanguru", "supports", false, "market_price"),
+    rec("zetaris-kiri-002", "Aggregators", "contradicts", false, "buyer_offtake")
+  ];
+  const risks = computeRiskMatrix("Tomato farming", "Kirinyaga County", records, []);
+  assert.ok(risks.length >= 4);
+  assert.ok(risks.some((r) => r.category === "commercial" && r.severity === "HIGH"));
+  assert.ok(risks.some((r) => r.category === "regulatory" && r.source_evidence_id === "zetaris-kiri-004"));
+  assert.ok(risks.some((r) => r.mitigation.includes("WRA") || r.mitigation.includes("offtake")));
+});
+

@@ -38,6 +38,38 @@ export interface DecisionResult {
   requirements: Array<{ id: string; label: string; satisfied: boolean; explanation: string }>;
 }
 
+export interface FinancialMetrics {
+  currency: string;
+  estimated_capex: number;
+  estimated_opex_per_acre: number;
+  expected_yield_kg_per_acre: { min: number; max: number; median: number };
+  breakeven_price_per_kg: number;
+  benchmark_wholesale_price: number;
+  gross_margin_percent: number;
+  payback_period_months: number;
+  sensitivity_notes: string;
+}
+
+export interface RiskItem {
+  category: "commercial" | "agronomic" | "regulatory" | "climate";
+  title: string;
+  severity: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+  impact: string;
+  mitigation: string;
+  source_evidence_id?: string;
+}
+
+export interface AgentTelemetry {
+  pipeline_steps: Array<{
+    agent: "Planner" | "Researcher" | "MemoryAgent" | "Evaluator" | "Writer";
+    action: string;
+    status: "success" | "warning" | "error";
+    duration_ms: number;
+    summary: string;
+  }>;
+  total_duration_seconds: number;
+}
+
 export interface InvestigationResult {
   id: string;
   run_id: string;
@@ -62,6 +94,9 @@ export interface InvestigationResult {
   report_version: number;
   trace_log_path?: string;
   duration_seconds?: number;
+  financial_metrics?: FinancialMetrics;
+  risk_matrix?: RiskItem[];
+  telemetry?: AgentTelemetry;
 }
 
 export interface InvestigationInput {

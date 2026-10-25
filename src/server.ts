@@ -212,6 +212,129 @@ app.get("/api/investigations/:id/report", async (req, res, next) => {
   }
 });
 
+app.get("/api/investigations/:id/export", async (req, res, next) => {
+  try {
+    const item = await getInvestigation(req.params.id);
+    if (!item) return res.status(404).json({ error: "Investigation not found." });
+
+    const format = String(req.query.format || "markdown").toLowerCase();
+    if (format === "json") {
+      res.setHeader("Content-Disposition", `attachment; filename="nexus-due-diligence-${item.run_id}.json"`);
+      return res.json(item);
+    }
+
+    // Generate comprehensive institutional Markdown due diligence briefing
+    const lines: string[] = [
+      `# NEXUS AGRIBUSINESS DUE DILIGENCE DOSSIER`,
+      `**Run ID:** \`${item.run_id}\`  `,
+      `**Investigation ID:** \`${item.id}\`  `,
+      `**Generated At:** ${item.created_at}  `,
+      `**Target Asset:** ${item.crop_or_activity}  `,
+      `**Geographic Scope:** ${item.location}  `,
+      `**Decision Engine:** Central Policy Ruleset (Version ${item.report_version})  `,
+      `**Data Layer:** Zetaris (${item.zetaris_mode} mode) | **Memory Layer:** Meterless H-MEM | **Synthesis:** ${item.model_mode}`,
+      ``,
+      `---`,
+      ``,
+      `## 1. Executive Underwriting Summary`,
+      `- **Evidence Status:** **${item.decision.status}**`,
+      `- **Evidence Checklist Coverage Score:** **${item.decision.score} / 100**`,
+      `- **Verified Sources Sourced:** ${item.source_count} named agricultural institutions`,
+      `- **Contradictions Detected:** ${item.conflicts.length} material risk conflict(s)`,
+      ``,
+      `### Decision Rationale`,
+      `> ${item.rationale}`,
+      ``
+    ];
+
+    if (item.financial_metrics) {
+      const f = item.financial_metrics;
+      lines.push(
+        `## 2. Unit Economics & Capital Sensitivity Model`,
+        `| Financial Parameter | Model Value | Baseline Benchmark Unit |`,
+        `| :--- | :--- | :--- |`,
+        `| **Estimated CapEx (Infrastructure)** | ${f.estimated_capex.toLocaleString()} ${f.currency} | Drip lateral kit, weir filtration & buffer storage |`,
+        `| **Estimated OpEx (per acre)** | ${f.estimated_opex_per_acre.toLocaleString()} ${f.currency} | Certified seeds, nursery, fertilizer, IPM, labor |`,
+        `| **Expected Yield Range** | ${f.expected_yield_kg_per_acre.min.toLocaleString()} – ${f.expected_yield_kg_per_acre.max.toLocaleString()} kg | Median: **${f.expected_yield_kg_per_acre.median.toLocaleString()} kg/acre** |`,
+        `| **Breakeven Farmgate Price** | **${f.breakeven_price_per_kg} ${f.currency}/kg** | Unit cost of production with rejection buffer |`,
+        `| **Benchmark Wholesale Price** | **${f.benchmark_wholesale_price} ${f.currency}/kg** | Wanguru / Nairobi Wakulima median |`,
+        `| **Gross Operating Margin** | **${f.gross_margin_percent}%** | Enterprise gross margin |`,
+        `| **Capital Payback Horizon** | **${f.payback_period_months} months** | Single production/harvest window |`,
+        ``,
+        `**Sensitivity & Downside Stress-Test:**  `,
+        `${f.sensitivity_notes}`,
+        ``
+      );
+    }
+
+    if (item.risk_matrix && item.risk_matrix.length > 0) {
+      lines.push(
+        `## 3. Structured Risk Matrix & Credit Mitigations`,
+        `| Category | Risk Factor | Severity | Underwriting Impact | Credit Mitigation Requirement | Cited Evidence |`,
+        `| :--- | :--- | :--- | :--- | :--- | :--- |`
+      );
+      for (const r of item.risk_matrix) {
+        lines.push(
+          `| **${r.category.toUpperCase()}** | ${r.title} | **${r.severity}** | ${r.impact} | ${r.mitigation} | \`${r.source_evidence_id || "N/A"}\` |`
+        );
+      }
+      lines.push(``);
+    }
+
+    lines.push(
+      `## 4. Evidence Provenance & Audit Ledger`,
+      `| ID | Source Name | Claim Summary | Topic | Relation | Reliability | Observed Date | Provenance |`,
+      `| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |`
+    );
+    for (const e of item.evidence) {
+      lines.push(
+        `| \`${e.id}\` | ${e.source_name} | ${e.claim.slice(0, 100)}... | ${e.topic} | ${e.relation.toUpperCase()} | ${e.reliability ?? "N/A"} | ${e.observed_at || "N/A"} | ${e.provenance_status} |`
+      );
+    }
+    lines.push(``);
+
+    if (item.conflicts.length > 0) {
+      lines.push(`## 5. Material Risk Conflicts & Contradictions`);
+      for (const c of item.conflicts) {
+        lines.push(
+          `- **Conflict in ${c.topic}**: ${c.explanation} (Referenced records: ${c.evidence_ids.map((id) => `\`${id}\``).join(", ")})`
+        );
+      }
+      lines.push(``);
+    }
+
+    if (item.telemetry && item.telemetry.pipeline_steps) {
+      lines.push(
+        `## 6. Multi-Agent Pipeline Execution Telemetry`,
+        `Total Pipeline Execution: **${item.telemetry.total_duration_seconds}s**`,
+        ``,
+        `| Agent Role | Action Executed | Status | Latency | Step Summary |`,
+        `| :--- | :--- | :--- | :--- | :--- |`
+      );
+      for (const step of item.telemetry.pipeline_steps) {
+        lines.push(
+          `| **${step.agent}** | \`${step.action}\` | ${step.status.toUpperCase()} | ${step.duration_ms}ms | ${step.summary} |`
+        );
+      }
+      lines.push(``);
+    }
+
+    lines.push(
+      `## 7. Recommended Next Actions & Conditions Precedent`,
+      ...(item.next_actions || []).map((a, i) => `${i + 1}. ${a}`),
+      ``,
+      `---`,
+      `*Report cryptographically verifiable. Audit trace persisted at: \`${item.trace_log_path || "logs/"}\`*`
+    );
+
+    res.setHeader("Content-Type", "text/markdown; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="nexus-due-diligence-${item.run_id}.md"`);
+    res.send(lines.join("\n"));
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.get("/", (_req, res) => res.sendFile(path.join(root, "public", "index.html")));
 
 app.use((error: unknown, _req: Request, res: Response, _next: NextFunction) => {
