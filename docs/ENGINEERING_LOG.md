@@ -601,3 +601,4 @@
 * **2026-10-25T18:14** - `nemotron`: optimize(nemotron): enterprise gross operating margin dynamic recalc (#1598)
 * **2026-10-25T18:42** - `telemetry`: optimize(telemetry): multi-tenant organization ID request header propagation (#1599)
 * **2026-10-25T19:11** - `api`: optimize(api): Kirinyaga tomato wholesale price index curve (#1600)
+* **2026-10-25T19:39** - `ui`: optimize(ui): fertilizer and IPM spray expenditure amortization (#1601)
