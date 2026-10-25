@@ -575,3 +575,4 @@
 * **2026-10-25T05:52** - `trace`: align(trace): fail-closed provenance classification for unverified URLs (#1572)
 * **2026-10-25T06:21** - `security`: align(security): browser CDP automated test assertions and hooks (#1573)
 * **2026-10-25T06:49** - `docs`: align(docs): TPC-DS merchandise domain exclusion ruleset (#1574)
+* **2026-10-25T07:18** - `tests`: align(tests): Nakuru highland potato frost cessation heuristics (#1575)
