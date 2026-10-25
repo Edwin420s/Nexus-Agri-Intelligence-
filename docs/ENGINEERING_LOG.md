@@ -579,3 +579,4 @@
 * **2026-10-25T07:46** - `engine`: implement(engine): stop-word lexical pruning in semantic tokenization (#1576)
 * **2026-10-25T08:15** - `zetaris`: implement(zetaris): atomic JSON storage rename with file mode 0o600 (#1577)
 * **2026-10-25T08:43** - `hmem`: implement(hmem): NVIDIA Nemotron prompt temperature and token guardrails (#1578)
+* **2026-10-25T09:12** - `decision`: implement(decision): Yatta canal rotational water rationing alerts (#1579)
