@@ -597,3 +597,4 @@
 * **2026-10-25T16:20** - `hmem`: optimize(hmem): secret-redacted JSONL telemetry buffer flush (#1594)
 * **2026-10-25T16:48** - `decision`: optimize(decision): WRA abstraction permit lead-time sensitivity warning (#1595)
 * **2026-10-25T17:17** - `metrics`: optimize(metrics): Wakulima aggregator grading and rejection buffer (#1596)
+* **2026-10-25T17:45** - `risk`: optimize(risk): Spark SQL proxy query payload serialization (#1597)
