@@ -564,3 +564,4 @@
 * **2026-10-25T00:39** - `zetaris`: align(zetaris): fail-safe deterministic report synthesis fallbacks (#1561)
 * **2026-10-25T01:07** - `hmem`: align(hmem): Machakos French bean GlobalGAP MRL compliance flags (#1562)
 * **2026-10-25T01:36** - `decision`: align(decision): cross-session H-MEM memory mining from dossier text (#1563)
+* **2026-10-25T02:04** - `metrics`: align(metrics): secret-redacted JSONL telemetry buffer flush (#1564)
