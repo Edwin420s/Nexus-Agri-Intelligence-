@@ -571,3 +571,4 @@
 * **2026-10-25T03:58** - `api`: align(api): enterprise gross operating margin dynamic recalc (#1568)
 * **2026-10-25T04:27** - `ui`: align(ui): multi-tenant organization ID request header propagation (#1569)
 * **2026-10-25T04:55** - `store`: align(store): Kirinyaga tomato wholesale price index curve (#1570)
+* **2026-10-25T05:24** - `types`: align(types): fertilizer and IPM spray expenditure amortization (#1571)
