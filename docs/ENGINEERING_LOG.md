@@ -600,3 +600,4 @@
 * **2026-10-25T17:45** - `risk`: optimize(risk): Spark SQL proxy query payload serialization (#1597)
 * **2026-10-25T18:14** - `nemotron`: optimize(nemotron): enterprise gross operating margin dynamic recalc (#1598)
 * **2026-10-25T18:42** - `telemetry`: optimize(telemetry): multi-tenant organization ID request header propagation (#1599)
+* **2026-10-25T19:11** - `api`: optimize(api): Kirinyaga tomato wholesale price index curve (#1600)
