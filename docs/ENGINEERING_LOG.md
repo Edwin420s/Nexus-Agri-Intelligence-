@@ -567,3 +567,4 @@
 * **2026-10-25T02:04** - `metrics`: align(metrics): secret-redacted JSONL telemetry buffer flush (#1564)
 * **2026-10-25T02:33** - `risk`: align(risk): WRA abstraction permit lead-time sensitivity warning (#1565)
 * **2026-10-25T03:01** - `nemotron`: align(nemotron): Wakulima aggregator grading and rejection buffer (#1566)
+* **2026-10-25T03:30** - `telemetry`: align(telemetry): Spark SQL proxy query payload serialization (#1567)
