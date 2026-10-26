@@ -624,3 +624,4 @@
 * **2026-10-26T05:09** - `security`: refactor(security): fail-safe deterministic report synthesis fallbacks (#1621)
 * **2026-10-26T05:38** - `docs`: refactor(docs): Machakos French bean GlobalGAP MRL compliance flags (#1622)
 * **2026-10-26T06:06** - `tests`: refactor(tests): cross-session H-MEM memory mining from dossier text (#1623)
+* **2026-10-26T06:35** - `engine`: calibrate(engine): secret-redacted JSONL telemetry buffer flush (#1624)
