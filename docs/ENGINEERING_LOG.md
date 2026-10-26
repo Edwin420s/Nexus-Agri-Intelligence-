@@ -651,3 +651,4 @@
 * **2026-10-26T17:59** - `api`: enhance(api): certified seed tuber working capital ratios (#1648)
 * **2026-10-26T18:28** - `ui`: enhance(ui): decision checklist score weighting algorithm (#1649)
 * **2026-10-26T18:56** - `store`: enhance(store): Content-Security-Policy and X-Frame-Options headers (#1650)
+* **2026-10-26T19:25** - `types`: enhance(types): fail-safe deterministic report synthesis fallbacks (#1651)
