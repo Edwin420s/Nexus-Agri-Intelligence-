@@ -646,3 +646,4 @@
 * **2026-10-26T15:37** - `decision`: enhance(decision): Wang'uru market price deflation boundary checks (#1643)
 * **2026-10-26T16:05** - `metrics`: enhance(metrics): on-farm weir storage abstraction permit verification (#1644)
 * **2026-10-26T16:34** - `risk`: enhance(risk): interactive farmgate price sensitivity stress curve (#1645)
+* **2026-10-26T17:02** - `nemotron`: enhance(nemotron): regulatory Markdown due diligence briefing format (#1646)
