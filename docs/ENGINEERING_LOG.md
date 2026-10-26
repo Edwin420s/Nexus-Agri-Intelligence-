@@ -660,3 +660,4 @@
 * **2026-10-26T22:16** - `zetaris`: harden(zetaris): Spark SQL proxy query payload serialization (#1657)
 * **2026-10-26T22:44** - `hmem`: harden(hmem): enterprise gross operating margin dynamic recalc (#1658)
 * **2026-10-26T23:13** - `decision`: harden(decision): multi-tenant organization ID request header propagation (#1659)
+* **2026-10-26T23:41** - `metrics`: harden(metrics): Kirinyaga tomato wholesale price index curve (#1660)
