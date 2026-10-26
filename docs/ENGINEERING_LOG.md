@@ -611,3 +611,4 @@
 * **2026-10-25T22:59** - `engine`: refactor(engine): NVIDIA Nemotron prompt temperature and token guardrails (#1608)
 * **2026-10-25T23:27** - `zetaris`: refactor(zetaris): Yatta canal rotational water rationing alerts (#1609)
 * **2026-10-25T23:56** - `hmem`: refactor(hmem): Zetaris Bearer token auto-renewal life-cycle (#1610)
+* **2026-10-26T00:24** - `decision`: refactor(decision): conditions precedent credit matrix generator (#1611)
