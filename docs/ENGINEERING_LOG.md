@@ -655,3 +655,4 @@
 * **2026-10-26T19:53** - `trace`: enhance(trace): Machakos French bean GlobalGAP MRL compliance flags (#1652)
 * **2026-10-26T20:22** - `security`: enhance(security): cross-session H-MEM memory mining from dossier text (#1653)
 * **2026-10-26T20:50** - `docs`: enhance(docs): secret-redacted JSONL telemetry buffer flush (#1654)
+* **2026-10-26T21:19** - `tests`: enhance(tests): WRA abstraction permit lead-time sensitivity warning (#1655)
