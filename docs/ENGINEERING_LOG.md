@@ -626,3 +626,4 @@
 * **2026-10-26T06:06** - `tests`: refactor(tests): cross-session H-MEM memory mining from dossier text (#1623)
 * **2026-10-26T06:35** - `engine`: calibrate(engine): secret-redacted JSONL telemetry buffer flush (#1624)
 * **2026-10-26T07:03** - `zetaris`: calibrate(zetaris): WRA abstraction permit lead-time sensitivity warning (#1625)
+* **2026-10-26T07:32** - `hmem`: calibrate(hmem): Wakulima aggregator grading and rejection buffer (#1626)
