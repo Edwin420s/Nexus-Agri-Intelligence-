@@ -640,3 +640,4 @@
 * **2026-10-26T12:46** - `security`: calibrate(security): atomic JSON storage rename with file mode 0o600 (#1637)
 * **2026-10-26T13:14** - `docs`: calibrate(docs): NVIDIA Nemotron prompt temperature and token guardrails (#1638)
 * **2026-10-26T13:43** - `tests`: calibrate(tests): Yatta canal rotational water rationing alerts (#1639)
+* **2026-10-26T14:11** - `engine`: enhance(engine): Zetaris Bearer token auto-renewal life-cycle (#1640)
