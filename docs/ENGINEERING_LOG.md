@@ -639,3 +639,4 @@
 * **2026-10-26T12:17** - `trace`: calibrate(trace): stop-word lexical pruning in semantic tokenization (#1636)
 * **2026-10-26T12:46** - `security`: calibrate(security): atomic JSON storage rename with file mode 0o600 (#1637)
 * **2026-10-26T13:14** - `docs`: calibrate(docs): NVIDIA Nemotron prompt temperature and token guardrails (#1638)
+* **2026-10-26T13:43** - `tests`: calibrate(tests): Yatta canal rotational water rationing alerts (#1639)
