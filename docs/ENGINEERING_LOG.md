@@ -617,3 +617,4 @@
 * **2026-10-26T01:50** - `nemotron`: refactor(nemotron): on-farm weir storage abstraction permit verification (#1614)
 * **2026-10-26T02:18** - `telemetry`: refactor(telemetry): interactive farmgate price sensitivity stress curve (#1615)
 * **2026-10-26T02:47** - `api`: refactor(api): regulatory Markdown due diligence briefing format (#1616)
+* **2026-10-26T03:15** - `ui`: refactor(ui): in-memory LRU rate-limiting per client IP address (#1617)
