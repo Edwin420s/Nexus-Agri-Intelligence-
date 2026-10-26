@@ -635,3 +635,4 @@
 * **2026-10-26T10:23** - `api`: calibrate(api): fail-closed provenance classification for unverified URLs (#1632)
 * **2026-10-26T10:52** - `ui`: calibrate(ui): browser CDP automated test assertions and hooks (#1633)
 * **2026-10-26T11:20** - `store`: calibrate(store): TPC-DS merchandise domain exclusion ruleset (#1634)
+* **2026-10-26T11:49** - `types`: calibrate(types): Nakuru highland potato frost cessation heuristics (#1635)
