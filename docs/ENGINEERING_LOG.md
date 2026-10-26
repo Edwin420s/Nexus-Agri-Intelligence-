@@ -630,3 +630,4 @@
 * **2026-10-26T08:01** - `decision`: calibrate(decision): Spark SQL proxy query payload serialization (#1627)
 * **2026-10-26T08:29** - `metrics`: calibrate(metrics): enterprise gross operating margin dynamic recalc (#1628)
 * **2026-10-26T08:58** - `risk`: calibrate(risk): multi-tenant organization ID request header propagation (#1629)
+* **2026-10-26T09:26** - `nemotron`: calibrate(nemotron): Kirinyaga tomato wholesale price index curve (#1630)
