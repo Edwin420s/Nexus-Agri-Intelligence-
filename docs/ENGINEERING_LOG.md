@@ -638,3 +638,4 @@
 * **2026-10-26T11:49** - `types`: calibrate(types): Nakuru highland potato frost cessation heuristics (#1635)
 * **2026-10-26T12:17** - `trace`: calibrate(trace): stop-word lexical pruning in semantic tokenization (#1636)
 * **2026-10-26T12:46** - `security`: calibrate(security): atomic JSON storage rename with file mode 0o600 (#1637)
+* **2026-10-26T13:14** - `docs`: calibrate(docs): NVIDIA Nemotron prompt temperature and token guardrails (#1638)
