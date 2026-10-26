@@ -652,3 +652,4 @@
 * **2026-10-26T18:28** - `ui`: enhance(ui): decision checklist score weighting algorithm (#1649)
 * **2026-10-26T18:56** - `store`: enhance(store): Content-Security-Policy and X-Frame-Options headers (#1650)
 * **2026-10-26T19:25** - `types`: enhance(types): fail-safe deterministic report synthesis fallbacks (#1651)
+* **2026-10-26T19:53** - `trace`: enhance(trace): Machakos French bean GlobalGAP MRL compliance flags (#1652)
