@@ -622,3 +622,4 @@
 * **2026-10-26T04:12** - `types`: refactor(types): decision checklist score weighting algorithm (#1619)
 * **2026-10-26T04:41** - `trace`: refactor(trace): Content-Security-Policy and X-Frame-Options headers (#1620)
 * **2026-10-26T05:09** - `security`: refactor(security): fail-safe deterministic report synthesis fallbacks (#1621)
+* **2026-10-26T05:38** - `docs`: refactor(docs): Machakos French bean GlobalGAP MRL compliance flags (#1622)
