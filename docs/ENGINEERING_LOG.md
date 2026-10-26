@@ -616,3 +616,4 @@
 * **2026-10-26T01:21** - `risk`: refactor(risk): Wang'uru market price deflation boundary checks (#1613)
 * **2026-10-26T01:50** - `nemotron`: refactor(nemotron): on-farm weir storage abstraction permit verification (#1614)
 * **2026-10-26T02:18** - `telemetry`: refactor(telemetry): interactive farmgate price sensitivity stress curve (#1615)
+* **2026-10-26T02:47** - `api`: refactor(api): regulatory Markdown due diligence briefing format (#1616)
