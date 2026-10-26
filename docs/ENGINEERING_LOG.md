@@ -628,3 +628,4 @@
 * **2026-10-26T07:03** - `zetaris`: calibrate(zetaris): WRA abstraction permit lead-time sensitivity warning (#1625)
 * **2026-10-26T07:32** - `hmem`: calibrate(hmem): Wakulima aggregator grading and rejection buffer (#1626)
 * **2026-10-26T08:01** - `decision`: calibrate(decision): Spark SQL proxy query payload serialization (#1627)
+* **2026-10-26T08:29** - `metrics`: calibrate(metrics): enterprise gross operating margin dynamic recalc (#1628)
