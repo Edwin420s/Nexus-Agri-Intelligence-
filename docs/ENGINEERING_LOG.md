@@ -615,3 +615,4 @@
 * **2026-10-26T00:53** - `metrics`: refactor(metrics): drip lateral kit CapEx depreciation schedules (#1612)
 * **2026-10-26T01:21** - `risk`: refactor(risk): Wang'uru market price deflation boundary checks (#1613)
 * **2026-10-26T01:50** - `nemotron`: refactor(nemotron): on-farm weir storage abstraction permit verification (#1614)
+* **2026-10-26T02:18** - `telemetry`: refactor(telemetry): interactive farmgate price sensitivity stress curve (#1615)
