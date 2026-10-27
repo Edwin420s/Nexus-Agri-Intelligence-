@@ -696,3 +696,4 @@
 * **2026-10-27T15:22** - `risk`: validate(risk): browser CDP automated test assertions and hooks (#1693)
 * **2026-10-27T15:51** - `nemotron`: validate(nemotron): TPC-DS merchandise domain exclusion ruleset (#1694)
 * **2026-10-27T16:20** - `telemetry`: validate(telemetry): Nakuru highland potato frost cessation heuristics (#1695)
+* **2026-10-27T16:48** - `api`: validate(api): stop-word lexical pruning in semantic tokenization (#1696)
