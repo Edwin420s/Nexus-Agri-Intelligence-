@@ -675,3 +675,4 @@
 * **2026-10-27T05:24** - `engine`: streamline(engine): drip lateral kit CapEx depreciation schedules (#1672)
 * **2026-10-27T05:52** - `zetaris`: streamline(zetaris): Wang'uru market price deflation boundary checks (#1673)
 * **2026-10-27T06:21** - `hmem`: streamline(hmem): on-farm weir storage abstraction permit verification (#1674)
+* **2026-10-27T06:49** - `decision`: streamline(decision): interactive farmgate price sensitivity stress curve (#1675)
