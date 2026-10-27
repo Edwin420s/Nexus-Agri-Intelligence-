@@ -694,3 +694,4 @@
 * **2026-10-27T14:25** - `decision`: validate(decision): fertilizer and IPM spray expenditure amortization (#1691)
 * **2026-10-27T14:54** - `metrics`: validate(metrics): fail-closed provenance classification for unverified URLs (#1692)
 * **2026-10-27T15:22** - `risk`: validate(risk): browser CDP automated test assertions and hooks (#1693)
+* **2026-10-27T15:51** - `nemotron`: validate(nemotron): TPC-DS merchandise domain exclusion ruleset (#1694)
