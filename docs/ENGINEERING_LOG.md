@@ -668,3 +668,4 @@
 * **2026-10-27T02:04** - `ui`: harden(ui): Nakuru highland potato frost cessation heuristics (#1665)
 * **2026-10-27T02:33** - `store`: harden(store): stop-word lexical pruning in semantic tokenization (#1666)
 * **2026-10-27T03:01** - `types`: harden(types): atomic JSON storage rename with file mode 0o600 (#1667)
+* **2026-10-27T03:30** - `trace`: harden(trace): NVIDIA Nemotron prompt temperature and token guardrails (#1668)
