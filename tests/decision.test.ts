@@ -138,6 +138,27 @@ test("computeFinancialMetrics blocks calculations when evidence is insufficient 
   assert.equal(fin, undefined);
 });
 
+test("computeFinancialMetrics calculates unit economics for Murang'a Hass avocado", () => {
+  const records = [rec("1", "Murang'a Avocado Cooperative", "supports", false, "market_price"), rec("2", "Kandara", "context", false, "yield")];
+  const fin = computeFinancialMetrics("Hass avocado orchard", "Murang'a County", records);
+  assert.ok(fin !== undefined);
+  assert.equal(fin?.estimated_capex, 180000);
+  assert.equal(fin?.estimated_opex_per_acre, 82000);
+  assert.equal(fin?.benchmark_wholesale_price, 58);
+  assert.equal(fin?.breakeven_price_per_kg, 10.8);
+  assert.ok(fin?.sensitivity_notes.includes("Export packhouse contract"));
+});
+
+test("computeFinancialMetrics calculates unit economics for Uasin Gishu grain maize", () => {
+  const records = [rec("1", "Eldoret Grain Hub", "supports", false, "market_price"), rec("2", "Moiben", "context", false, "yield")];
+  const fin = computeFinancialMetrics("Hybrid maize farming", "Uasin Gishu County", records);
+  assert.ok(fin !== undefined);
+  assert.equal(fin?.estimated_capex, 45000);
+  assert.equal(fin?.estimated_opex_per_acre, 68000);
+  assert.equal(fin?.benchmark_wholesale_price, 43);
+  assert.equal(fin?.breakeven_price_per_kg, 25.2);
+});
+
 test("computeRiskMatrix generates categorized credit risks with mitigations and source IDs", () => {
   const records = [
     rec("zetaris-kiri-001", "Wanguru", "supports", false, "market_price"),

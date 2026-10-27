@@ -22,6 +22,21 @@ const PRESETS = {
     location: "Nakuru County (Molo), Kenya",
     crop: "Irish potato farming"
   },
+  maize: {
+    question: "Assess commercial white maize production feasibility in Uasin Gishu County (Eldoret / Turbo), evaluating NCPB and miller wholesale spot prices, certified H614 seed and fertilizer costs, and grain moisture discount penalties.",
+    location: "Uasin Gishu County, Kenya",
+    crop: "White maize commercial production"
+  },
+  avocado: {
+    question: "Evaluate export Hass avocado orchard investment in Murang'a County (Kandara), focusing on exporter packhouse farmgate contracts, fruit fly phytosanitary standards, and GlobalGAP compliance costs.",
+    location: "Murang'a County, Kenya",
+    crop: "Hass avocado export orchard"
+  },
+  onion: {
+    question: "Investigate commercial red bulb onion farming in Kajiado County (Loitokitok), examining Wakulima wholesale spot prices, hybrid F1 seed costs, curing losses, and borehole water salinity risks.",
+    location: "Kajiado County, Kenya",
+    crop: "Red bulb onion farming"
+  },
   retail: {
     question: "Assess whether retail merchandise catalog records from TPCDS_DB can support an agricultural loan for horticulture.",
     location: "Kirinyaga County, Kenya",

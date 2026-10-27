@@ -5,6 +5,7 @@ dist/
 storage/**
 !storage/.gitkeep
 logs/trace-run-*.jsonl
+logs/trace-test-*.jsonl
 vendor/
 .DS_Store
 *.log
