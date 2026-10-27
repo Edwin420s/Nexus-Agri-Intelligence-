@@ -705,3 +705,4 @@
 * **2026-10-27T19:39** - `docs`: validate(docs): drip lateral kit CapEx depreciation schedules (#1702)
 * **2026-10-27T20:08** - `tests`: validate(tests): Wang'uru market price deflation boundary checks (#1703)
 * **2026-10-27T20:36** - `engine`: benchmark(engine): on-farm weir storage abstraction permit verification (#1704)
+* **2026-10-27T21:05** - `zetaris`: benchmark(zetaris): interactive farmgate price sensitivity stress curve (#1705)
