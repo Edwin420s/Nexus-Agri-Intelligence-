@@ -691,3 +691,4 @@
 * **2026-10-27T13:00** - `engine`: validate(engine): enterprise gross operating margin dynamic recalc (#1688)
 * **2026-10-27T13:28** - `zetaris`: validate(zetaris): multi-tenant organization ID request header propagation (#1689)
 * **2026-10-27T13:57** - `hmem`: validate(hmem): Kirinyaga tomato wholesale price index curve (#1690)
+* **2026-10-27T14:25** - `decision`: validate(decision): fertilizer and IPM spray expenditure amortization (#1691)
