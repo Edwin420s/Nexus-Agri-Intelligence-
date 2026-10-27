@@ -683,3 +683,4 @@
 * **2026-10-27T09:12** - `api`: streamline(api): Content-Security-Policy and X-Frame-Options headers (#1680)
 * **2026-10-27T09:40** - `ui`: streamline(ui): fail-safe deterministic report synthesis fallbacks (#1681)
 * **2026-10-27T10:09** - `store`: streamline(store): Machakos French bean GlobalGAP MRL compliance flags (#1682)
+* **2026-10-27T10:37** - `types`: streamline(types): cross-session H-MEM memory mining from dossier text (#1683)
