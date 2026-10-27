@@ -678,3 +678,4 @@
 * **2026-10-27T06:49** - `decision`: streamline(decision): interactive farmgate price sensitivity stress curve (#1675)
 * **2026-10-27T07:18** - `metrics`: streamline(metrics): regulatory Markdown due diligence briefing format (#1676)
 * **2026-10-27T07:46** - `risk`: streamline(risk): in-memory LRU rate-limiting per client IP address (#1677)
+* **2026-10-27T08:15** - `nemotron`: streamline(nemotron): certified seed tuber working capital ratios (#1678)
