@@ -684,3 +684,4 @@
 * **2026-10-27T09:40** - `ui`: streamline(ui): fail-safe deterministic report synthesis fallbacks (#1681)
 * **2026-10-27T10:09** - `store`: streamline(store): Machakos French bean GlobalGAP MRL compliance flags (#1682)
 * **2026-10-27T10:37** - `types`: streamline(types): cross-session H-MEM memory mining from dossier text (#1683)
+* **2026-10-27T11:06** - `trace`: streamline(trace): secret-redacted JSONL telemetry buffer flush (#1684)
