@@ -682,3 +682,4 @@
 * **2026-10-27T08:43** - `telemetry`: streamline(telemetry): decision checklist score weighting algorithm (#1679)
 * **2026-10-27T09:12** - `api`: streamline(api): Content-Security-Policy and X-Frame-Options headers (#1680)
 * **2026-10-27T09:40** - `ui`: streamline(ui): fail-safe deterministic report synthesis fallbacks (#1681)
+* **2026-10-27T10:09** - `store`: streamline(store): Machakos French bean GlobalGAP MRL compliance flags (#1682)
