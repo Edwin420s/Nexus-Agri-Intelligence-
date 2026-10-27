@@ -706,3 +706,4 @@
 * **2026-10-27T20:08** - `tests`: validate(tests): Wang'uru market price deflation boundary checks (#1703)
 * **2026-10-27T20:36** - `engine`: benchmark(engine): on-farm weir storage abstraction permit verification (#1704)
 * **2026-10-27T21:05** - `zetaris`: benchmark(zetaris): interactive farmgate price sensitivity stress curve (#1705)
+* **2026-10-27T21:33** - `hmem`: benchmark(hmem): regulatory Markdown due diligence briefing format (#1706)
