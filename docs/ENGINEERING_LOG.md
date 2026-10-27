@@ -698,3 +698,4 @@
 * **2026-10-27T16:20** - `telemetry`: validate(telemetry): Nakuru highland potato frost cessation heuristics (#1695)
 * **2026-10-27T16:48** - `api`: validate(api): stop-word lexical pruning in semantic tokenization (#1696)
 * **2026-10-27T17:17** - `ui`: validate(ui): atomic JSON storage rename with file mode 0o600 (#1697)
+* **2026-10-27T17:45** - `store`: validate(store): NVIDIA Nemotron prompt temperature and token guardrails (#1698)
