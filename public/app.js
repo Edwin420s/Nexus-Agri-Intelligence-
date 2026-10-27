@@ -122,21 +122,8 @@ question.addEventListener("input", () => {
 });
 
 function updateSensitivitySlider(f, price) {
-  const medianYield = f.expected_yield_kg_per_acre.median;
   const opex = f.estimated_opex_per_acre;
-  const isTomato = f.sensitivity_notes.includes("tomato") || f.benchmark_wholesale_price === 85;
-  const isRice = f.sensitivity_notes.includes("Basmati") || f.benchmark_wholesale_price === 78;
-  const isBeans = f.benchmark_wholesale_price === 105;
-
-  let marketableKg = medianYield;
-  if (isTomato) {
-    marketableKg = medianYield * (1 - 0.175); // 17.5% rejection buffer
-  } else if (isRice) {
-    marketableKg = medianYield * (1 - 0.08); // 8% moisture buffer
-  } else if (isBeans) {
-    marketableKg = medianYield * 0.85; // 85% export grade
-  }
-
+  const marketableKg = f.breakeven_price_per_kg > 0 ? (opex / f.breakeven_price_per_kg) : f.expected_yield_kg_per_acre.median;
   const dynamicRev = marketableKg * price;
   const dynamicMargin = Math.round(((dynamicRev - opex) / dynamicRev) * 1000) / 10;
 
@@ -146,12 +133,12 @@ function updateSensitivitySlider(f, price) {
   if (dynamicMargin < 0) {
     marginDisplay.textContent = `Operating Loss: ${dynamicMargin}%`;
     marginDisplay.style.color = "var(--red)";
-  } else if (dynamicMargin < 40) {
+  } else if (dynamicMargin < 35) {
     marginDisplay.textContent = `Gross Margin: ${dynamicMargin}% (Marginal)`;
     marginDisplay.style.color = "var(--amber)";
   } else {
     marginDisplay.textContent = `Gross Margin: ${dynamicMargin}% (Viable)`;
-    marginDisplay.style.color = "var(--green)";
+    marginDisplay.style.color = "var(--accent)";
   }
 }
 
@@ -222,9 +209,24 @@ function render(data) {
     $("fin-sensitivity-notes").textContent = f.sensitivity_notes;
 
     const slider = $("price-slider");
-    slider.min = Math.max(10, Math.round(f.breakeven_price_per_kg * 0.7));
+    slider.min = Math.max(5, Math.floor(f.breakeven_price_per_kg * 0.7));
     slider.max = Math.round(f.benchmark_wholesale_price * 1.5);
     slider.value = f.benchmark_wholesale_price;
+
+    const tickBox = $("slider-ticks");
+    if (tickBox) {
+      const p = f.benchmark_wholesale_price;
+      const be = f.breakeven_price_per_kg;
+      const pLow = Math.max(5, Math.round(be * 0.85));
+      const pHigh = Math.round(p * 1.35);
+      tickBox.innerHTML = `
+        <span>${pLow} ${f.currency} (Glut Stress)</span>
+        <span>${be} ${f.currency} (Breakeven)</span>
+        <span>${p} ${f.currency} (Spot Benchmark)</span>
+        <span>${pHigh} ${f.currency} (Peak Premium)</span>
+      `;
+    }
+
     updateSensitivitySlider(f, Number(slider.value));
 
     slider.oninput = (e) => {

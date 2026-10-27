@@ -99,33 +99,38 @@ function findConflicts(records: EvidenceRecord[]): EvidenceConflict[] {
   }
 
   for (const [topic, group] of groups) {
-    if (group.some((r) => r.relation === "supports") && group.some((r) => r.relation === "contradicts")) {
+    const sup = group.find((r) => r.relation === "supports");
+    const con = group.find((r) => r.relation === "contradicts");
+    if (sup && con) {
       conflicts.push({
         topic,
         evidence_ids: group.filter((r) => r.relation !== "context").map((r) => r.id),
-        explanation: `Records in topic "${topic}" have opposing evidence relations. Compare dates, definitions, units, and geographic coverage before relying on this claim.`
+        explanation: `Contradiction in "${topic}": ${sup.source_name} claims "${sup.claim}" while ${con.source_name} reports contrary finding "${con.claim}". Compare source dates, units, and geographic coverage before relying on this claim.`
       });
     }
   }
 
   // 2. Cross-cutting feasibility friction (e.g. price supports vs buyer offtake or water contradicts)
-  const hasPriceSupport = records.some((r) => r.topic.includes("price") && r.relation === "supports");
+  const priceRecord = records.find((r) => r.topic.includes("price") && r.relation === "supports");
   const offtakeContradicts = records.filter((r) => r.topic.includes("offtake") && r.relation === "contradicts");
   const waterContradicts = records.filter((r) => r.topic.includes("water") && r.relation === "contradicts");
 
-  if (hasPriceSupport && offtakeContradicts.length > 0) {
+  if (priceRecord && offtakeContradicts.length > 0) {
+    const offtakeRec = offtakeContradicts[0];
+    const priceText = priceRecord.claim ? `${priceRecord.source_name} indicates favorable market returns ("${priceRecord.claim}"), but ` : "";
     conflicts.push({
       topic: "market_vs_offtake",
       evidence_ids: offtakeContradicts.map((r) => r.id),
-      explanation: "Wholesale market pricing indicates favorable gross revenues, but buyer offtake records indicate severe rejection rates (15-20%) and informal price deflation without binding purchase contracts."
+      explanation: `${priceText}${offtakeRec.source_name} warns of commercial off-take friction: "${offtakeRec.claim}". ${offtakeRec.detail}`
     });
   }
 
-  if (hasPriceSupport && waterContradicts.length > 0) {
+  if (priceRecord && waterContradicts.length > 0) {
+    const waterRec = waterContradicts[0];
     conflicts.push({
       topic: "pricing_vs_water_quota",
       evidence_ids: waterContradicts.map((r) => r.id),
-      explanation: "Market opportunity is viable, but water abstraction quotas or seasonal rationing contradict open-field irrigation without permitted reservoir storage."
+      explanation: `Operational viability is constrained by water resource limits: ${waterRec.source_name} documents "${waterRec.claim}". ${waterRec.detail}`
     });
   }
 
@@ -733,6 +738,65 @@ function parseModelJson(text: string): { rationale?: string; missing_information
   }
 }
 
+function computeMissingAndNext(
+  evidence: EvidenceRecord[],
+  conflicts: EvidenceConflict[],
+  decision: DecisionResult,
+  crop: string,
+  location: string
+): { missing: string[]; next: string[] } {
+  const missing: string[] = [];
+  const next: string[] = [];
+
+  const hasPrice = evidence.some((r) => r.topic.includes("price") && !r.synthetic);
+  const hasCost = evidence.some((r) => r.topic.includes("cost") && !r.synthetic);
+  const hasWater = evidence.some((r) => r.topic.includes("water") && !r.synthetic);
+  const hasOfftake = evidence.some((r) => r.topic.includes("offtake") && !r.synthetic);
+  const undatedRecords = evidence.filter((r) => !r.observed_at && !r.published_at);
+  const lowReliabilityRecords = evidence.filter((r) => (r.reliability ?? 1) < 0.7);
+
+  if (!hasPrice) {
+    missing.push(`Verified wholesale or farmgate benchmark pricing series for ${crop} in ${location}.`);
+    next.push(`Request recent commodity market price bulletins from ${location} agricultural directorate or local cooperatives.`);
+  }
+  if (!hasCost) {
+    missing.push(`Audited enterprise budget (CapEx & OpEx breakdown) for 1 acre of ${crop} in ${location}.`);
+    next.push(`Obtain itemized local dealer quotations for certified seed, basal fertilizer, and mechanized land preparation in ${location}.`);
+  }
+  if (!hasWater) {
+    missing.push(`Water Resources Authority (WRA) abstraction permit terms and seasonal irrigation quota data for ${location}.`);
+    next.push(`Audit on-farm water access (borehole test yield, river permit, or rainwater storage pan) to verify irrigation capacity.`);
+  }
+  if (!hasOfftake) {
+    missing.push(`Written institutional buyer offtake terms or binding purchase agreements for ${crop}.`);
+    next.push(`Negotiate forward contract or Letter of Intent (LOI) with formal aggregators or food processors in ${location}.`);
+  }
+  if (undatedRecords.length > 0) {
+    missing.push(`Observation timestamps for ${undatedRecords.length} record(s): ${undatedRecords.map((r) => r.id).join(", ")}.`);
+    next.push(`Verify temporal freshness of evidence to ensure market data reflects current inflationary and seasonal pricing.`);
+  }
+  if (lowReliabilityRecords.length > 0) {
+    missing.push(`Independent validation for low-reliability sources (${lowReliabilityRecords.map((r) => r.source_name).join(", ")}).`);
+  }
+  for (const c of conflicts) {
+    next.push(`Reconcile contradiction in "${c.topic.replace(/_/g, " ")}": ${c.explanation.slice(0, 160)}.`);
+  }
+
+  if (missing.length === 0) {
+    missing.push(`Farm-specific soil test report and nutrient profile for the target parcel in ${location}.`);
+    missing.push(`Named farm manager agronomic track record and crop loss insurance terms.`);
+  }
+  if (next.length === 0) {
+    next.push(`Schedule on-site agronomic inspection in ${location} prior to loan disbursement.`);
+    next.push(`Structure credit facility in tranches aligned with crop phenological growth stages.`);
+  }
+
+  return {
+    missing: missing.slice(0, 5),
+    next: next.slice(0, 5)
+  };
+}
+
 function defaultRationale(
   records: EvidenceRecord[],
   conflicts: EvidenceConflict[],
@@ -751,12 +815,13 @@ function defaultRationale(
     }
     return `Nexus evaluated ${records.length} record(s) for ${crop} in ${location}, but the available evidence failed minimum sufficiency requirements (coverage score ${decision.score}/100). Essential agronomic, pricing, or water access data is missing or unverified. Do not commit capital without verified field data.`;
   }
-  if (decision.status === "INVESTIGATE FURTHER") {
-    const sourceCount = new Set(records.map((r) => r.source_name)).size;
-    return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s) for ${crop} in ${location}. While agronomic and pricing factors show viability, ${conflicts.length} material risk conflict(s) were flagged (e.g. buyer offtake rejection rates vs wholesale spot prices). Verdict: INVESTIGATE FURTHER (coverage score ${decision.score}/100). Verify written offtake terms and irrigation quotas before planting.`;
-  }
   const sourceCount = new Set(records.map((r) => r.source_name)).size;
-  return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s) for ${crop} in ${location}. The evidence sufficiency status is ${decision.status} (coverage score ${decision.score}/100). No unresolved contradictions were detected. Verify local water abstraction quotas, certified input costs, and binding buyer terms before committing capital.`;
+  if (decision.status === "INVESTIGATE FURTHER") {
+    const conflictTopics = conflicts.map((c) => c.topic.replace(/_/g, " ")).join(", ");
+    const conflictDetail = conflicts.map((c) => c.explanation).slice(0, 2).join(" ");
+    return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s) for ${crop} in ${location}. While production viability baseline was established, ${conflicts.length} material contradiction(s) were flagged in ${conflictTopics}. Specifically: ${conflictDetail} Verdict: INVESTIGATE FURTHER (evidence checklist coverage ${decision.score}/100). Underwriting must verify resolving evidence before capital commitment.`;
+  }
+  return `Nexus reviewed ${records.length} record(s) across ${sourceCount} named source(s) for ${crop} in ${location}. The evidence sufficiency status is ${decision.status} (coverage score ${decision.score}/100). All core underwriting requirements (provenance, source diversity, temporal freshness, and lack of contradictions) were satisfied. Verify local water abstraction permits and final purchase agreements before disbursement.`;
 }
 
 export async function runInvestigation(input: InvestigationInput): Promise<InvestigationResult> {
@@ -890,17 +955,14 @@ export async function runInvestigation(input: InvestigationInput): Promise<Inves
   if (evidence.some((r) => r.synthetic)) warnings.push("Synthetic fixture data is present. Do not use it as factual market evidence.");
   if (!memory.available) warnings.push(`Memory unavailable: ${memory.source}`);
 
-  const missing = parsed?.missing_information ?? [
-    `Confirm the source dates and grading calibration methodology for ${crop} wholesale price claims in ${location}.`,
-    `Verify farm-specific water access quotas and input costs for ${crop} production.`,
-    `Obtain written offtake terms or binding purchase agreements for ${crop} before capital disbursement.`
-  ];
+  const dynamicGaps = computeMissingAndNext(evidence, conflicts, decision, crop, location);
+  const missing = parsed?.missing_information && parsed.missing_information.length > 0
+    ? parsed.missing_information
+    : dynamicGaps.missing;
 
-  const next = parsed?.next_actions ?? [
-    `Inspect the cited source URLs and verify date and grade relevance to ${location}.`,
-    `Obtain current local supplier quotations for certified input seeds/stock in ${location}.`,
-    `Re-run the investigation once farm-specific cost structure and permits are established.`
-  ];
+  const next = parsed?.next_actions && parsed.next_actions.length > 0
+    ? parsed.next_actions
+    : dynamicGaps.next;
 
   const now = new Date().toISOString();
   const durationSec = tracer.getDurationSeconds();
