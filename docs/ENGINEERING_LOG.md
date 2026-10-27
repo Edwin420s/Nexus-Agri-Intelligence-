@@ -681,3 +681,4 @@
 * **2026-10-27T08:15** - `nemotron`: streamline(nemotron): certified seed tuber working capital ratios (#1678)
 * **2026-10-27T08:43** - `telemetry`: streamline(telemetry): decision checklist score weighting algorithm (#1679)
 * **2026-10-27T09:12** - `api`: streamline(api): Content-Security-Policy and X-Frame-Options headers (#1680)
+* **2026-10-27T09:40** - `ui`: streamline(ui): fail-safe deterministic report synthesis fallbacks (#1681)
