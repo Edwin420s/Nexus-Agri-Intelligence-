@@ -674,3 +674,4 @@
 * **2026-10-27T04:55** - `tests`: harden(tests): conditions precedent credit matrix generator (#1671)
 * **2026-10-27T05:24** - `engine`: streamline(engine): drip lateral kit CapEx depreciation schedules (#1672)
 * **2026-10-27T05:52** - `zetaris`: streamline(zetaris): Wang'uru market price deflation boundary checks (#1673)
+* **2026-10-27T06:21** - `hmem`: streamline(hmem): on-farm weir storage abstraction permit verification (#1674)
