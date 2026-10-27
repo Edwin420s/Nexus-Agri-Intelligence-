@@ -666,3 +666,4 @@
 * **2026-10-27T01:07** - `telemetry`: harden(telemetry): browser CDP automated test assertions and hooks (#1663)
 * **2026-10-27T01:36** - `api`: harden(api): TPC-DS merchandise domain exclusion ruleset (#1664)
 * **2026-10-27T02:04** - `ui`: harden(ui): Nakuru highland potato frost cessation heuristics (#1665)
+* **2026-10-27T02:33** - `store`: harden(store): stop-word lexical pruning in semantic tokenization (#1666)
