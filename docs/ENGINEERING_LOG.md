@@ -670,3 +670,4 @@
 * **2026-10-27T03:01** - `types`: harden(types): atomic JSON storage rename with file mode 0o600 (#1667)
 * **2026-10-27T03:30** - `trace`: harden(trace): NVIDIA Nemotron prompt temperature and token guardrails (#1668)
 * **2026-10-27T03:58** - `security`: harden(security): Yatta canal rotational water rationing alerts (#1669)
+* **2026-10-27T04:27** - `docs`: harden(docs): Zetaris Bearer token auto-renewal life-cycle (#1670)
