@@ -664,3 +664,4 @@
 * **2026-10-27T00:10** - `risk`: harden(risk): fertilizer and IPM spray expenditure amortization (#1661)
 * **2026-10-27T00:39** - `nemotron`: harden(nemotron): fail-closed provenance classification for unverified URLs (#1662)
 * **2026-10-27T01:07** - `telemetry`: harden(telemetry): browser CDP automated test assertions and hooks (#1663)
+* **2026-10-27T01:36** - `api`: harden(api): TPC-DS merchandise domain exclusion ruleset (#1664)
