@@ -6,6 +6,7 @@ import {
   computeFinancialMetrics,
   computeRiskMatrix
 } from "../src/agent.js";
+import { buildZetarisQuery, normalizeCropKey } from "../src/zetaris.js";
 import type { EvidenceRecord } from "../src/types.js";
 
 const rec = (
@@ -157,6 +158,36 @@ test("computeFinancialMetrics calculates unit economics for Uasin Gishu grain ma
   assert.equal(fin?.estimated_opex_per_acre, 68000);
   assert.equal(fin?.benchmark_wholesale_price, 43);
   assert.equal(fin?.breakeven_price_per_kg, 25.2);
+});
+
+test("computeFinancialMetrics calculates unit economics for Mwea Basmati rice in Kirinyaga", () => {
+  const records = [rec("1", "Mwea Rice Growers", "supports", false, "market_price"), rec("2", "KALRO Mwea", "context", false, "yield")];
+  const fin = computeFinancialMetrics("ricee", "Kirinyaga County, Kenya", records);
+  assert.ok(fin !== undefined);
+  assert.equal(fin?.estimated_capex, 80000);
+  assert.equal(fin?.estimated_opex_per_acre, 95000);
+  assert.equal(fin?.benchmark_wholesale_price, 78);
+  assert.equal(fin?.breakeven_price_per_kg, 28.7);
+  assert.ok(fin?.sensitivity_notes.includes("Basmati 370 paddy"));
+});
+
+test("computeRiskMatrix generates rice-specific credit risks with NIA canal and miller docking mitigations", () => {
+  const records = [rec("zetaris-rice-001", "Wanguru Millers", "supports", false, "market_price"), rec("zetaris-rice-002", "Wanguru Millers", "contradicts", false, "buyer_offtake")];
+  const risks = computeRiskMatrix("ricee", "Kirinyaga County, Kenya", records, []);
+  assert.ok(risks.some((r) => r.title.includes("Paddy Moisture Content")));
+  assert.ok(risks.some((r) => r.source_evidence_id === "zetaris-rice-002"));
+  assert.ok(risks.some((r) => r.title.includes("National Irrigation Authority")));
+});
+
+test("buildZetarisQuery prioritizes explicit crop over location keywords and legacy question text", () => {
+  const query = buildZetarisQuery({
+    crop: "ricee",
+    location: "Kirinyaga County, Kenya",
+    question: "Assess whether small-scale tomato farming in Kirinyaga County is worth investigating..."
+  });
+  assert.ok(query.includes("zetaris-rice-001"), "Must execute rice SQL rather than tomato SQL");
+  assert.ok(query.includes("Basmati 370"), "Must cite Basmati 370");
+  assert.ok(!query.includes("zetaris-kiri-001"), "Must NOT execute tomato query");
 });
 
 test("computeRiskMatrix generates categorized credit risks with mitigations and source IDs", () => {

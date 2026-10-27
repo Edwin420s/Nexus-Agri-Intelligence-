@@ -12,6 +12,11 @@ const PRESETS = {
     location: "Kirinyaga County, Kenya",
     crop: "Tomato farming"
   },
+  rice: {
+    question: "Assess commercial Basmati paddy rice production feasibility in Kirinyaga County (Mwea Irrigation Scheme), evaluating NIA farmgate wholesale prices, certified seed and rotavator puddling costs, rotational canal water quotas, and commercial miller moisture deductions.",
+    location: "Kirinyaga County (Mwea), Kenya",
+    crop: "Basmati paddy rice"
+  },
   beans: {
     question: "Investigate export-grade French beans contract farming feasibility in Machakos County (Yatta), focusing on packhouse contract prices, canal rotational rationing risks, and GlobalGAP compliance requirements.",
     location: "Machakos County (Yatta), Kenya",
@@ -92,19 +97,42 @@ document.querySelectorAll(".preset-btn").forEach((btn) => {
       question.value = preset.question;
       $("location").value = preset.location;
       $("crop").value = preset.crop;
+      question.dataset.userEdited = "";
     }
   });
+});
+
+// Auto-sync question if user manually edits crop/location without custom phrasing
+$("crop").addEventListener("input", (e) => {
+  const newCrop = e.target.value.trim();
+  const loc = $("location").value.trim() || "Kenya";
+  if (!question.dataset.userEdited && newCrop) {
+    question.value = `Assess whether ${newCrop} production in ${loc} is commercially viable, examining wholesale farmgate prices, production and input costs, water access permits, and buyer offtake terms.`;
+  }
+});
+$("location").addEventListener("input", (e) => {
+  const newLoc = e.target.value.trim() || "Kenya";
+  const cr = $("crop").value.trim() || "commercial agribusiness";
+  if (!question.dataset.userEdited) {
+    question.value = `Assess whether ${cr} production in ${newLoc} is commercially viable, examining wholesale farmgate prices, production and input costs, water access permits, and buyer offtake terms.`;
+  }
+});
+question.addEventListener("input", () => {
+  question.dataset.userEdited = "true";
 });
 
 function updateSensitivitySlider(f, price) {
   const medianYield = f.expected_yield_kg_per_acre.median;
   const opex = f.estimated_opex_per_acre;
   const isTomato = f.sensitivity_notes.includes("tomato") || f.benchmark_wholesale_price === 85;
+  const isRice = f.sensitivity_notes.includes("Basmati") || f.benchmark_wholesale_price === 78;
   const isBeans = f.benchmark_wholesale_price === 105;
 
   let marketableKg = medianYield;
   if (isTomato) {
     marketableKg = medianYield * (1 - 0.175); // 17.5% rejection buffer
+  } else if (isRice) {
+    marketableKg = medianYield * (1 - 0.08); // 8% moisture buffer
   } else if (isBeans) {
     marketableKg = medianYield * 0.85; // 85% export grade
   }

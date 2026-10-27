@@ -10,7 +10,7 @@ import type {
   InvestigationResult,
   RiskItem
 } from "./types.js";
-import { collectEvidence } from "./zetaris.js";
+import { collectEvidence, normalizeCropKey } from "./zetaris.js";
 import { recallMemory, rememberInvestigation } from "./memory.js";
 import { reasonWithMeterless } from "./nemotron.js";
 import { AgentTracer } from "./trace.js";
@@ -223,10 +223,39 @@ export function computeFinancialMetrics(
     return undefined;
   }
 
-  const queryText = `${crop} ${location}`.toLowerCase();
+  const cropKey = normalizeCropKey(crop, `${crop} ${location}`);
+
+  // Scenario 0: Rice / Paddy Rice (e.g. Mwea / Kirinyaga / Ahero)
+  if (cropKey === "rice") {
+    const capex = 80000;
+    const opex = 95000;
+    const minYield = 3000;
+    const maxYield = 4500;
+    const medianYield = 3600;
+    const benchmarkPrice = 78;
+    const moistureLossBuffer = 0.08;
+    const marketableKg = medianYield * (1 - moistureLossBuffer);
+    const breakeven = Math.round((opex / marketableKg) * 10) / 10;
+    const grossRev = marketableKg * benchmarkPrice;
+    const grossMargin = Math.round(((grossRev - opex) / grossRev) * 1000) / 10;
+    const payback = 5.0;
+
+    return {
+      currency: "KES",
+      estimated_capex: capex,
+      estimated_opex_per_acre: opex,
+      expected_yield_kg_per_acre: { min: minYield, max: maxYield, median: medianYield },
+      breakeven_price_per_kg: breakeven,
+      benchmark_wholesale_price: benchmarkPrice,
+      gross_margin_percent: grossMargin,
+      payback_period_months: payback,
+      sensitivity_notes:
+        "At wholesale spot price of 78 KES/kg for Basmati 370 paddy, enterprise gross margin is 63.2%. If grain moisture exceeds 14% at delivery, millers enforce 10-15% price docking, reducing gross margins to 51.4%. Enterprise remains cash-positive above 28.7 KES/kg breakeven. Access to concrete drying floors or mechanical drying prevents broken grain discounts."
+    };
+  }
 
   // Scenario 1: Tomato farming (e.g. Kirinyaga County / Mwea)
-  if (queryText.includes("tomato") || queryText.includes("kirinyaga")) {
+  if (cropKey === "tomato" || (!cropKey && !crop && location.toLowerCase().includes("kirinyaga"))) {
     const capex = 150000;
     const opex = 215000;
     const minYield = 18000;
@@ -255,7 +284,7 @@ export function computeFinancialMetrics(
   }
 
   // Scenario 2: French beans export (e.g. Machakos County / Yatta)
-  if (queryText.includes("bean") || queryText.includes("machakos") || queryText.includes("yatta")) {
+  if (cropKey === "bean" || (!cropKey && !crop && location.toLowerCase().includes("machakos"))) {
     const capex = 120000;
     const opex = 145000;
     const minYield = 5000;
@@ -285,7 +314,7 @@ export function computeFinancialMetrics(
   }
 
   // Scenario 3: Irish potatoes (e.g. Nakuru County / Molo)
-  if (queryText.includes("potato") || queryText.includes("nakuru") || queryText.includes("molo")) {
+  if (cropKey === "potato" || (!cropKey && !crop && location.toLowerCase().includes("nakuru"))) {
     const capex = 90000;
     const opex = 180000;
     const minYield = 4000;
@@ -312,7 +341,7 @@ export function computeFinancialMetrics(
   }
 
   // Scenario 4: Commercial Maize / Corn (e.g. Uasin Gishu / Trans-Nzoia)
-  if (queryText.includes("maize") || queryText.includes("corn") || queryText.includes("uasin gishu") || queryText.includes("eldoret")) {
+  if (cropKey === "maize" || (!cropKey && !crop && location.toLowerCase().includes("uasin gishu"))) {
     const capex = 45000;
     const opex = 68000;
     const minYield = 2500;
@@ -341,7 +370,7 @@ export function computeFinancialMetrics(
   }
 
   // Scenario 5: Export Hass Avocado (e.g. Murang'a / Central Kenya)
-  if (queryText.includes("avocado") || queryText.includes("murang'a") || queryText.includes("muranga")) {
+  if (cropKey === "avocado" || (!cropKey && !crop && location.toLowerCase().includes("murang'a"))) {
     const capex = 180000;
     const opex = 82000;
     const minYield = 7000;
@@ -371,7 +400,7 @@ export function computeFinancialMetrics(
   }
 
   // Scenario 6: Bulb Onions (e.g. Kajiado / Loitokitok)
-  if (queryText.includes("onion") || queryText.includes("kajiado") || queryText.includes("loitokitok")) {
+  if (cropKey === "onion" || (!cropKey && !crop && location.toLowerCase().includes("kajiado"))) {
     const capex = 110000;
     const opex = 162000;
     const minYield = 12000;
@@ -400,7 +429,7 @@ export function computeFinancialMetrics(
   }
 
   // Scenario 7: Commercial Dairy / Cow Milk (e.g. Kiambu / Rift Valley)
-  if (queryText.includes("dairy") || queryText.includes("milk") || queryText.includes("cow")) {
+  if (cropKey === "dairy" || (!cropKey && !crop && location.toLowerCase().includes("kiambu"))) {
     const capex = 280000;
     const opex = 198000; // Annualized per cow
     const minYield = 4500;
@@ -469,10 +498,43 @@ export function computeRiskMatrix(
     return [];
   }
 
-  const queryText = `${crop} ${location}`.toLowerCase();
+  const cropKey = normalizeCropKey(crop, `${crop} ${location}`);
   const risks: RiskItem[] = [];
 
-  if (queryText.includes("tomato") || queryText.includes("kirinyaga")) {
+  if (cropKey === "rice") {
+    risks.push({
+      category: "commercial",
+      title: "Paddy Moisture Content Mill Docking Penalties",
+      severity: "HIGH",
+      impact: "Private millers in Wang'uru enforce 10–15% deductions on paddy delivered above 14% moisture content, eroding gross margins.",
+      mitigation: "Mandate access to cooperative drying floors or solar driers before loan disbursement to guarantee <14% MC delivery.",
+      source_evidence_id: "zetaris-rice-002"
+    });
+    risks.push({
+      category: "regulatory",
+      title: "National Irrigation Authority (NIA) Rotational Canal Rationing",
+      severity: "MEDIUM",
+      impact: "Canal rotational scheduling between Section A and Section B during river low baseflow can delay basin flooding for tail-end blocks.",
+      mitigation: "Verify farm block coordinates with NIA Mwea Scheme water schedule and ensure field bunds hold 10cm standing water.",
+      source_evidence_id: "zetaris-rice-004"
+    });
+    risks.push({
+      category: "agronomic",
+      title: "Rice Blast & Apple Snail Seedling Damage",
+      severity: "HIGH",
+      impact: "Fungal rice blast (Magnaporthe oryzae) and invasive apple snails can cause up to 35% tiller mortality in early vegetative phase.",
+      mitigation: "Condition loan release on certified blast-resistant seed (BW 196 / Komboka / Basmati 370) and approved copper-based molluscicide protocol.",
+      source_evidence_id: "zetaris-rice-003"
+    });
+    risks.push({
+      category: "commercial",
+      title: "Imported Long-Grain Rice Spot Market Price Undercutting",
+      severity: "MEDIUM",
+      impact: "Surges of duty-exempt imported long-grain white rice in Nairobi markets create spot price gluts for non-aromatic local paddy.",
+      mitigation: "Underwrite strictly for high-demand aromatic Basmati varieties with verified offtake agreements with established rice millers.",
+      source_evidence_id: "zetaris-rice-001"
+    });
+  } else if (cropKey === "tomato" || (!cropKey && !crop && location.toLowerCase().includes("kirinyaga"))) {
     risks.push({
       category: "commercial",
       title: "Informal Aggregator Offtake Volatility & Crate Rejection",
@@ -505,7 +567,7 @@ export function computeRiskMatrix(
       mitigation: "Structure planting calendar for off-peak harvest window (July–September) using drip irrigation to capture high prices.",
       source_evidence_id: "zetaris-kiri-001"
     });
-  } else if (queryText.includes("bean") || queryText.includes("machakos") || queryText.includes("yatta")) {
+  } else if (cropKey === "bean" || (!cropKey && !crop && location.toLowerCase().includes("machakos"))) {
     risks.push({
       category: "commercial",
       title: "Export Packhouse MRL Rejection Penalty",
@@ -522,7 +584,7 @@ export function computeRiskMatrix(
       mitigation: "Mandate installation of a 100m³ plastic-lined buffer water pan before loan disbursement.",
       source_evidence_id: "zetaris-mach-002"
     });
-  } else if (queryText.includes("potato") || queryText.includes("nakuru") || queryText.includes("molo")) {
+  } else if (cropKey === "potato" || (!cropKey && !crop && location.toLowerCase().includes("nakuru"))) {
     risks.push({
       category: "commercial",
       title: "High Seed Tuber Working Capital Requirement",
@@ -539,7 +601,7 @@ export function computeRiskMatrix(
       mitigation: "Calibrate planting date to early October and construct a ventilated diffuse-light store (DLS) on farm.",
       source_evidence_id: "zetaris-nak-002"
     });
-  } else if (queryText.includes("maize") || queryText.includes("corn") || queryText.includes("uasin gishu") || queryText.includes("eldoret")) {
+  } else if (cropKey === "maize" || (!cropKey && !crop && location.toLowerCase().includes("uasin gishu"))) {
     risks.push({
       category: "commercial",
       title: "Millers Grain Moisture Content Deduction Penalties",
@@ -556,7 +618,7 @@ export function computeRiskMatrix(
       mitigation: "Require use of certified hybrid seed (H614/H628) and structured IPM biorational spray program.",
       source_evidence_id: "zetaris-mze-004"
     });
-  } else if (queryText.includes("avocado") || queryText.includes("murang'a") || queryText.includes("muranga")) {
+  } else if (cropKey === "avocado" || (!cropKey && !crop && location.toLowerCase().includes("murang'a"))) {
     risks.push({
       category: "commercial",
       title: "EU False Codling Moth & Fruit Fly Quarantine Interceptions",
@@ -573,7 +635,7 @@ export function computeRiskMatrix(
       mitigation: "Enforce canopy pruning and foliar calcium nutrition to maximize export Grade 1 packout above 80%.",
       source_evidence_id: "zetaris-avo-002"
     });
-  } else if (queryText.includes("onion") || queryText.includes("kajiado") || queryText.includes("loitokitok")) {
+  } else if (cropKey === "onion" || (!cropKey && !crop && location.toLowerCase().includes("kajiado"))) {
     risks.push({
       category: "commercial",
       title: "Post-Harvest Neck Rot Losses in High-Humidity Windows",
@@ -590,7 +652,7 @@ export function computeRiskMatrix(
       mitigation: "Require certified water laboratory analysis and valid Water Resources Authority abstraction permit.",
       source_evidence_id: "zetaris-on-004"
     });
-  } else if (queryText.includes("dairy") || queryText.includes("milk") || queryText.includes("cow")) {
+  } else if (cropKey === "dairy" || (!cropKey && !crop && location.toLowerCase().includes("kiambu"))) {
     risks.push({
       category: "commercial",
       title: "Processor Zero-Tolerance Antibiotic Residue Rejections",
@@ -734,7 +796,11 @@ export async function runInvestigation(input: InvestigationInput): Promise<Inves
 
   // Researcher queries Zetaris data layer
   const startResearcher = Date.now();
-  const collected = await collectEvidence(questionWithContext);
+  const collected = await collectEvidence({
+    crop,
+    location,
+    question
+  });
   const evidence = collected.records;
 
   tracer.logEvent({
