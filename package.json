@@ -17,6 +17,7 @@
     "test": "tsx --test tests/*.test.ts",
     "test:hmem": "tsx --test tests/hmem.test.ts",
     "test:decision": "tsx --test tests/decision.test.ts",
+    "test:e2e": "node --experimental-websocket tests/frontend_e2e.mjs",
     "check": "npm run build && npm test"
   },
   "dependencies": {
