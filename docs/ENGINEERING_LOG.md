@@ -700,3 +700,4 @@
 * **2026-10-27T17:17** - `ui`: validate(ui): atomic JSON storage rename with file mode 0o600 (#1697)
 * **2026-10-27T17:45** - `store`: validate(store): NVIDIA Nemotron prompt temperature and token guardrails (#1698)
 * **2026-10-27T18:14** - `types`: validate(types): Yatta canal rotational water rationing alerts (#1699)
+* **2026-10-27T18:42** - `trace`: validate(trace): Zetaris Bearer token auto-renewal life-cycle (#1700)
